@@ -8,29 +8,29 @@
   If mouse wrangler needs to be installed on a new Campfire computer, then follow these instructions.
   1. Ensure Electron/Node are installed.
   2. Follow the installation guide in the documentation.
-  3. Modify parameters below 
+  3. Modify parameters below
   4. type "electron ." in cmd.exe
-  
+
   Please see slides/documentation in repository for references on figures which are crucial
   in explaining the logic behind this architecture.
 
 
 Examples of inputs for parameters.
   "floorURL": 'http://bit.ly/CampfireFloorSlide'
-  "wallURL": 'http://bit.ly/CampfireWallSlide' 
+  "wallURL": 'http://bit.ly/CampfireWallSlide'
   var exampleFileURL = 'file://' + __dirname + '/images/wall_invert.png'
   "floorURL": exampleFileURL
   */
 
-    
 var fileDir = 'file://' + __dirname
-//'http://bit.ly/CampfireFloorSlide'
 var floorURL = 'http://bit.ly/CampfireFloorSlide';
 var wallURL = 'http://bit.ly/CampfireWallSlide';
 
-var mouseutil = require('@campfirehci/mouseutil')({ "fullscreen": true,
-                                                    "display": true,
-                                                    "screenWrap": true,
-													"centermode": false,
-                                                    "floorURL": floorURL,
-                                                    "wallURL": wallURL });
+var mouseutil = require('@campfirehci/mouseutil')({
+  "fullscreen": true,
+  "display": true,
+  "screenWrap": true,
+  "centermode": false,
+  "floorURL": floorURL,
+  "wallURL": wallURL
+});
