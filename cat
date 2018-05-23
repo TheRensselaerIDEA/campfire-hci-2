@@ -1,0 +1,26 @@
+
+Main screen { id: 2779098405,
+  bounds: { x: 0, y: 0, width: 6400, height: 800 },
+  workArea: { x: 0, y: 0, width: 6400, height: 800 },
+  size: { width: 6400, height: 800 },
+  workAreaSize: { width: 6400, height: 800 },
+  scaleFactor: 1,
+  rotation: 0,
+  touchSupport: 'unknown' }
+all screens [ { id: 2528732444,
+    bounds: { x: -1920, y: 0, width: 1920, height: 1080 },
+    workArea: { x: -1920, y: 0, width: 1920, height: 1080 },
+    size: { width: 1920, height: 1080 },
+    workAreaSize: { width: 1920, height: 1080 },
+    scaleFactor: 1,
+    rotation: 0,
+    touchSupport: 'unknown' },
+  { id: 2779098405,
+    bounds: { x: 0, y: 0, width: 6400, height: 800 },
+    workArea: { x: 0, y: 0, width: 6400, height: 800 },
+    size: { width: 6400, height: 800 },
+    workAreaSize: { width: 6400, height: 800 },
+    scaleFactor: 1,
+    rotation: 0,
+    touchSupport: 'unknown' } ]
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 
