@@ -9,6 +9,7 @@
 
   Modified By Antonio Fiol-Mahon on 5/22/2018
 */
+
 'use strict';
 
 // Parameters: An electron.screen object
@@ -36,6 +37,7 @@ module.exports = function(args) {
       this.screens = this.setScreens(); //TODO doesnt need assignment?
       this.createWindow();
       this.listener();
+      console.log("MouseController Initialized")
     },
 
     /*

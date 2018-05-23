@@ -26,7 +26,7 @@ var fileDir = 'file://' + __dirname
 var floorURL = 'http://bit.ly/CampfireFloorSlide';
 var wallURL = 'http://bit.ly/CampfireWallSlide';
 
-var mouseutil = require('@campfirehci/mouseutil')({
+var mouseutil = require('../npm/')({
   "fullscreen": true,
   "display": true,
   "screenWrap": true,
