@@ -1,15 +1,16 @@
-<<<<<<< HEAD
 # campfire-hci-2
 Extensions to campfire-hci (starting Summer 2018)
-=======
-# Campfire-Hci
-Code related to HCI extensions for the IDEA Campfire
+
+
+###														###
+### campfire-hci-instructions ###
+###														###
 
 # How to run
 1. cd ./../path/to/campfire-hci
 2. cd wrangler
 3. npm install
-4. electron .
+4. npm start
 If there are compatibility errors with electron, run this command in the directory of package.json.
 ```
 npm rebuild --runtime=electron --target=1.8.2 --disturl=https://atom.io/download/atom-shell --abi=48
@@ -40,4 +41,3 @@ FOR FRESH INSTALLS ONLY
 	- see building robotjs
 		- https://www.npmjs.com/package/robotjs
 --------------------
->>>>>>> Commit all existing code pre cleanup
