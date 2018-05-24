@@ -47,8 +47,11 @@ var mouseController = {
       this.params["floorurl"],
       this.params["fullscreen"]
     );
-
-    this.listener(); // Start the mouse event listener
+    this.listener(
+      this.params["screenwrap"],
+      this.params["centermode"],
+      false
+    );
   },
 
   /*
@@ -100,6 +103,10 @@ var mouseController = {
 
   /*
     Create the windows that will display content on the screens
+    @param {boolean} displayEnabled: true to show displays
+    @param {string} wallURL: URL for wall display
+    @param {string} floorURL: URL for floor display
+    @param {boolean} fullScreen: true for fullscreen mdoe
   */
   createWindow: function(displayEnabled, wallURL, floorURL, fullScreen) {
     // Wall Display Configuration
@@ -115,11 +122,6 @@ var mouseController = {
     //Forced setting to fit window to campfire screens
     mainWindow.setContentSize(6400,800);
     mainWindow.loadURL(wallURL);
-
-    //'file://' + __dirname + '/images/wall_invert.png'
-    // Create a browser window for the "Floor"...
-    // Floor on Campfire must be centered (x position)
-    // "Floor" for debug should fill available screen
 
     // Floor Display Configuration
     this.floorScreen.bounds.width=1920;
@@ -153,8 +155,12 @@ var mouseController = {
   },
 
   /*
+    Listens to mouse events and corrects mouse position when required
+    @param {boolean} screenWrapEnabled: true if cursor should wrap around wall
+    @param {boolean} centerModeEnabled: //TODO document param
+    @param {boolean} debugPrintEnabled: true to output debug values to console
   */
-  listener: function() {
+  listener: function(screenWrapEnabled, centerModeEnabled, debugPrintEnabled) {
     var wall = this.wallScreen;
     var floor = this.floorScreen;
     var fb = floor.bounds;
@@ -163,15 +169,14 @@ var mouseController = {
     var borderOffset = 30;
     var onFloor = false;
     var params = this.params;
-    var screenWrapEnabled = this.params["screenwrap"];
-    var centerModeEnabled = this.params["centermode"];
     //These functions are created in local scope to be used by the event listener.
     var util = {
+
       /*
-        Find angle from the origin
-        Input:  dx: distance between centerx and mousex
-                dy: distance between centery and mousey
-        Output: degrees from origin angle
+        Find angle from origin
+        @param {number} dx: distance between centerx and mousex
+        @param {number} dy: distance between centery and mousey
+        @return {number}: degrees from origin angle
       */
       calcTheta: function(dx, dy) {
         var t = Math.atan2(dy,dx) * 180 / Math.PI; // Degree of angle
@@ -180,7 +185,7 @@ var mouseController = {
       },
 
       /*
-        Return true if cursor is on floor, false if cursor on wall
+        @return {boolean}: true if cursor is on floor, false if cursor on wall
       */
       onFloor: function(x, y, fb) {
         var xOnFloor = (x <= fb.x + fb.width && x >= fb.x);
@@ -286,6 +291,7 @@ var mouseController = {
     var isOnFloor = false;
     var lastX = null;
     var lastY = null;
+
     // Event Listener: Receives x and y positions of the mouse
     mouse.on('move', function(mouseX, mouseY) {
       isOnFloor = util.onFloor(mouseX, mouseY, fb);
@@ -298,8 +304,7 @@ var mouseController = {
         wallListener(mouseX, mouseY, fCx, fCy, fRadius, wallOffset, borderOffset);
       }
 
-      /*
-      if (DEBUG) {
+      if (debugPrintEnabled) {
         var debug_msg = "";
         debug_msg += "\nOnFloor = " + isOnFloor
         debug_msg += "\n(LastX, LastY): " + "(" + lastX + "," + lastY + ")";
@@ -311,7 +316,6 @@ var mouseController = {
         debug_msg += "\n" + fCx + "," + fCy;
         console.log(debug_msg);
       }
-      */
     });
   }
 }
