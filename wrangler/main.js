@@ -324,13 +324,18 @@ var mouseController = {
 app.on('ready', function() {
 	var floorURL = 'http://bit.ly/CampfireFloorSlide';
 	var wallURL = 'http://bit.ly/CampfireWallSlide';
+  var fileDir = 'file://' + __dirname
+
+  var floorImg = path.join(fileDir, 'images', 'target2.png')
+  var wallImg = path.join(fileDir, 'images', 'wall.png')
+
 	args = {
     "fullscreen": true,
 	  "display": true,
 		"screenWrap": true,
 		"centermode": false,
-		"floorURL": floorURL,
-		"wallURL": wallURL
+		"floorURL": floorImg,
+		"wallURL": wallImg
   }
   mouseController.init(args);
 })
