@@ -25,7 +25,7 @@ Examples of inputs for parameters.
 var floorURL = 'http://bit.ly/CampfireFloorSlide';
 var wallURL = 'http://bit.ly/CampfireWallSlide';
 
-var mouseutil = require('../npm/')({
+var mouseutil = require('../npm')({
   "fullscreen": true,
   "display": true,
   "screenWrap": true,
