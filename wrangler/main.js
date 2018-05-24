@@ -22,7 +22,6 @@ Examples of inputs for parameters.
   "floorURL": exampleFileURL
   */
 
-var fileDir = 'file://' + __dirname
 var floorURL = 'http://bit.ly/CampfireFloorSlide';
 var wallURL = 'http://bit.ly/CampfireWallSlide';
 
