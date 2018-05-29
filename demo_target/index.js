@@ -8,7 +8,6 @@ const fileDir = 'file://' + __dirname
 
 const floorImg = path.join(fileDir, 'images', 'target2.png')
 const wallImg = path.join(fileDir, 'images', 'wall.png')
-const wranglerPath = path.join(fileDir, 'wrangler')
 
 const args = {
   "fullscreen": true,
@@ -19,4 +18,4 @@ const args = {
   "wallURL": wallImg
 }
 
-var mouseutil = require('../wrangler')(args);
+var demo_app = require('campfire-hci-2@latest')(args);
