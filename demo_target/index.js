@@ -18,4 +18,4 @@ const args = {
   "wallURL": wallImg
 }
 
-var demo_app = require('@campfire-hci-2')(args);
+var demo_app = require('campfire-hci-2')(args);
