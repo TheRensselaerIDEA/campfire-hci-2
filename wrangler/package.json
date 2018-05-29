@@ -1,10 +1,7 @@
 {
-  "name": "mouse_wrangler",
+  "name": "campfire-hci2",
   "version": "1.0.1",
   "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
   "devDependencies": {
     "electron-rebuild": "^1.7.3"
   },
