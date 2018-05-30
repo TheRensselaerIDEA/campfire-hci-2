@@ -1,6 +1,6 @@
 {
   "name": "campfire-hci-2",
-  "version": "1.0.5",
+  "version": "1.0.12",
   "main": "main.js",
   "devDependencies": {
     "electron-rebuild": "^1.7.3"
