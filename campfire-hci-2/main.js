@@ -22,23 +22,18 @@ Examples of inputs for parameters.
   var exampleFileURL = 'file://' + __dirname + '/images/wall_invert.png'
   "floorURL": exampleFileURL
 */
+'use strict';
 
 // Imports
 const electron = require('electron');
-const MouseController = require('./MouseController.js')
-
-'use strict';
-
-// Default URLs for floor & wall slide
-var floorURL = 'http://bit.ly/CampfireFloorSlide';
-var wallURL = 'http://bit.ly/CampfireWallSlide';
+const ViewController = require('./MouseController.js')
 
 module.exports = function(args) {
 
-  var mouseController = new MouseController(args);
+  var viewController = new ViewController(args);
 
   electron.app.on('ready', function() {
-    mouseController.init(args)
+    viewController.init()
   });
-  return mouseController;
+  return viewController;
 }
