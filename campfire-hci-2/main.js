@@ -26,7 +26,7 @@ Examples of inputs for parameters.
 
 // Imports
 const electron = require('electron');
-const ViewController = require('./MouseController.js')
+const ViewController = require('./ViewController.js')
 
 module.exports = function(args) {
 
