@@ -23,13 +23,11 @@ Examples of inputs for parameters.
   "floorURL": exampleFileURL
 */
 
-
+'use strict';
 
 // Default URLs for floor & wall slide
 var floorURL = 'http://bit.ly/CampfireFloorSlide';
 var wallURL = 'http://bit.ly/CampfireWallSlide';
-
-'use strict';
 
 module.exports = function(args) {
   // Imports
@@ -37,7 +35,16 @@ module.exports = function(args) {
   const url = require('url');
   const path = require("path");
   const robot = require('robotjs');
-  const mouse = require('win-mouse')();
+
+  // Check if win-mouse is available
+  var winMousePresent;
+  try {
+    const winMouse = require('win-mouse')();
+    winMousePresent = true;
+  } catch(err) {
+    console.log("WARN: WinMouse unavailable, skipping mouse event binding...")
+    winMousePresent = false;
+  }
 
   // hci top level variables
   const app = electron.app; // Control application life
@@ -99,12 +106,18 @@ module.exports = function(args) {
       this.wallOffset = 0.25;
       this.screen = electron.screen;
       var allScreens = this.screen.getAllDisplays();
-      if (allScreens[0].size.width > allScreens[1].size.width) {
+      // If only 1 monitor is present, display both on primary display
+      try {
+        if (allScreens[0].size.width > allScreens[1].size.width) {
+          this.wallScreen = allScreens[0];
+          this.floorScreen = allScreens[1]
+        } else {
+          this.floorScreen = allScreens[0];
+          this.wallScreen = allScreens[1];
+        }
+      } catch(err) {
         this.wallScreen = allScreens[0];
-        this.floorScreen = allScreens[1]
-      } else {
         this.floorScreen = allScreens[0];
-        this.wallScreen = allScreens[1];
       }
     },
 
@@ -299,8 +312,12 @@ module.exports = function(args) {
       var lastX = null;
       var lastY = null;
 
-      // Event Listener: Receives x and y positions of the mouse
-      mouse.on('move', function(mouseX, mouseY) {
+      /*
+        Handle mouse position events for floor/wall
+        @param {number} mouseX: mouse x position
+        @param {number} mouseY: mouse y position
+      */
+      var mouseListener = function(mouseX, mouseY) {
         isOnFloor = util.onFloor(mouseX, mouseY, fb);
         //Transitioning from floor to wall
         if (isOnFloor) {
@@ -323,7 +340,12 @@ module.exports = function(args) {
           debug_msg += "\n" + fCx + "," + fCy;
           console.log(debug_msg);
         }
-      });
+      }
+
+      // Bind MouseListener to winMouse if it is available
+      if (winMousePresent) {
+        winMouse.on('move', mouseListener);
+      }
     }
   }
 

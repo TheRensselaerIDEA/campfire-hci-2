@@ -6,8 +6,8 @@ const path = require("path");
 
 const fileDir = 'file://' + __dirname
 
-const floorImg = path.join(fileDir, 'images', 'target2.png')
-const wallImg = path.join(fileDir, 'images', 'wall.png')
+const floorImg = path.join(fileDir, 'images', 'target2_invert.png')
+const wallImg = path.join(fileDir, 'images', 'wall_invert.png')
 
 const args = {
   "fullscreen": true,
