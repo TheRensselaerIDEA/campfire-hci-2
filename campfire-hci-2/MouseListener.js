@@ -1,3 +1,12 @@
+/*
+  Author: Tommy Fang
+  Date: 3/20/2018
+  Advisors: Professors Jim Hendler and John Erickson
+  Rensselaer Polytechnic Institute Master's Project Spring 2018
+
+  Adapted into seperate class by Antonio Fiol-Mahon
+*/
+
 // Imports
 const robot = require('robotjs');
 

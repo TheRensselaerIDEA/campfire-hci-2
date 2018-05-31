@@ -88,7 +88,7 @@ module.exports = function ViewController(args) {
       height: this.wallScreen.bounds.height,
       show: displayEnabled,
       frame: false,
-      webPreferences:{nodeIntegration: true}
+      webPreferences:{ nodeIntegration: true }
     });
     //Forced setting to fit window to campfire screens
     mainWindow.setContentSize(6400,800);

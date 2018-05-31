@@ -1,0 +1,15 @@
+{
+  "name": "campfire-launcher",
+  "version": "1.0.0",
+  "description": "An application launcher for the campfire",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "campfire-hci-2": "../campfire-hci-2",
+    "electron": "^1.8.6"
+  },
+  "author": "Antonio Fiol-Mahon",
+  "license": "ISC"
+}
