@@ -5,7 +5,7 @@ const robot = require('robotjs');
 var winMousePresent;
 var winMouse;
 try {
-  winMouse = require('win-mouse');
+  winMouse = require('win-mouse')();
   winMousePresent = true;
 } catch(err) {
   console.log("WARN: WinMouse unavailable, skipping mouse event binding...")
