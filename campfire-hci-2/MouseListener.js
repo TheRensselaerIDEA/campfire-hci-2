@@ -1,6 +1,17 @@
 // Imports
 const robot = require('robotjs');
 
+// Check if win-mouse is available, if so import it and set flag
+var winMousePresent;
+const winMouse;
+try {
+  winMouse = require('win-mouse');
+  winMousePresent = true;
+} catch(err) {
+  console.log("WARN: WinMouse unavailable, skipping mouse event binding...")
+  winMousePresent = false;
+}
+
 /*
   Find angle from origin in degrees
   @param {number} dx: distance between centerx and mousex
@@ -29,16 +40,6 @@ function CURSOR_ON_FLOOR(x, y, floorBounds) {
   @param {boolean} debugPrintEnabled: true to output debug values to console
 */
 module.exports = function MouseListener(floorScreen, wallScreen, screenWrapEnabled, centerModeEnabled, debugPrintEnabled) {
-
-  // Check if win-mouse is available, if so import it and set flag
-  var winMousePresent;
-  try {
-    const winMouse = require('win-mouse');
-    winMousePresent = true;
-  } catch(err) {
-    console.log("WARN: WinMouse unavailable, skipping mouse event binding...")
-    winMousePresent = false;
-  }
 
   this.floorBounds = floorScreen.bounds;
   this.wallBounds = wallScreen.bounds;
