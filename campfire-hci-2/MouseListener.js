@@ -25,15 +25,6 @@ function CALCULATE_THETA(dx, dy) {
 }
 
 /*
-  @return {boolean}: true if cursor is on floor, false if cursor on wall
-*/
-function CURSOR_ON_FLOOR(x, y, floorBounds) {
-  var xOnFloor = (x <= floorBounds.x + floorBounds.width && x >= floorBounds.x);
-  var yOnFloor = (y <= floorBounds.y + floorBounds.height && y >= floorBounds.y);
-  return xOnFloor && yOnFloor;
-}
-
-/*
   Listens to mouse events and corrects mouse position when required
   @param {boolean} screenWrapEnabled: true if cursor should wrap around wall
   @param {boolean} centerModeEnabled: //TODO document param
@@ -57,6 +48,15 @@ module.exports = function MouseListener(floorScreen, wallScreen, screenWrapEnabl
   //Due to the way the wall screen is oriented on top of the floor screen, these variables are required.
   this.floorOffset = 0.75;
   this.wallOffset = 0.25;
+
+  /*
+    @return {boolean}: true if cursor is on floor, false if cursor on wall
+  */
+  this.cursor_on_floor = function(x, y) {
+    var xOnFloor = (x <= this.floorBounds.x + this.floorBounds.width && x >= this.floorBounds.x);
+    var yOnFloor = (y <= this.floorBounds.y + this.floorBounds.height && y >= this.floorBounds.y);
+    return xOnFloor && yOnFloor;
+  }
 
   /*
     Wraps the cursor around to the left and right side of the wall
@@ -146,7 +146,7 @@ module.exports = function MouseListener(floorScreen, wallScreen, screenWrapEnabl
     @param {number} mouseY: mouse y position
   */
   this.mouseListener = function(mouseX, mouseY) {
-    var isOnFloor = CURSOR_ON_FLOOR(mouseX, mouseY, floorBounds);
+    var isOnFloor = this.cursor_on_floor(mouseX, mouseY);
     //Transitioning from floor to wall
     if (isOnFloor) {
       _floorListener(mouseX, mouseY);
