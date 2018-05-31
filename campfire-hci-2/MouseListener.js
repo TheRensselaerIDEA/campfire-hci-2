@@ -146,7 +146,7 @@ module.exports = function MouseListener(floorScreen, wallScreen, screenWrapEnabl
     @param {number} mouseY: mouse y position
   */
   this.mouseListener = function(mouseX, mouseY) {
-    var isOnFloor = CURSOR_ON_FLOOR(mouseX, mouseY, this.floorBounds);
+    var isOnFloor = CURSOR_ON_FLOOR(mouseX, mouseY, floorBounds);
     //Transitioning from floor to wall
     if (isOnFloor) {
       _floorListener(mouseX, mouseY);
@@ -162,8 +162,8 @@ module.exports = function MouseListener(floorScreen, wallScreen, screenWrapEnabl
       debug_msg += "\n Current R - " + currentR;
       debug_msg += "\n(Mx, My): " + "(" + xPos + "," + yPos + ")";
       debug_msg += "\nWall Center: " + wCx + "," + (wCy);
-      debug_msg += "\nFloor Center" + this.fCx + "," + this.fCy;
-      debug_msg += "\n" + this.fCx + "," + this.fCy;
+      debug_msg += "\nFloor Center" + fCx + "," + fCy;
+      debug_msg += "\n" + fCx + "," + fCy;
       console.log(debug_msg);
     }
   };
