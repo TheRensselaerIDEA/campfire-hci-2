@@ -3,7 +3,7 @@ const robot = require('robotjs');
 
 // Check if win-mouse is available, if so import it and set flag
 var winMousePresent;
-const winMouse;
+var winMouse;
 try {
   winMouse = require('win-mouse');
   winMousePresent = true;
