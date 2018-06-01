@@ -8,44 +8,43 @@ const MouseListener = require('./MouseListener.js')
 const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';
 const DEFAULT_WALL_URL = 'http://bit.ly/CampfireWallSlide';
 
-// Module definition
-module.exports = function ViewController(args) {
+/*
+  Defines a viewcontroller for managing
+  the two campfire displays
+*/
+function ViewController(args) {
+  /*
+  Simplify argument reading and allow default values for ommitted args
+  */
+  this.getArg = function(key, default_val) {
+    return (args[key] != undefined) ? args[key] : default_val;
+  };
 
-  // Set Default parameters
-  this.params = {
-    "display": true,
-    "screenwrap": true,
-    "centermode": true,
-    "fullscreen": true,
-    "floorurl": DEFAULT_FLOOR_URL,
-    "wallurl": DEFAULT_WALL_URL
-  }
-  // Overwrite Default parameters with provided values
-  if (Object.keys(args).length > 0) {
-    var val, arg;
-    for (arg in args) {
-      val = args[arg];
-      arg = arg.toLowerCase();
-      this.params[arg] = val;
-    }
-  }
+  // Set parameters from args or fall back to a default value
+  this.display = this.getArg('display', true);
+  this.screenwrap = this.getArg('screenWrap', true);
+  this.centermode = this.getArg('centermode', true);
+  this.fullscreen = this.getArg('fullscreen', true);
+  this.floorURL = this.getArg('floorURL', DEFAULT_FLOOR_URL);
+  this.wallURL = this.getArg('wallURL', DEFAULT_WALL_URL);
+  this.debugEnabled = this.getArg('debugEnabled', false)
 
   /* Initialize screen variables with electron. */
   this.init = function() {
     // Configure Screens
     this.setScreens();
     this.createWindow(
-      this.params["display"],
-      this.params["wallurl"],
-      this.params["floorurl"],
-      this.params["fullscreen"]
+      this.display,
+      this.wallURL,
+      this.floorURL,
+      this.fullscreen
     );
     this.listener = new MouseListener(
       this.floorScreen,
       this.wallScreen,
-      this.params["screenwrap"],
-      this.params["centermode"],
-      false
+      this.screenwrap,
+      this.centermode,
+      this.debugEnabled
     );
   };
 
@@ -66,7 +65,7 @@ module.exports = function ViewController(args) {
         this.floorScreen = allScreens[0];
         this.wallScreen = allScreens[1];
       }
-    } catch(err) {
+    } catch(err) { // Set both to primary if there is only 1 display available
       this.wallScreen = allScreens[0];
       this.floorScreen = allScreens[0];
     }
@@ -124,4 +123,15 @@ module.exports = function ViewController(args) {
       floorWindow = null;
     });
   };
+}
+
+
+// Module definition
+module.exports = function(args) {
+  var vc = new ViewController(args)
+  // Configure application to initialize when electron is ready
+  electron.app.on('ready', function() {
+    vc.init();
+  });
+  return vc;
 }
