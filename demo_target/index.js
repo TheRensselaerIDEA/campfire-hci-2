@@ -18,8 +18,3 @@ var demoApp = new ViewController({
   "floorURL": floorURL,
   "wallURL": wallURL
 });
-
-// Configure application to initialize when electron is ready
-electron.app.on('ready', function() {
-  demoApp.init();
-});
