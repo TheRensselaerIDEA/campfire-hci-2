@@ -2,6 +2,7 @@
 
 var electron = require('electron');
 var appList = electron.remote.getGlobal('appList');
+var appSelected = 0; // Default selection in system
 const child_process = require('child_process');
 
 /*
@@ -9,10 +10,32 @@ const child_process = require('child_process');
 */
 function openApp(index) {
   if (electron.remote.getGlobal('openApp')["pid"] == null) {
-    let appProcess = child_process.exec("electron " + appList[index]["path"]);
+    if (appList[index]["path"].length > 0) {
+      let appProcess = child_process.exec("electron " + appList[index]["path"]);
+    }
     electron.remote.getGlobal('openApp')['pid'] = appProcess.pid;
   } else {
-    document.getElementById('display').innerHTML = "Can't open a new app now"
+    document.getElementById('display').innerHTML = "Can't open a new app now";
+  }
+}
+
+/*
+  Updates selection and view
+*/
+function select(index) {
+  //TODO check index is valid
+  if (index < appList.length && index >= 0) {
+    appSelected = index;
+    document.getElementById('display').innerHTML = "Selected " + appSelected;
+    let appIndex;
+    for (appIndex in appList) {
+      let currentIndex = appIndex;
+      if (currentIndex == appSelected) {
+        document.getElementById("app_"+currentIndex).setAttribute('class', "btn btn-success");
+      } else {
+        document.getElementById("app_"+currentIndex).setAttribute('class', "btn btn-primary");
+      }
+    }
   }
 }
 
@@ -27,11 +50,23 @@ function loadAppTable() {
     let row = appTable.insertRow(-1);
     let cell = row.insertCell(0);
     let btn = document.createElement("BUTTON");
-    btn.setAttribute("id", "app_"+appIndex)
+    btn.className = "btn btn-light";
+    btn.id = "app_"+appIndex;
     btn.innerHTML = appList[appIndex]["name"] + " @ index " + appIndex;
     btn.addEventListener("click", function() {
       openApp(currentIndex);
     });
     cell.appendChild(btn);
+  }
+  select(0);
+}
+
+document.onkeydown = function(evt) {
+  if (evt.keyCode == 40) {
+    select(appSelected + 1);
+  } else if (evt.keyCode == 38) {
+    select(appSelected - 1);
+  } else if (evt.keyCode == 32) {
+    openApp(appSelected);
   }
 }
