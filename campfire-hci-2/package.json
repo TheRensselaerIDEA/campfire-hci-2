@@ -1,7 +1,7 @@
 {
   "name": "campfire-hci-2",
   "version": "1.0.12",
-  "main": "main.js",
+  "main": "ViewController.js",
   "devDependencies": {
     "electron-rebuild": "^1.7.3"
   },

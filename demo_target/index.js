@@ -10,7 +10,7 @@ const fileDir = 'file://' + __dirname
 const floorURL = path.join(fileDir, 'images', 'target2_invert.png');
 const wallURL = path.join(fileDir, 'images', 'wall_invert.png');
 
-var demoApp = new ViewController({
+var demoApp = ViewController({
   "fullscreen": true,
   "display": true,
   "screenWrap": true,
