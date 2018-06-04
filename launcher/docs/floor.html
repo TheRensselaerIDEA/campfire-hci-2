@@ -7,19 +7,14 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="floor.css">
+    <script src="floor.js"></script>
   </head>
   <body>
     <table id='appTable' class='table'>
     </table>
+    <p id='display'>
+      No Display Items
+    </p>
   </body>
-  <script>
-    var apps = require('electron').remote.getGlobal('appList')
-    var appTable = document.getElementById('appTable');
-    var val;
-    for (val in apps) {
-      var row = appTable.insertRow(-1);
-      var cell = row.insertCell(0);
-      cell.innerHTML = apps[val];
-    }
-  </script>
+  <script>loadAppTable();</script>
 </html>

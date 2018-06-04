@@ -80,7 +80,7 @@ function ViewController(args) {
   */
   this.createWindow = function(displayEnabled, wallURL, floorURL, fullScreen) {
     // Wall Display Configuration
-    var mainWindow = new electron.BrowserWindow({
+    this.mainWindow = new electron.BrowserWindow({
       x: this.wallScreen.bounds.x,
       y: this.wallScreen.bounds.y,
       width: this.wallScreen.bounds.width,
@@ -90,13 +90,13 @@ function ViewController(args) {
       webPreferences:{ nodeIntegration: true }
     });
     //Forced setting to fit window to campfire screens
-    mainWindow.setContentSize(6400,800);
-    mainWindow.loadURL(wallURL);
+    this.mainWindow.setContentSize(6400,800);
+    this.mainWindow.loadURL(wallURL);
 
     // Floor Display Configuration
     this.floorScreen.bounds.width=1920;
     this.floorScreen.bounds.height=1080;
-    var floorWindow = new electron.BrowserWindow({
+    this.floorWindow = new electron.BrowserWindow({
       x:this.floorScreen.bounds.x,
       y:this.floorScreen.bounds.y,
       width:this.floorScreen.bounds.width,
@@ -106,21 +106,21 @@ function ViewController(args) {
       webPreferences:{nodeIntegration: true}
     });
 
-    floorWindow.setContentSize(1920,1080);
-    floorWindow.loadURL(floorURL);
+    this.floorWindow.setContentSize(1920,1080);
+    this.floorWindow.loadURL(floorURL);
 
     // Set display to fullscreen
-    floorWindow.setFullScreen(fullScreen);
-    mainWindow.setFullScreen(fullScreen);
+    this.floorWindow.setFullScreen(fullScreen);
+    this.mainWindow.setFullScreen(fullScreen);
 
     // Emitted when the window is closed.
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     // TODO: ensure that this is being dereferenced properly
-    mainWindow.on('closed', function () {
-      mainWindow = null;
-      floorWindow = null;
+    this.mainWindow.on('closed', function () {
+      this.mainWindow = null;
+      this.floorWindow = null;
     });
   };
 }
@@ -128,7 +128,7 @@ function ViewController(args) {
 
 // Module definition
 module.exports = function(args) {
-  var vc = new ViewController(args)
+  let vc = new ViewController(args);
   // Configure application to initialize when electron is ready
   electron.app.on('ready', function() {
     vc.init();

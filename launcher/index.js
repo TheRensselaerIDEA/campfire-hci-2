@@ -5,6 +5,7 @@
 const path = require('path')
 const ViewController = require('campfire-hci-2');
 const electron = require('electron');
+const child_process = require('child_process');
 
 const docRoot = path.join('file://', __dirname, 'docs');
 const floorURL = path.join(docRoot, 'floor.html');
@@ -19,7 +20,22 @@ var view = ViewController({
   "wallURL": wallURL
 });
 
-var apps = ["App 1", "App 2", "App 3"];
+var apps = [
+  {"name": "demo_target", "path": "../demo_target/index.js"},
+  {"name": "App 2", "path": ""},
+  {"name": "App 3", "path": ""}
+];
 
 
 global.appList = apps;
+
+// Data about the open child process
+global.openApp = {"pid":null};
+
+// Configure electron to kill any subprocesses on exit
+electron.app.on('quit', function() {
+  if (global.openApp["pid"] != null) {
+    console.log("Killing process " + global.openApp['pid']);
+    child_process.exec("pkill -P " + global.openApp['pid']);
+  }
+});
