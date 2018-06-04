@@ -30,9 +30,10 @@ function select(index) {
     let appIndex;
     for (appIndex in appList) {
       let currentIndex = appIndex;
-      if (currentIndex == appSelected) {
+      // Apply stying based on if element is selected
+      if (currentIndex == appSelected) { // Selected styling
         document.getElementById("app_"+currentIndex).setAttribute('class', "btn btn-success");
-      } else {
+      } else { // Other styling
         document.getElementById("app_"+currentIndex).setAttribute('class', "btn btn-primary");
       }
     }
