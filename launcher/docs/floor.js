@@ -9,13 +9,16 @@ const child_process = require('child_process');
   Opens the application at the specified index in appList
 */
 function openApp(index) {
-  if (electron.remote.getGlobal('openApp')["pid"] == null) {
+  // Ensure an app isnt already open
+  if (electron.remote.getGlobal('openApp')["app"] == null) {
+    // Check path isn't empty before calling it
     if (appList[index]["path"].length > 0) {
       let appProcess = child_process.exec("electron " + appList[index]["path"]);
     }
-    electron.remote.getGlobal('openApp')['pid'] = appProcess.pid;
+    electron.remote.getGlobal('openApp')['app'] = appProcess;
+    console.log("New process created with PID " + appProcess.pid);
   } else {
-    document.getElementById('display').innerHTML = "Can't open a new app now";
+    console.log("app already open, cannot open new one");
   }
 }
 
@@ -26,7 +29,7 @@ function select(index) {
   //TODO check index is valid
   if (index < appList.length && index >= 0) {
     appSelected = index;
-    document.getElementById('display').innerHTML = "Selected " + appSelected;
+    console.log("Index " + appSelected + " has been selected");
     let appIndex;
     for (appIndex in appList) {
       let currentIndex = appIndex;
