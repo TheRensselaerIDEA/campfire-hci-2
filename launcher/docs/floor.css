@@ -1,3 +1,15 @@
+body {
+  background: rgb(33, 37, 43) !important;
+} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
 .table {
     border-radius: 5px;
     width: 50%;

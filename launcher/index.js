@@ -13,7 +13,7 @@ const floorURL = path.join(docRoot, 'floor.html');
 const wallURL = path.join(docRoot, 'wall.html');
 
 var view = ViewController({
-  "fullscreen": false,
+  "fullscreen": true,
   "display": true,
   "screenWrap": true,
   "centermode": false,
@@ -38,16 +38,18 @@ function killChildPs() {
     } else {
       child_process.exec('pkill -P ' + global.openApp['app'].pid); // Kill the process
     }
+    // This also happens automatically in the event handler for child exit
     global.openApp["app"] = null;
   }
 }
 
+// Load app list into globals for renderer threads to access
 global.appList = require('./appList.json');
 
 
 // Configure electron to handle quit command when in background
 electron.app.on('ready', () => {
-  electron.globalShortcut.register('CommandOrControl+X', killChildPs);
+  electron.globalShortcut.register('CommandOrControl+Shift+U', killChildPs);
 });
 
 // Configure electron to kill any subprocesses on exit

@@ -11,12 +11,16 @@ const child_process = require('child_process');
 function openApp(index) {
   // Ensure an app isnt already open
   if (electron.remote.getGlobal('openApp')["app"] == null) {
-    // Check path isn't empty before calling it
+    // Check path to child process isn't empty before opening
     if (appList[index]["path"].length > 0) {
       let appProcess = child_process.exec("electron " + appList[index]["path"]);
+      appProcess.on('exit', function (code, signal) {
+        electron.remote.getGlobal('openApp')['app'] = null;
+      });
+      electron.remote.getGlobal('openApp')['app'] = appProcess;
+
     }
-    electron.remote.getGlobal('openApp')['app'] = appProcess;
-    console.log("New process created with PID " + appProcess.pid);
+
   } else {
     console.log("app already open, cannot open new one");
   }
@@ -35,32 +39,53 @@ function select(index) {
       let currentIndex = appIndex;
       // Apply stying based on if element is selected
       if (currentIndex == appSelected) { // Selected styling
-        document.getElementById("app_"+currentIndex).setAttribute('class', "btn btn-success");
+        document.getElementById("app_"+currentIndex).setAttribute('class', "list-group-item active");
       } else { // Other styling
-        document.getElementById("app_"+currentIndex).setAttribute('class', "btn btn-primary");
+        document.getElementById("app_"+currentIndex).setAttribute('class', "list-group-item");
       }
     }
   }
 }
 
 /*
+  Generates the element for a list item with specified parameters
+*/
+function generateListElement(index, name, description) {
+  // Create list container element
+  let a = document.createElement('a');
+  a.id = "app_" + index;
+  a.addEventListener("click", function() {
+    openApp(index);
+  });
+  // Create title element
+  let title = document.createElement('h4');
+  title.innerHTML = name;
+  title.setAttribute('class', 'list-group-item-heading');
+  // Create description element
+  let desc = document.createElement('p');
+  desc.innerHTML = description;
+  desc.setAttribute('class', 'list-group-item-text');
+  // Append children to container and return element
+  a.appendChild(title);
+  a.appendChild(desc);
+  return a;
+}
+
+/*
   Load the app list based off of the values from the main index.js
 */
 function loadAppTable() {
-  let appTable = document.getElementById('appTable');
+  let listDiv = document.getElementById('listDiv');
   let appIndex;
   for (appIndex in appList) {
-    let currentIndex = appIndex; // Need a local copy so that event listener binds to right index
-    let row = appTable.insertRow(-1);
-    let cell = row.insertCell(0);
-    let btn = document.createElement("BUTTON");
-    btn.className = "btn btn-light";
-    btn.id = "app_"+appIndex;
-    btn.innerHTML = appList[appIndex]["name"] + " @ index " + appIndex;
-    btn.addEventListener("click", function() {
-      openApp(currentIndex);
-    });
-    cell.appendChild(btn);
+    const currentIndex = appIndex; // Need a local copy so that event listener binds to right index
+    var listItem = generateListElement(
+      appIndex,
+      appList[appIndex]['name'],
+      appList[appIndex]['description']
+    );
+    // Add to list
+    listDiv.appendChild(listItem);
   }
   select(0);
 }
