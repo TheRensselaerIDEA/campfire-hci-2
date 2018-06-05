@@ -1,29 +1,36 @@
 # campfire-hci-2
-Extensions to campfire-hci (starting Summer 2018)
+	Extensions to campfire-hci (starting Summer 2018)
 
+___
 
-###														###
-### campfire-hci-instructions ###
-###														###
+## Getting Started with campfire-hci-2
+	-Before proceeding, ensure NPM is installed, see the Additional Dependencies section for more detailed information
+	-Below is a description of the packages included in this project
 
-# How to run
-1. cd ./../path/to/campfire-hci
-2. cd wrangler
-3. npm install
-4. npm start
-If there are compatibility errors with electron, run this command in the directory of package.json.
-```
-npm rebuild --runtime=electron --target=1.8.2 --disturl=https://atom.io/download/atom-shell --abi=48
-```
+### campfire-hci-2
+	-Source code for the framework/library
+	-Does not run as a standalone application
+	-See demo_target for a simple example of its usage
 
-# How to include mouse utils
-1. ```npm install @campfirehci/mouseutil```
-2. include in app.js
-```javascript
-var mouseutil = require('campfirehci/mouseutill')({ "arguments": values });
-```
+### launcher
+	This application is build on campfire-hci-2 and provides an elegant way
+	to switch between various applications and demos available on the campfire.
+	To Install/Run:
+		1. `cd ./../path/to/campfire-hci/launcher`
+		2. `./install.sh`
+		3. `npm start`
 
-# Additional dependencies:
+### demo_target
+	This package is used for testing/development of the campfire-hci-2 framework.
+	It displays 2 specified pages on the floor and wall of the campfire
+	To Install/Run:
+		1. `cd ./../path/to/campfire-hci/demo_target`
+		2. `./install.sh`
+		3. `npm start`
+
+___
+
+## Additional dependencies:
 1. Node.js
 	- https://nodejs.org/en/
 2. Electron.js
