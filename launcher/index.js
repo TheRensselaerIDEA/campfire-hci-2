@@ -34,7 +34,9 @@ function killChildPs() {
     console.log("Killing process " + global.openApp['app'].pid);
     // Use the kill command appropriate for the platform
     if (os.platform() == 'win32') {
-      global.openApp['app'].kill("SIGKILL");
+      console.log("Killing windows process...")
+      child_process.exec('TaskKill /PID ' + global.openApp['app'].pid + " /F"); // Kill the process
+      //global.openApp['app'].kill("SIGKILL");
     } else {
       child_process.exec('pkill -P ' + global.openApp['app'].pid); // Kill the process
     }
@@ -49,7 +51,7 @@ global.appList = require('./appList.json');
 
 // Configure electron to handle quit command when in background
 electron.app.on('ready', () => {
-  electron.globalShortcut.register('CommandOrControl+Shift+U', killChildPs);
+  electron.globalShortcut.register('CommandOrControl+Shift+K', killChildPs);
 });
 
 // Configure electron to kill any subprocesses on exit
