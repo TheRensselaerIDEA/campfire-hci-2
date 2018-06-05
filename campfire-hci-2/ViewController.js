@@ -22,12 +22,13 @@ function ViewController(args) {
 
   // Set parameters from args or fall back to a default value
   this.display = this.getArg('display', true);
-  this.screenwrap = this.getArg('screenWrap', true);
+  this.wallWrapEnabled = this.getArg('screenWrap', true);
   this.centermode = this.getArg('centermode', true);
   this.fullscreen = this.getArg('fullscreen', true);
   this.floorURL = this.getArg('floorURL', DEFAULT_FLOOR_URL);
   this.wallURL = this.getArg('wallURL', DEFAULT_WALL_URL);
-  this.debugEnabled = this.getArg('debugEnabled', false)
+  this.debugEnabled = this.getArg('debugEnabled', false);
+  this.mouseWranglerEnabled = this.getArg('mousewrangler', true);
 
   /* Initialize screen variables with electron. */
   this.init = function() {
@@ -39,13 +40,15 @@ function ViewController(args) {
       this.floorURL,
       this.fullscreen
     );
-    this.listener = new MouseListener(
-      this.floorScreen,
-      this.wallScreen,
-      this.screenwrap,
-      this.centermode,
-      this.debugEnabled
-    );
+    if (this.mouseWranglerEnabled) {
+      this.listener = new MouseListener(
+        this.floorScreen,
+        this.wallScreen,
+        this.wallWrapEnabled,
+        this.centermode,
+        this.debugEnabled
+      );
+    }
   };
 
   /*
@@ -123,6 +126,7 @@ function ViewController(args) {
       this.floorWindow = null;
     });
   };
+
 }
 
 

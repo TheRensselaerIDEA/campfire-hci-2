@@ -21,7 +21,7 @@ try {
   winMousePresent = false;
 }
 
-module.exports = function MouseListener(floorScreen, wallScreen, screenWrap, centerMode) {
+module.exports = function MouseListener(floorScreen, wallScreen, wallWrapEnabled, centerMode) {
 
   var util = {
     //Input: dx: distance between centerx and mousex
@@ -39,7 +39,7 @@ module.exports = function MouseListener(floorScreen, wallScreen, screenWrap, cen
       return ((x <= fb.x + fb.width && x >= fb.x) && (y <= fb.y + fb.height && y >= fb.y));
     },
 
-    screenWrap: function(x, y, wb) {
+    wallWrap: function(x, y, wb) {
         //moving right to left
         if (y >= wb.height-2) return;
         if (x >= (wb.x + wb.width)-2) {
@@ -77,8 +77,8 @@ module.exports = function MouseListener(floorScreen, wallScreen, screenWrap, cen
         theta = Math.abs(theta - twoPI);
       }
       //case for reaching vertical border, the mouse appears on the opposite border.
-      if (screenWrap) {
-          util.screenWrap(x, y, wb);
+      if (wallWrapEnabled) {
+          util.wallWrap(x, y, wb);
       }
       if (x > wb.x && y > (wb.height)-4) {
         var newRadius = fRadius - borderOffset;

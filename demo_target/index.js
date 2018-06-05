@@ -16,5 +16,6 @@ var demoApp = ViewController({
   "screenWrap": true,
   "centermode": false,
   "floorURL": floorURL,
-  "wallURL": wallURL
+  "wallURL": wallURL,
+  "mousewrangler": false
 });
