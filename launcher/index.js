@@ -35,7 +35,7 @@ function killChildPs() {
     // Use the kill command appropriate for the platform
     if (os.platform() == 'win32') {
       console.log("Killing windows process...")
-      child_process.exec('TaskKill /PID ' + global.openApp['app'].pid + " /F"); // Kill the process
+      child_process.exec('TaskKill /PID ' + global.openApp['app'].pid + " /F /T"); // Kill the process
       //global.openApp['app'].kill("SIGKILL");
     } else {
       child_process.exec('pkill -P ' + global.openApp['app'].pid); // Kill the process
