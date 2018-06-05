@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Demo Target",
+    "description": "Simple Application that display an alignment target on the wall and floor of the campfire",
+    "path": "../demo_target/index.js"
+  },
+  {
+    "name": "App 2",
+     "path": ""
+  },
+  {
+    "name": "App 3",
+    "path": ""
+  }
+]

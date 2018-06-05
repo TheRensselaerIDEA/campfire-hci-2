@@ -20,17 +20,14 @@ var view = ViewController({
   "wallURL": wallURL
 });
 
-var apps = [
-  {"name": "demo_target", "path": "../demo_target/index.js"},
-  {"name": "App 2", "path": ""},
-  {"name": "App 3", "path": ""}
-];
 
 
-global.appList = apps;
+global.appList = require('./appList.json');
 
 // Data about the open child process
 global.openApp = {"pid":null};
+
+
 
 // Configure electron to kill any subprocesses on exit
 electron.app.on('quit', function() {
