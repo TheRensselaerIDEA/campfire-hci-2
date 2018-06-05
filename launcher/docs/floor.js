@@ -54,8 +54,11 @@ function generateListElement(index, name, description) {
   // Create list container element
   let a = document.createElement('a');
   a.id = "app_" + index;
-  a.addEventListener("click", function() {
+  a.addEventListener("click", () => {
     openApp(index);
+  });
+  a.addEventListener("mouseover", () => {
+    select(index);
   });
   // Create title element
   let title = document.createElement('h4');
