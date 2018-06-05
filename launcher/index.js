@@ -51,7 +51,7 @@ global.appList = require('./appList.json');
 
 // Configure electron to handle quit command when in background
 electron.app.on('ready', () => {
-  electron.globalShortcut.register('CommandOrControl+Shift+K', killChildPs);
+  electron.globalShortcut.register('CommandOrControl+K', killChildPs);
 });
 
 // Configure electron to kill any subprocesses on exit
