@@ -124,6 +124,12 @@ function ViewController(args) {
     this.mainWindow.on('closed', function () {
       this.mainWindow = null;
       this.floorWindow = null;
+      electron.app.quit();
+    });
+    this.floorWindow.on('closed', function () {
+      this.mainWindow = null;
+      this.floorWindow = null;
+      electron.app.quit();
     });
   };
 
