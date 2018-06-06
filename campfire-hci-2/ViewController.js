@@ -3,7 +3,6 @@
 // Imports
 const electron = require('electron');
 const MouseListener = require('./MouseListener.js')
-const InputController = require('./InputController.js')
 
 // Constants
 const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';
@@ -51,7 +50,6 @@ function ViewController(args) {
         this.debugEnabled
       );
     }
-    this.inputController = new InputController();
   };
 
   /*

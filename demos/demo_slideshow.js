@@ -3,8 +3,8 @@
 */
 
 // Import dependencies
-const ViewController = require("campfire-hci-2");
 const electron = require('electron');
+const ViewController = require("campfire-hci-2");
 
 // Create application by calling ViewController
 var view = ViewController({
@@ -16,8 +16,3 @@ var view = ViewController({
   "wallURL": "http://bit.ly/CampfireWallSlideFull",
   "mousewrangler": true
 });
-
-/*view.inputController.bindSelect(() => {
-  console.log("Select pressed!")
-});
-*/
