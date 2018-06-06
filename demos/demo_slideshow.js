@@ -12,7 +12,7 @@ var demoApp = ViewController({
   "display": true,
   "screenWrap": true,
   "centermode": false,
-  "floorURL": 'http://bit.ly/CampfireFloorSlideFull',
-  "wallURL": 'http://bit.ly/CampfireWallSlideFull',
-  "mousewrangler": false
+  "floorURL": "http://bit.ly/CampfireFloorSlideFull",
+  "wallURL": "http://bit.ly/CampfireWallSlideFull",
+  "mousewrangler": true
 });

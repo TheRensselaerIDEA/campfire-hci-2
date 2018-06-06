@@ -1,7 +1,6 @@
 /*
   Simple example of a campfire-hci-2 application
 */
-
 const ViewController = require("campfire-hci-2");
 const electron = require('electron');
 

@@ -6,7 +6,7 @@ const path = require("path");
 const ViewController = require("campfire-hci-2");
 const electron = require('electron');
 
-const fileDir = 'file://' + __dirname
+const fileDir = 'file://' + __dirname;
 const floorURL = path.join(fileDir, 'images', 'target2_invert.png');
 const wallURL = path.join(fileDir, 'images', 'wall_invert.png');
 
@@ -17,5 +17,5 @@ var demoApp = ViewController({
   "centermode": false,
   "floorURL": floorURL,
   "wallURL": wallURL,
-  "mousewrangler": false
+  "mousewrangler": true
 });
