@@ -12,7 +12,7 @@ var view = ViewController({
   "display": true,
   "screenWrap": true,
   "centermode": false,
-  "floorURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/5601/",
-  "wallURL": "https://docs.google.com/presentation/d/1MgjFQRFPFa9zst6da585Kas-jMa5zx96a4rG8u1pctA/present?slide=id.p",
+  "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
+  "wallURL": "https://docs.google.com/presentation/d/14PRCr90QDENrT5B_5MN5cmd95n82MiWsn03m3bSE4s8/present?slide=id.p",
   "mousewrangler": true
 });
