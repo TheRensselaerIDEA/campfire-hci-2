@@ -1,16 +1,16 @@
 [
   {
     "name": "Target Demo",
-    "description": "Simple Application that display an alignment target on the wall and floor of the campfire",
+    "description": "Simple static demo that displays an alignment target on the wall and floor",
     "path": "../demos/demo_target.js"
   },
   {
     "name": "Slideshow Demo",
-    "description": "Display a slideshow on the wall and floor of the campfire",
+    "description": "Demonstration of an animated visualization using google slides.",
     "path": "../demos/demo_slideshow.js"
   },
   {
-    "name": "Multi Window Shiny",
+    "name": "Multi Window Shiny Demo",
     "description": "R based visualizations being computed on the IDEA cluster",
     "path": "../demos/demo_multi_window_shiny.js"
   },
