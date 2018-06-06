@@ -4,7 +4,7 @@
 const ViewController = require("campfire-hci-2");
 const electron = require('electron');
 
-const shinyURL = "http://lp01.idea.rpi.edu/shiny/erickj4/swotr/";
+const shinyURL = "http://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/";
 
 var demoApp = ViewController({
   "fullscreen": true,
@@ -13,5 +13,5 @@ var demoApp = ViewController({
   "centermode": false,
   "floorURL": shinyURL + "?view=Floor",
   "wallURL": shinyURL + "?view=Wall",
-  "mousewrangler": false
+  "mousewrangler": true
 });
