@@ -14,5 +14,5 @@ var demoApp = ViewController({
   "centermode": false,
   "floorURL": shinyURL + "?view=Floor",
   "wallURL": shinyURL + "?view=Wall",
-  "mousewrangler": true
+  "mousewrangler": false
 });

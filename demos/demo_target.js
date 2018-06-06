@@ -17,5 +17,5 @@ var demoApp = ViewController({
   "centermode": false,
   "floorURL": floorURL,
   "wallURL": wallURL,
-  "mousewrangler": true
+  "mousewrangler": false
 });
