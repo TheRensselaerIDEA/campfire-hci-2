@@ -1,31 +1,31 @@
 [
   {
-    "name": "Target Demo",
+    "name": "Wrangler Grid Demo",
     "description": "Simple static demo that displays an alignment target on the wall and floor",
     "path": "../demos/demo_target.js"
   },
   {
-    "name": "Slideshow Demo",
+    "name": "Google Slides Demo",
     "description": "Demonstration of an animated visualization using google slides.",
     "path": "../demos/demo_slideshow.js"
   },
   {
-    "name": "Multi Window Shiny Demo",
+    "name": "Basic Multi Window Shiny Demo",
     "description": "R based visualizations being computed on the IDEA cluster",
     "path": "../demos/demo_multi_window_shiny.js"
   },
   {
-    "name": "Comparative Analysis Demo",
+    "name": "Comparative Analysis Demo (Slides)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet",
     "path": "../demos/demo_comparative_analysis.js"
   },
   {
-    "name": "Give Us Money Demo",
+    "name": "Give Us Money Demo (Slides, D3)",
     "description": "IDEA Hackathon entry",
     "path": "../demos/demo_give_us_money.js"
   },
   {
-    "name": "HDHE",
+    "name": "HDHE (Multi Window Shiny)",
     "description": "IDEA Hackathon entry",
     "path": "../demos/demo_hdhe.js"
   }
