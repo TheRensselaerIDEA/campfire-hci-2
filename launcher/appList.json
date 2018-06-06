@@ -23,5 +23,10 @@
     "name": "Give Us Money Demo",
     "description": "IDEA Hackathon entry",
     "path": "../demos/demo_give_us_money.js"
+  },
+  {
+    "name": "HDHE",
+    "description": "IDEA Hackathon entry",
+    "path": "../demos/demo_hdhe.js"
   }
 ]
