@@ -14,5 +14,5 @@ var demoApp = ViewController({
   "centermode": false,
   "floorURL": 'http://bit.ly/CampfireFloorSlideFull',
   "wallURL": 'http://bit.ly/CampfireWallSlideFull',
-  "mousewrangler": false
+  "mousewrangler": true
 });

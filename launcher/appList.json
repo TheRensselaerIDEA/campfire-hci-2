@@ -2,12 +2,12 @@
   {
     "name": "Target Demo",
     "description": "Simple Application that display an alignment target on the wall and floor of the campfire",
-    "path": "../demo_target/index.js"
+    "path": "../demos/demo_target.js"
   },
   {
     "name": "Slideshow Demo",
     "description": "Display a slideshow on the wall and floor of the campfire",
-    "path": "../demo_target/slideshow.js"
+    "path": "../demos/demo_slideshow.js"
   },
   {
     "name": "App 3",

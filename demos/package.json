@@ -2,7 +2,7 @@
   "name": "demo_target",
   "version": "1.0.0",
   "description": "Simple Demo of campfire-hci capabilities",
-  "main": "index.js",
+  "main": "demo_target.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
