@@ -20,8 +20,8 @@
     "path": "../demos/demo_comparative_analysis.js"
   },
   {
-    "name": "App 5",
-    "description": "Dummy menu option, will not open an application",
-    "path": ""
+    "name": "Give Us Money Demo",
+    "description": "IDEA Hackathon entry",
+    "path": "../demos/demo_give_us_money.js"
   }
 ]

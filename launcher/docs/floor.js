@@ -1,30 +1,11 @@
 'use strict';
 
 var electron = require('electron');
+const ChildUtils = require('../ChildUtils.js');
+
 var appList = electron.remote.getGlobal('appList');
 var appSelected = 0; // Default selection in system
 const child_process = require('child_process');
-
-/*
-  Opens the application at the specified index in appList
-*/
-function openApp(index) {
-  // Ensure an app isnt already open
-  if (electron.remote.getGlobal('openApp')["app"] == null) {
-    // Check path to child process isn't empty before opening
-    if (appList[index]["path"].length > 0) {
-      let appProcess = child_process.exec("electron " + appList[index]["path"]);
-      appProcess.on('exit', function (code, signal) {
-        electron.remote.getGlobal('openApp')['app'] = null;
-      });
-      electron.remote.getGlobal('openApp')['app'] = appProcess;
-
-    }
-
-  } else {
-    console.log("app already open, cannot open new one");
-  }
-}
 
 /*
   Updates selection and view
@@ -56,7 +37,7 @@ function generateListElement(index, name, description) {
   let listContainer = document.createElement('a');
   listContainer.id = "app_" + index;
   // Bind event listeners to container
-  listContainer.addEventListener("click", () => { openApp(index); });
+  listContainer.addEventListener("click", () => { ChildUtils.openApp(index); });
   listContainer.addEventListener("mouseover", () => { select(index); });
   // Create title element
   let title = document.createElement('h4');
@@ -97,6 +78,6 @@ document.onkeydown = function(evt) {
   } else if (evt.keyCode == 38) {
     select(appSelected - 1);
   } else if (evt.keyCode == 32) {
-    openApp(appSelected);
+    ChildUtils.openApp(appSelected);
   }
 }
