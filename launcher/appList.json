@@ -10,9 +10,9 @@
     "path": "../demos/demo_slideshow.js"
   },
   {
-    "name": "App 3",
-    "description": "Dummy menu option, will not open an application",
-    "path": ""
+    "name": "Multi Window Shiny",
+    "description": "R based visualizations being computed on the IDEA cluster",
+    "path": "../demos/demo_multi_window_shiny.js"
   },
   {
     "name": "App 4",

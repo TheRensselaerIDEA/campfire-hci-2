@@ -41,7 +41,6 @@ function select(index) {
       if (currentIndex == appSelected) { // Selected styling
         let selected = document.getElementById("app_"+currentIndex);
         selected.setAttribute('class', "list-group-item active");
-        selected.style.transform="translateX(-3%)"
       } else { // Other styling
         document.getElementById("app_"+currentIndex).setAttribute('class', "list-group-item");
       }
