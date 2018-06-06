@@ -15,9 +15,9 @@
     "path": "../demos/demo_multi_window_shiny.js"
   },
   {
-    "name": "App 4",
-    "description": "Dummy menu option, will not open an application",
-    "path": ""
+    "name": "Comparative Analysis Demo",
+    "description": "Created during the campfire hackathon",
+    "path": "../demos/demo_comparative_analysis.js"
   },
   {
     "name": "App 5",

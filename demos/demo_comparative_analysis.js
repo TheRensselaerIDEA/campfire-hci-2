@@ -12,8 +12,8 @@ var view = ViewController({
   "display": true,
   "screenWrap": true,
   "centermode": false,
-  "floorURL": "http://bit.ly/CampfireFloorSlideFull",
-  "wallURL": "http://bit.ly/CampfireWallSlideFull",
+  "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
+  "wallURL": "https://docs.google.com/presentation/d/1MgjFQRFPFa9zst6da585Kas-jMa5zx96a4rG8u1pctA/present?slide=id.p",
   "mousewrangler": true
 });
 
