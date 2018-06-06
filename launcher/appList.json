@@ -6,7 +6,7 @@
   },
   {
     "name": "Google Slides Demo",
-    "description": "Demonstration of an animated visualization using google slides.",
+    "description": "Demonstration of an animated visualization using google slides",
     "path": "../demos/demo_slideshow.js"
   },
   {
