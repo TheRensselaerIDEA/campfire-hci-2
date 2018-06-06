@@ -39,7 +39,9 @@ function select(index) {
       let currentIndex = appIndex;
       // Apply stying based on if element is selected
       if (currentIndex == appSelected) { // Selected styling
-        document.getElementById("app_"+currentIndex).setAttribute('class', "list-group-item active");
+        let selected = document.getElementById("app_"+currentIndex);
+        selected.setAttribute('class', "list-group-item active");
+        selected.style.transform="translateX(-3%)"
       } else { // Other styling
         document.getElementById("app_"+currentIndex).setAttribute('class', "list-group-item");
       }
@@ -52,14 +54,11 @@ function select(index) {
 */
 function generateListElement(index, name, description) {
   // Create list container element
-  let a = document.createElement('a');
-  a.id = "app_" + index;
-  a.addEventListener("click", () => {
-    openApp(index);
-  });
-  a.addEventListener("mouseover", () => {
-    select(index);
-  });
+  let listContainer = document.createElement('a');
+  listContainer.id = "app_" + index;
+  // Bind event listeners to container
+  listContainer.addEventListener("click", () => { openApp(index); });
+  listContainer.addEventListener("mouseover", () => { select(index); });
   // Create title element
   let title = document.createElement('h4');
   title.innerHTML = name;
@@ -68,10 +67,10 @@ function generateListElement(index, name, description) {
   let desc = document.createElement('p');
   desc.innerHTML = description;
   desc.setAttribute('class', 'list-group-item-text');
-  // Append children to container and return element
-  a.appendChild(title);
-  a.appendChild(desc);
-  return a;
+  // Append children to listContainer and return element
+  listContainer.appendChild(title);
+  listContainer.appendChild(desc);
+  return listContainer;
 }
 
 /*

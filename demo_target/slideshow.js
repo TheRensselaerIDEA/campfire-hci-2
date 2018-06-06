@@ -2,20 +2,17 @@
   Simple example of a campfire-hci-2 application
 */
 
-const path = require("path");
+// Import dependencies
 const ViewController = require("campfire-hci-2");
 const electron = require('electron');
 
-const fileDir = 'file://' + __dirname
-const floorURL = path.join(fileDir, 'images', 'target2_invert.png');
-const wallURL = path.join(fileDir, 'images', 'wall_invert.png');
-
+// Create application by calling ViewController
 var demoApp = ViewController({
   "fullscreen": true,
   "display": true,
   "screenWrap": true,
   "centermode": false,
-  "floorURL": 'http://bit.ly/CampfireFloorSlide',
-  "wallURL": 'http://bit.ly/CampfireWallSlide',
+  "floorURL": 'http://bit.ly/CampfireFloorSlideFull',
+  "wallURL": 'http://bit.ly/CampfireWallSlideFull',
   "mousewrangler": false
 });
