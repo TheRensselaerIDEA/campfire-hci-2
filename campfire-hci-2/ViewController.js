@@ -29,6 +29,7 @@ function ViewController(args) {
   this.wallURL = this.getArg('wallURL', DEFAULT_WALL_URL);
   this.debugEnabled = this.getArg('debugEnabled', false);
   this.mouseWranglerEnabled = this.getArg('mousewrangler', true);
+  this.nodeIntegration = this.getArg('nodeIntegration', true);
 
   /* Initialize screen variables with electron. */
   this.init = function() {
@@ -90,7 +91,7 @@ function ViewController(args) {
       height: this.wallScreen.bounds.height,
       show: displayEnabled,
       frame: false,
-      webPreferences:{ nodeIntegration: true }
+      webPreferences:{ nodeIntegration: this.nodeIntegration }
     });
     //Forced setting to fit window to campfire screens
     this.mainWindow.setContentSize(6400,800);
@@ -106,7 +107,7 @@ function ViewController(args) {
       height:this.floorScreen.bounds.height,
       show: displayEnabled,
       frame:false,
-      webPreferences:{nodeIntegration: true}
+      webPreferences:{nodeIntegration: this.nodeIntegration }
     });
 
     this.floorWindow.setContentSize(1920,1080);
