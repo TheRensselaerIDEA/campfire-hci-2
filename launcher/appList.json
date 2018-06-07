@@ -2,31 +2,49 @@
   {
     "name": "Wrangler Grid Demo",
     "description": "Simple static demo that displays an alignment target on the wall and floor",
-    "path": "../demos/demo_target.js"
+    "type": "external_app",
+    "start_cmd": "electron ../demos/demo_target.js"
   },
   {
     "name": "Google Slides Demo",
     "description": "Demonstration of an animated visualization using google slides",
-    "path": "../demos/demo_slideshow.js"
+    "type": "simple_app",
+    "args": {
+      "centermode": false,
+      "floorURL": "http://bit.ly/CampfireFloorSlideFull",
+      "wallURL": "http://bit.ly/CampfireWallSlideFull"
+    }
   },
   {
     "name": "Basic Multi Window Shiny Demo",
     "description": "R based visualizations being computed on the IDEA cluster",
-    "path": "../demos/demo_multi_window_shiny.js"
+    "type": "simple_app",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Wall",
+      "nodeIntegration": false
+    }
   },
   {
     "name": "Comparative Analysis Demo (Slides)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet",
-    "path": "../demos/demo_comparative_analysis.js"
-  },
-  {
-    "name": "Give Us Money Demo (Slides, D3)",
-    "description": "IDEA Hackathon entry",
-    "path": "../demos/demo_give_us_money.js"
+    "type": "simple_app",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
+      "wallURL": "https://docs.google.com/presentation/d/14PRCr90QDENrT5B_5MN5cmd95n82MiWsn03m3bSE4s8/present?slide=id.p"
+    }
   },
   {
     "name": "HDHE (Multi Window Shiny)",
     "description": "IDEA Hackathon entry",
-    "path": "../demos/demo_hdhe.js"
+    "type": "simple_app",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/HDHE/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/HDHE/?Wall",
+      "nodeIntegration": false
+    }
   }
 ]

@@ -27,11 +27,6 @@ var view = ViewController({
 // Data about the open child process
 global.openApp = {"app":null};
 
-
-// Load app list into globals for renderer threads to access
-global.appList = require('./appList.json');
-
-
 // Configure electron to handle quit command when in background
 electron.app.on('ready', () => {
   electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);

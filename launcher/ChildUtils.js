@@ -1,10 +1,12 @@
 /*
   A set of utilities for managing a child process
 */
+'use strict';
 
 // Import Dependenciess
 const child_process = require('child_process');
 const os = require('os');
+
 
 /*
   Thread agnostic way of retrieving the reference to the child process
@@ -32,27 +34,36 @@ function setChildPs(newPS) {
 
 module.exports = {
 
+  appList: require('./appList.json'),
+
   /*
     Opens the application at the specified index in appList
-    @warn This should only be called from client
+    // TODO eliminate warning
+    @warn behavior of function undefined/untested if called outside of a renderer thread
     @param {number} index - the index of the application to open
   */
   openApp: function(index) {
-
+    let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
     if (getChildPs() != null) {
       this.killChildPs();
     }
-    // Check path to child process isn't empty before opening
-    if (appList[index]["path"].length > 0) {
-      let appProcess = child_process.exec("electron " + appList[index]["path"]);
-      appProcess.on('exit', function (code, signal) {
-        setChildPs(null);
-      });
-      setChildPs(appProcess);
-    }
 
+    // Start a basic ViewController only campfire-hci-2 app
+    if (this.appList[index]["type"] == "simple_app") {
+      appProcess = child_process.exec("electron simpleLauncher.js " + index);
+    // Run an external command to start an application
+    } else if (this.appList[index]["type"] == "external_app") {
+      appProcess = child_process.exec(this.appList[index]["start_cmd"]);
+    } else {
+      console.log("Invalid Application type: " + this.appList[index]["type"]);
+      return
+    }
+    appProcess.on('exit', function (code, signal) {
+      setChildPs(null);
+    });
+    setChildPs(appProcess);
   },
 
   /*

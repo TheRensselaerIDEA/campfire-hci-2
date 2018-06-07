@@ -3,7 +3,6 @@
 var electron = require('electron');
 const ChildUtils = require('../ChildUtils.js');
 
-var appList = electron.remote.getGlobal('appList');
 var appSelected = 0; // Default selection in system
 const child_process = require('child_process');
 
@@ -12,11 +11,11 @@ const child_process = require('child_process');
 */
 function select(index) {
   //TODO check index is valid
-  if (index < appList.length && index >= 0) {
+  if (index < ChildUtils.appList.length && index >= 0) {
     appSelected = index;
     console.log("Index " + appSelected + " has been selected");
     let appIndex;
-    for (appIndex in appList) {
+    for (appIndex in ChildUtils.appList) {
       let currentIndex = appIndex;
       // Apply stying based on if element is selected
       if (currentIndex == appSelected) { // Selected styling
@@ -59,12 +58,12 @@ function generateListElement(index, name, description) {
 function loadAppTable() {
   let listDiv = document.getElementById('listDiv');
   let appIndex;
-  for (appIndex in appList) {
+  for (appIndex in ChildUtils.appList) {
     const currentIndex = appIndex; // Need a local copy so that event listener binds to right index
     var listItem = generateListElement(
       appIndex,
-      appList[appIndex]['name'],
-      appList[appIndex]['description']
+      ChildUtils.appList[appIndex]['name'],
+      ChildUtils.appList[appIndex]['description']
     );
     // Add to list
     listDiv.appendChild(listItem);
