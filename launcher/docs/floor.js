@@ -71,6 +71,9 @@ function loadAppTable() {
   select(0);
 }
 
+/*
+  Handle input events for the webpage while in focus
+*/
 document.onkeydown = function(evt) {
   if (evt.keyCode == 40) {
     select(appSelected + 1);
