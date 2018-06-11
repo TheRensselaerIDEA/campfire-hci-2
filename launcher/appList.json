@@ -51,6 +51,6 @@
     "name": "Google Streetview Navigator",
     "description": "Campfire Demo using google streetview",
     "type": "external_app",
-    "start_cmd": "nw \\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
+    "start_cmd": "..\\demos\\start_streetview_navigator.bat"
   }
 ]
