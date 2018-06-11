@@ -46,5 +46,11 @@
       "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/HDHE/?Wall",
       "nodeIntegration": false
     }
+  },
+  {
+    "name": "Google Streetview Navigator",
+    "description": "Campfire Demo using google streetview",
+    "type": "external_app",
+    "start_cmd": "nw \\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
   }
 ]

@@ -1,16 +1,16 @@
 # appList.json Usage
 - appList.json is an array of AppDescriptors
-- Below is a description of the formats available and their arguments
+- Below is a description of the AppDescriptors available and their parameters
 
 ___
 
 ## Simple electron app
-- Simple electron apps are standalone **campfire-hci-2** view controllers
+- Simple electron apps are JSON defined standalone instances of the **campfire-hci-2.ViewController**
 
 - Common Use cases
-  - Static HTML, CSS, JS, Image, etc.
+  - Static HTML, CSS, JS, image, etc.
 
-  - Externally Hosted single page application
+  - Externally hosted dynamic web applications
 
 - All of the properties defined in the **args** object below are optional. If omitted, they will fall back to their defaults shown below.
 ### JSON Spec
