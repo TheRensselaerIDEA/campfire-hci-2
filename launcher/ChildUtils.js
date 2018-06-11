@@ -56,6 +56,8 @@ module.exports = {
     // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
       appProcess = child_process.exec(this.appList[index]["start_cmd"]);
+    } else if (this.appList[index]["type"] == "batch_cmd") {
+      appProcess = child_process.spawn(this.appList[index]["start_cmd"], {"shell": true});
     } else {
       console.log("Invalid Application type: " + this.appList[index]["type"]);
       return
