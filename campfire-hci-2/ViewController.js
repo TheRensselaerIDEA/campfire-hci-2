@@ -11,6 +11,8 @@ const DEFAULT_WALL_URL = 'http://bit.ly/CampfireWallSlide';
 /*
   Defines a viewcontroller for managing
   the two campfire displays
+  @constructor
+  @param {Object} args - object containing optional parameters for construction
 */
 function ViewController(args) {
   /*
@@ -146,3 +148,4 @@ module.exports = function(args) {
   });
   return vc;
 }
+

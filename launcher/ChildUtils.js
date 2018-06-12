@@ -7,7 +7,6 @@
 const child_process = require('child_process');
 const os = require('os');
 
-
 /*
   Thread agnostic way of retrieving the reference to the child process
   @return {Object} ChildProcess of launcher if any, else null
