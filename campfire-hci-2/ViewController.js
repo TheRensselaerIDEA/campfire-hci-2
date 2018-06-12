@@ -2,7 +2,7 @@
 
 // Imports
 const electron = require('electron');
-const MouseListener = require('./MouseListener.js')
+const MouseListener = require('./MouseListener.js');
 
 // Constants
 const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';

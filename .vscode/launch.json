@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Electron Main",
             "runtimeExecutable": "${workspaceFolder}/launcher/node_modules/.bin/electron",
-            "program": "${workspaceFolder}/launcher/index.js",
+            "program": "${workspaceFolder}/launcher/launcher.js",
             "protocol": "inspector"
         }
     ]

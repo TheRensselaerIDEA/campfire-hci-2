@@ -6,8 +6,6 @@ const ChildUtils = require('../ChildUtils.js');
 
 var appSelected = 0; // Default selection in system
 
-
-
 /**
  * Conveneient setter for element text and backgorund colors, for recoloring buttons
  *
@@ -85,12 +83,34 @@ function loadAppTable() {
 /*
   Handle input events for the webpage while in focus
 */
-document.onkeydown = function(evt) {
-  if (evt.keyCode == 40) {
+// document.onkeydown = function(evt) {
+//   if (evt.keyCode == 40) {
+//     select(appSelected + 1);
+//   } else if (evt.keyCode == 38) {
+//     select(appSelected - 1);
+//   } else if (evt.keyCode == 32) {
+//     ChildUtils.openApp(appSelected);
+//   }
+// }
+
+// Bind actions to viewcontroller input manager
+console.log("binding keybord event handlers..")
+const im = require('../InputManager.js');
+
+electron.remote.app.on('ready', () => {
+  console.log("Electron ready, binding keyboard commands to input manager...")
+  im.bindForward(() => {
+    console.log("IM: Forward");
     select(appSelected + 1);
-  } else if (evt.keyCode == 38) {
+  });
+  
+  im.bindBackward(() => {
+    console.log("IM: Back");
     select(appSelected - 1);
-  } else if (evt.keyCode == 32) {
+  });
+  
+  im.bindSelect(() => {
+    console.log("IM: Select");
     ChildUtils.openApp(appSelected);
-  }
-}
+  });
+});

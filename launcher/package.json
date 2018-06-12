@@ -2,7 +2,7 @@
   "name": "campfire-launcher",
   "version": "1.0.0",
   "description": "An application launcher for the campfire",
-  "main": "index.js",
+  "main": "launcher.js",
   "scripts": {
     "start": "electron ."
   },

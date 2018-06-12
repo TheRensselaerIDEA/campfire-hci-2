@@ -1,4 +1,5 @@
 /*
+  Entry point for Campfire Launcher
   Author: Antonio Fiol-Mahon
 */
 
@@ -6,7 +7,7 @@
 const path = require('path')
 const ViewController = require('campfire-hci-2');
 const electron = require('electron');
-const ChildUtils = require('./ChildUtils.js')
+const ChildUtils = require('./ChildUtils.js');
 
 // Static Variable definitions
 const docRoot = path.join('file://', __dirname, 'docs');
@@ -24,10 +25,9 @@ var view = ViewController({
   "mousewrangler": false
 });
 
-
-
 // Data about the open child process
 global.openApp = {"app":null};
+
 
 // Configure electron to handle quit command when in background
 electron.app.on('ready', () => {
