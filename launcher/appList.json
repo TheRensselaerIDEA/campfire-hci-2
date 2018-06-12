@@ -52,11 +52,5 @@
     "description": "Campfire Demo using google streetview",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
-  },
-  {
-    "name": "Batch CMD Test",
-    "description": "Debug entry for .bat launched programs",
-    "type": "batch_cmd",
-    "start_cmd": "..\\demos\\batchTest.bat"
   }
 ]

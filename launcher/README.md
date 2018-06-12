@@ -46,17 +46,3 @@ ___
     "start_cmd": "This should contain the command used to start the application"
   }
 ```
-
-## Batch cmd
-- Any application that is launched through a .bat file can be run with this script, simply point start_cmd to the desired .bat file
-
-- ***start_cmd*** - the path to the batch script. Can be an absolute path or a path relative to `campfire-hci-2/launcher`
-### JSON Spec
-```javascript
-  {
-    "name": "External App name goes here",
-    "description": "External App description goes here",
-    "type": "batch_cmd",
-    "start_cmd": "..\\Path\\To\\my\\BatchScript.bat"
-  }
-```

@@ -55,13 +55,6 @@ module.exports = {
     // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
       appProcess = child_process.spawn(this.appList[index]["start_cmd"], [], {shell: true});
-    // Excecute a windows batch command to start an external application
-    } else if (this.appList[index]["type"] == "batch_cmd") {
-      console.log("Launching batch cmd [" + this.appList[index]["start_cmd"] + "]...");
-      appProcess = child_process.spawn(this.appList[index]["start_cmd"], [], {shell: true});
-      appProcess.stdout.on('data', (data) => {
-        console.log(data.toString());
-      });
     } else {
       console.log("Invalid Application type: " + this.appList[index]["type"]);
       return
