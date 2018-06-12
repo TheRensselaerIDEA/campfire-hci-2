@@ -55,13 +55,21 @@ module.exports = {
     // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
       appProcess = child_process.exec(this.appList[index]["start_cmd"]);
+    // Excecute a windows batch command to start an external application
     } else if (this.appList[index]["type"] == "batch_cmd") {
-      appProcess = child_process.spawn(this.appList[index]["start_cmd"], [], {"shell": true});
+      console.log("Launching batch cmd [" + this.appList[index]["start_cmd"] + "]...");
+      appProcess = child_process.spawn(this.appList[index]["start_cmd"], [], {shell: true});
+      appProcess.stdout.on('data', (data) => {
+        console.log(data.toString());
+      });
     } else {
       console.log("Invalid Application type: " + this.appList[index]["type"]);
       return
     }
+
+    // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
+      console.log("child exited with status " + code);
       setChildPs(null);
     });
     setChildPs(appProcess);
