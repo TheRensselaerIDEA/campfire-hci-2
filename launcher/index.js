@@ -32,18 +32,6 @@ global.openApp = {"app":null};
 // Configure electron to handle quit command when in background
 electron.app.on('ready', () => {
   electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);
-
-  var trayIcon = new electron.Tray(path.join('images', 'if_rocket_1054990.png'));
-  var trayMenuTemplate = [
-    {
-      label: 'Open Launcher',
-      click: function() {
-        
-      }
-    }
-  ]
-  var trayMenu = electron.Menu.buildFromTemplate(trayMenuTemplate);
-  trayIcon.setContextMenu(trayMenu);
 });
 
 // Configure electron to kill any subprocesses on exit
