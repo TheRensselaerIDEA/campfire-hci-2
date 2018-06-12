@@ -21,13 +21,19 @@ ___
 		3. `npm start`
 
 ### demo_target
-	This package is used for testing/development of the campfire-hci-2 framework.
-	It displays 2 specified pages on the floor and wall of the campfire
-	To Install/Run:
-		1. `cd ./../path/to/campfire-hci/demo_target`
-		2. `./install.sh`
-		3. `npm start`
+- This package is used for testing/development of the campfire-hci-2 framework.
 
+- It displays 2 specified pages on the floor and wall of the campfire
+
+- To Install/Run:
+```bash
+# move to demo_target direcrory
+cd ./../path/to/campfire-hci/demo_target
+# run installation script
+./install.sh
+# start electron application via NPM
+npm start
+```
 ___
 
 ## Additional dependencies:
