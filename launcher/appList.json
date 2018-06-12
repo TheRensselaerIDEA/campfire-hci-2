@@ -50,8 +50,8 @@
   {
     "name": "Google Streetview Navigator",
     "description": "Campfire Demo using google streetview",
-    "type": "batch_cmd",
-    "start_cmd": "..\\demos\\start_streetview_navigator.bat"
+    "type": "external_app",
+    "start_cmd": "nw \\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
   },
   {
     "name": "Batch CMD Test",
