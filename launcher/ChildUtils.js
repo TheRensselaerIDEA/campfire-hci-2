@@ -14,7 +14,7 @@ const os = require('os');
 function getChildPs() {
   try {
     return electron.remote.getGlobal('openApp')["app"];
-  } catch(err) {
+  } catch (err) {
     return global.openApp["app"];
   }
 }
@@ -26,7 +26,7 @@ function getChildPs() {
 function setChildPs(newPS) {
   try {
     electron.remote.getGlobal('openApp')["app"] = newPS;
-  } catch(err) {
+  } catch (err) {
     global.openApp["app"] = newPS;
   }
 }
@@ -41,7 +41,7 @@ module.exports = {
     @warn behavior of function undefined/untested if called outside of a renderer thread
     @param {number} index - the index of the application to open
   */
-  openApp: function(index) {
+  openApp: function (index) {
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
@@ -52,9 +52,20 @@ module.exports = {
     // Start a basic ViewController only campfire-hci-2 app
     if (this.appList[index]["type"] == "simple_app") {
       appProcess = child_process.exec("electron simpleLauncher.js " + index);
-    // Run an external command to start an application
+      // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
-      appProcess = child_process.spawn(this.appList[index]["start_cmd"], [], {shell: true});
+
+      let childWorkingDir = this.appList[index]['start_dir'];
+ 
+      appProcess = child_process.spawn(
+        this.appList[index]["start_cmd"],
+        [],
+        { 
+          // Set child working directory from app descriptor if specified
+          cwd: (childWorkingDir != null) ? childWorkingDir : null,
+          shell: true 
+        }
+      );
     } else {
       console.log("Invalid Application type: " + this.appList[index]["type"]);
       return
@@ -71,8 +82,8 @@ module.exports = {
   /*
     Terminates a child process if it exists
   */
-  killChildPs: function() {
-    console.log("attempting to kill ps "+getChildPs());
+  killChildPs: function () {
+    console.log("attempting to kill ps " + getChildPs());
     if (getChildPs() != null) {
       console.log("Killing process " + getChildPs().pid);
       // Use the kill command appropriate for the platform

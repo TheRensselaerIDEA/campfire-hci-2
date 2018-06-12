@@ -13,7 +13,7 @@ ___
   - Externally hosted dynamic web applications
 
 - All of the properties defined in the **args** object below are optional. If omitted, they will fall back to their defaults shown below.
-### JSON Spec
+### JSON Example
 ```javascript
   {
     "name": "Simple Electron App name goes here",
@@ -36,13 +36,21 @@ ___
 ## External app
 - Any application that can be launched through the command line is supported through this app type
 
-- ***start_cmd*** - the path to the app. Can be an absolute path or a path relative to `campfire-hci-2/launcher`
-### JSON Spec
+### Parameters
+
+- **start_cmd** - Command to launch the app
+  - Can use an absolute path or a path relative to `campfire-hci-2/launcher`
+
+- **working_dir** - (Optional) working directory for **start_cmd**. 
+  - Equivalent to calling `cd start_dir` before running the command
+
+### JSON Example
 ```javascript
   {
     "name": "External App name goes here",
     "description": "External App description goes here",
     "type": "external_app",
-    "start_cmd": "This should contain the command used to start the application"
+    "start_cmd": "./startMyApp.exe arg1 arg2",
+    "working_dir": "../path/to/dir"
   }
 ```

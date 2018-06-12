@@ -69,6 +69,7 @@
     "name": "Slide Wrangler",
     "description": "DEFAULT",
     "type": "external_app",
-    "start_cmd": "electron C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler"
+    "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
+    "start_cmd": "electron ."
   }
 ]
