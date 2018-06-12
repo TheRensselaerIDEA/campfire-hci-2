@@ -71,5 +71,12 @@
     "type": "external_app",
     "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
     "start_cmd": "electron ."
+  },
+  {
+    "name": "Tiless",
+    "description": "DEFAULT",
+    "type": "external_app",
+    "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
+    "start_cmd": "nw ."
   }
 ]
