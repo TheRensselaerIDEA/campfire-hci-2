@@ -73,10 +73,17 @@
     "start_cmd": "electron ."
   },
   {
-    "name": "Tiless",
+    "name": "Tiles",
     "description": "DEFAULT",
     "type": "external_app",
     "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
     "start_cmd": "nw ."
+  },
+  {
+    "name": "SWOTR Electron Demo",
+    "description": "DEFAULT",
+    "type": "external_app",
+    "start_dir": "C:\\SWOTR-Electron-Demo",
+    "start_cmd": "electron ."
   }
 ]
