@@ -58,5 +58,11 @@
     "description": "DEFAULT",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
+  },
+  {
+    "name": "WebGL Terrain Explorer",
+    "description": "DEFAULT",
+    "type": "external_app",
+    "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
   }
 ]
