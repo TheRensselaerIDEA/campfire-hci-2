@@ -64,5 +64,11 @@
     "description": "DEFAULT",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
+  },
+  {
+    "name": "Slide Wrangler",
+    "description": "DEFAULT",
+    "type": "external_app",
+    "start_cmd": "electron C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler"
   }
 ]
