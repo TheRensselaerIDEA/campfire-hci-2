@@ -9,18 +9,3 @@ h1 {
 h2 {
   color: white;
 }
-
-.table {
-    border-radius: 5px;
-    width: 50%;
-    margin: 0px auto;
-    float: none;
-}
-
-.table th {
-    text-align: center;
-}
-
-.table tr {
-    text-align: center;
-}

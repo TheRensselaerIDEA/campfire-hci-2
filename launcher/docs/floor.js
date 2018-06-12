@@ -1,10 +1,24 @@
 'use strict';
 
-var electron = require('electron');
+const electron = require('electron');
+const child_process = require('child_process');
 const ChildUtils = require('../ChildUtils.js');
 
 var appSelected = 0; // Default selection in system
-const child_process = require('child_process');
+
+
+
+/**
+ * Conveneient setter for element text and backgorund colors, for recoloring buttons
+ *
+ * @param {Object} element - listElement to color, works with element returned from generateListElement()
+ * @param {String} bgColor - a hex color string, sets background color
+ * @param {String} nameColor - a hex color string, sets name text color
+ * @param {String} descColor - a hex color string, sets description text color
+ */
+function setElementColors(element, bgColor, nameColor, descColor) {
+  element.setAttribute('style', "background-color:" + bgColor + ";")
+}
 
 /*
   Updates selection and view
@@ -19,10 +33,10 @@ function select(index) {
       let currentIndex = appIndex;
       // Apply stying based on if element is selected
       if (currentIndex == appSelected) { // Selected styling
-        let selected = document.getElementById("app_"+currentIndex);
+        let selected = document.getElementById("app_" + currentIndex);
         selected.setAttribute('class', "list-group-item active");
       } else { // Other styling
-        document.getElementById("app_"+currentIndex).setAttribute('class', "list-group-item");
+        document.getElementById("app_" + currentIndex).setAttribute('class', "list-group-item");
       }
     }
   }
@@ -31,22 +45,24 @@ function select(index) {
 /*
   Generates the element for a list item with specified parameters
 */
-function generateListElement(index, name, description) {
-  // Create list container element
+function generateListElement(index) {
+  // Create list container element & add event listeners
   let listContainer = document.createElement('a');
   listContainer.id = "app_" + index;
-  // Bind event listeners to container
   listContainer.addEventListener("click", () => { ChildUtils.openApp(index); });
   listContainer.addEventListener("mouseover", () => { select(index); });
+
   // Create title element
   let title = document.createElement('h4');
-  title.innerHTML = name;
+  title.innerHTML = ChildUtils.appList[index]['name'];
   title.setAttribute('class', 'list-group-item-heading');
+
   // Create description element
   let desc = document.createElement('p');
-  desc.innerHTML = description;
+  desc.innerHTML = ChildUtils.appList[index]['description'];
   desc.setAttribute('class', 'list-group-item-text');
-  // Append children to listContainer and return element
+
+  // Add children and return element
   listContainer.appendChild(title);
   listContainer.appendChild(desc);
   return listContainer;
@@ -59,12 +75,7 @@ function loadAppTable() {
   let listDiv = document.getElementById('listDiv');
   let appIndex;
   for (appIndex in ChildUtils.appList) {
-    const currentIndex = appIndex; // Need a local copy so that event listener binds to right index
-    var listItem = generateListElement(
-      appIndex,
-      ChildUtils.appList[appIndex]['name'],
-      ChildUtils.appList[appIndex]['description']
-    );
+    var listItem = generateListElement(appIndex);
     // Add to list
     listDiv.appendChild(listItem);
   }
