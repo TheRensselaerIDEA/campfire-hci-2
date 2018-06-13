@@ -10,9 +10,6 @@ const electron = require('electron');
 const ChildUtils = require('./ChildUtils.js');
 const InputManager = require('./InputManager.js');
 
-var ipcMain = electron.ipcMain
-
-
 // Static Variable definitions
 const docRoot = path.join('file://', __dirname, 'docs');
 const floorURL = path.join(docRoot, 'floor.html');

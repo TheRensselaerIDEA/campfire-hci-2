@@ -82,19 +82,6 @@ function loadAppTable() {
   select(0);
 }
 
-/*
-  Handle input events for the webpage while in focus
-*/
-// document.onkeydown = function(evt) {
-//   if (evt.keyCode == 40) {
-//     select(appSelected + 1);
-//   } else if (evt.keyCode == 38) {
-//     select(appSelected - 1);
-//   } else if (evt.keyCode == 32) {
-//     ChildUtils.openApp(appSelected);
-//   }
-// }
-
 // Bind actions to viewcontroller input manager
 console.log("binding keybord event handlers..")
 const im = require('../InputManager.js');
