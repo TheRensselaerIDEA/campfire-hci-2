@@ -4,22 +4,33 @@ const electron = require('electron');
  * Defines the InputManager class
  * WARNING: Calls to this class must be made after electron is ready, calls before may cause errors. To protect against this, enclose uses in electron.app.on('ready', () => { usage here })
  */
-module.exports = {
+module.exports = function InputManager() {
     
     // Keyboard Accelerator Definitions
-    FORWARD_ACCELERATOR: "F6",
-    BACKWARD_ACCELERATOR:"F7",
-    SELECT_ACCELERATOR: "F8",
+    const FORWARD_ACCELERATOR = "F6";
+    const BACKWARD_ACCELERATOR = "F7";
+    const SELECT_ACCELERATOR = "F8";
 
-    bindForward: function (handler) {
-        electron.globalShortcut.register(FORWARD_ACCELERATOR, handler);
-    },
+    this.menu = new electron.Menu();
 
-    bindBackward: function (handler) {
-        electron.globalShortcut.register(BACKWARD_ACCELERATOR, handler);
-    },
+    /**
+     * Binds a function to the specified accelerator, allows way binding is handled to be changed centrally
+     * @param {string} accel 
+     * @param {function} handler 
+     */
+    this.bind = function(accel, handler) {
+        electron.globalShortcut.register(accel, handler);
+    };
 
-    bindSelect: function (handler) {
-        electron.globalShortcut.register(SELECT_ACCELERATOR, handler);
-    }
+    this.bindForward = function (handler) {
+        this.bind(FORWARD_ACCELERATOR, handler);
+    };
+
+    this.bindBackward = function (handler) {
+        this.bind(BACKWARD_ACCELERATOR, handler);
+    };
+    
+    this.bindSelect = function (handler) {
+        this.bind(SELECT_ACCELERATOR, handler);
+    };
 }

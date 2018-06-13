@@ -4,6 +4,8 @@ const electron = require('electron');
 const child_process = require('child_process');
 const ChildUtils = require('../ChildUtils.js');
 
+var ipcRenderer = electron.ipcRenderer;
+
 var appSelected = 0; // Default selection in system
 
 /**
@@ -97,20 +99,14 @@ function loadAppTable() {
 console.log("binding keybord event handlers..")
 const im = require('../InputManager.js');
 
-electron.remote.app.on('ready', () => {
-  console.log("Electron ready, binding keyboard commands to input manager...")
-  im.bindForward(() => {
-    console.log("IM: Forward");
+// Check for keypress events from main electron hread
+ipcRenderer.on('keyevent', function(event, arg) {
+  console.log("Key event detected!");
+  if (arg == 'up') {
     select(appSelected + 1);
-  });
-  
-  im.bindBackward(() => {
-    console.log("IM: Back");
+  } else if (arg == 'down') {
     select(appSelected - 1);
-  });
-  
-  im.bindSelect(() => {
-    console.log("IM: Select");
+  } else if (arg == 'select') {
     ChildUtils.openApp(appSelected);
-  });
+  }
 });
