@@ -1,6 +1,6 @@
-/*
-  Simple example of a campfire-hci-2 application
-*/
+/**
+ * Example of a barebones campfire-hci-2 application
+ */
 
 const path = require("path");
 const ViewController = require("campfire-hci-2");

@@ -8,12 +8,12 @@ const MouseListener = require('./MouseListener.js');
 const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';
 const DEFAULT_WALL_URL = 'http://bit.ly/CampfireWallSlide';
 
-/*
-  Defines a viewcontroller for managing
-  the two campfire displays
-  @constructor
-  @param {Object} args - object containing optional parameters for construction
-*/
+
+/**
+ * Defines a viewcontroller for managing the two campfire displays
+ * @constructor
+ * @param {*} args - object containing optional parameters for construction
+ */
 function ViewController(args) {
   /*
   Simplify argument reading and allow default values for ommitted args
@@ -33,7 +33,9 @@ function ViewController(args) {
   this.mouseWranglerEnabled = this.getArg('mousewrangler', true);
   this.nodeIntegration = this.getArg('nodeIntegration', true);
 
-  /* Initialize screen variables with electron. */
+  /**
+   * Initialize screen variables with electron.
+   */
   this.init = function() {
     // Configure Screens
     this.setScreens();
@@ -54,10 +56,10 @@ function ViewController(args) {
     }
   };
 
-  /*
-    Configure the wall and floor screen var and set offsets
-    Larger screen is set to wall screen automatically
-  */
+  /**
+   * Configure the wall and floor screen var and set offsets
+   * Larger screen is set to wall screen automatically
+   */
   this.setScreens = function() {
     this.wallScreen = null;
     this.floorScreen = null;
@@ -77,13 +79,13 @@ function ViewController(args) {
     }
   };
 
-  /*
-    Create the windows that will display content on the screens
-    @param {boolean} displayEnabled: true to show displays
-    @param {string} wallURL: URL for wall display
-    @param {string} floorURL: URL for floor display
-    @param {boolean} fullScreen: true for fullscreen mdoe
-  */
+  /**
+   * Create the windows that will display content on the screens
+   * @param {boolean} displayEnabled: true to show displays
+   * @param {string} wallURL: URL for wall display
+   * @param {string} floorURL: URL for floor display
+   * @param {boolean} fullScreen: true for fullscreen mode
+   */
   this.createWindow = function(displayEnabled, wallURL, floorURL, fullScreen) {
     // Wall Display Configuration
     this.mainWindow = new electron.BrowserWindow({
@@ -139,7 +141,11 @@ function ViewController(args) {
 }
 
 
-// Module definition
+/**
+ * Creates a new view controller and returns the reference
+ * @param {Object} args - Object of configuration parameters for View Controller
+ * @returns a new initialized view controller
+ */
 module.exports = function(args) {
   let vc = new ViewController(args);
   // Configure application to initialize when electron is ready

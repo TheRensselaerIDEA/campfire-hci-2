@@ -4,7 +4,7 @@
   Advisors: Professors Jim Hendler and John Erickson
   Rensselaer Polytechnic Institute Master's Project Spring 2018
 
-  Adapted into seperate class by Antonio Fiol-Mahon
+  Adapted into a seperate class by Antonio Fiol-Mahon
 */
 
 // Imports
@@ -24,9 +24,12 @@ try {
 module.exports = function MouseListener(floorScreen, wallScreen, wallWrapEnabled, centerMode) {
 
   var util = {
-    //Input: dx: distance between centerx and mousex
-    //       dy: distance between centery and mousey
-    //Output: degrees from origin angle
+    /**
+     * Find an angle between the center of the screen and the mouse
+     * @param {number} dx - distance between centerx and mousex
+     * @param {number} dy - distance between centery and mousey
+     * @returns {number} degrees from origin angle 
+     */
     calcTheta: function(dx, dy) {
       //degree of angle
       var t = Math.atan2(dy,dx) * 180 / Math.PI;
