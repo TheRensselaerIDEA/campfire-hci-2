@@ -1,5 +1,5 @@
 const electron = require('electron');
-
+const MidiHandler = require('./MidiHandler.js')
 /**
  * Defines the InputManager class
  * WARNING: Calls to this class must be made after electron is ready, calls before may cause errors. To protect against this, enclose uses in electron.app.on('ready', () => { usage here })
@@ -7,11 +7,11 @@ const electron = require('electron');
 module.exports = function InputManager() {
     
     // Keyboard Accelerator Definitions
-    const FORWARD_ACCELERATOR = "F6";
-    const BACKWARD_ACCELERATOR = "F7";
+    const BACKWARD_ACCELERATOR = "F6";
+    const FORWARD_ACCELERATOR = "F7";
     const SELECT_ACCELERATOR = "F8";
 
-    this.menu = new electron.Menu();
+    this.midiH = new MidiHandler();
 
     /**
      * Binds a function to the specified accelerator, allows way binding is handled to be changed centrally
@@ -33,4 +33,9 @@ module.exports = function InputManager() {
     this.bindSelect = function (handler) {
         this.bind(SELECT_ACCELERATOR, handler);
     };
+
+    this.bindMidiSpin = function (handler) {
+        console.log('empty!');
+    }
 }
+

@@ -82,10 +82,6 @@ function loadAppTable() {
   select(0);
 }
 
-// Bind actions to viewcontroller input manager
-console.log("binding keybord event handlers..")
-const im = require('../InputManager.js');
-
 // Check for keypress events from main electron hread
 ipcRenderer.on('keyevent', function(event, arg) {
   console.log("Key event detected!");

@@ -55,35 +55,44 @@
   },
   {
     "name": "Semnext",
-    "description": "DEFAULT",
+    "description": "",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
   },
   {
     "name": "WebGL Terrain Explorer",
-    "description": "DEFAULT",
+    "description": "",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
   },
   {
     "name": "Slide Wrangler",
-    "description": "DEFAULT",
+    "description": "",
     "type": "external_app",
     "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
     "start_cmd": "electron ."
   },
   {
     "name": "Tiles",
-    "description": "DEFAULT",
+    "description": "",
     "type": "external_app",
     "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
     "start_cmd": "nw ."
   },
   {
     "name": "SWOTR Electron Demo",
-    "description": "DEFAULT",
+    "description": "",
     "type": "external_app",
     "start_dir": "C:\\SWOTR-Electron-Demo",
     "start_cmd": "electron ."
+  },
+  {
+    "name": "Erickson Twitter Data",
+    "description": "Streamgraph of John Erickson's Twitter Stream (18K tweets, 2008-2018)",
+    "type": "simple_app",
+    "args": {
+      "floorURL": "http://www.blankwebsite.com/",
+      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph.html"
+    }
   }
 ]

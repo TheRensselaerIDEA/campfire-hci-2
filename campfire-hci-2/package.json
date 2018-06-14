@@ -9,7 +9,8 @@
     "electron": "^1.8.6",
     "keypress": "^0.2.1",
     "mouse": "0.0.1",
-    "robotjs": "^0.4.7"
+    "robotjs": "^0.4.7",
+    "midi": "0.9.5"
   },
   "optionalDependencies": {
     "win-mouse": "^1.1.2"

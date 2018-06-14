@@ -3,6 +3,7 @@
 // Imports
 const electron = require('electron');
 const MouseListener = require('./MouseListener.js');
+const InputManager = require('./InputManager.js');
 
 // Constants
 const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';
@@ -12,7 +13,7 @@ const DEFAULT_WALL_URL = 'http://bit.ly/CampfireWallSlide';
 /**
  * Defines a viewcontroller for managing the two campfire displays
  * @constructor
- * @param {*} args - object containing optional parameters for construction
+ * @param {Object} args - object containing optional parameters for construction
  */
 function ViewController(args) {
   /*
@@ -37,6 +38,8 @@ function ViewController(args) {
    * Initialize screen variables with electron.
    */
   this.init = function() {
+    // Configure input manager
+    this.inputManager = new InputManager();
     // Configure Screens
     this.setScreens();
     this.createWindow(
@@ -87,6 +90,7 @@ function ViewController(args) {
    * @param {boolean} fullScreen: true for fullscreen mode
    */
   this.createWindow = function(displayEnabled, wallURL, floorURL, fullScreen) {
+
     // Wall Display Configuration
     this.mainWindow = new electron.BrowserWindow({
       x: this.wallScreen.bounds.x,
@@ -95,6 +99,8 @@ function ViewController(args) {
       height: this.wallScreen.bounds.height,
       show: displayEnabled,
       frame: false,
+      backgroundColor: '#FFFFFF',
+      fullscreen: fullScreen,
       webPreferences:{ nodeIntegration: this.nodeIntegration }
     });
     //Forced setting to fit window to campfire screens
@@ -102,8 +108,9 @@ function ViewController(args) {
     this.mainWindow.loadURL(wallURL);
 
     // Floor Display Configuration
-    this.floorScreen.bounds.width=1920;
-    this.floorScreen.bounds.height=1080;
+    
+    //this.floorScreen.bounds.width=1920;
+    //this.floorScreen.bounds.height=1080;
     this.floorWindow = new electron.BrowserWindow({
       x:this.floorScreen.bounds.x,
       y:this.floorScreen.bounds.y,
@@ -111,27 +118,21 @@ function ViewController(args) {
       height:this.floorScreen.bounds.height,
       show: displayEnabled,
       frame:false,
+      backgroundColor: '#FFFFFF',
+      fullscreen: fullScreen,
       webPreferences:{nodeIntegration: this.nodeIntegration }
     });
 
     this.floorWindow.setContentSize(1920,1080);
     this.floorWindow.loadURL(floorURL);
 
-    // Set display to fullscreen
-    this.floorWindow.setFullScreen(fullScreen);
-    this.mainWindow.setFullScreen(fullScreen);
-
-    // Emitted when the window is closed.
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    // TODO: ensure that this is being dereferenced properly
-    this.mainWindow.on('closed', function () {
+    // Dereference the windows and ensure app closes down properly
+    this.mainWindow.on('closed', () => {
       this.mainWindow = null;
       this.floorWindow = null;
       electron.app.quit();
     });
-    this.floorWindow.on('closed', function () {
+    this.floorWindow.on('closed', () => {
       this.mainWindow = null;
       this.floorWindow = null;
       electron.app.quit();

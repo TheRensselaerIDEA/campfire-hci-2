@@ -8,7 +8,6 @@ const path = require('path')
 const ViewController = require('campfire-hci-2');
 const electron = require('electron');
 const ChildUtils = require('./ChildUtils.js');
-const InputManager = require('./InputManager.js');
 
 // Static Variable definitions
 const docRoot = path.join('file://', __dirname, 'docs');
@@ -26,9 +25,6 @@ var vc = ViewController({
   "mousewrangler": false
 });
 
-// Create input manager
-var im = new InputManager();
-
 // Data about the open child process
 global.openApp = {"app":null};
 
@@ -38,17 +34,17 @@ electron.app.on('ready', () => {
   electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);
   
   // Bind input events to actions on the floorWindow
-  im.bindForward(() => {
+  vc.inputManager.bindForward(() => {
     if (global.openApp['app'] == null) {
       vc.floorWindow.webContents.send('keyevent', 'up');
     }
   });
-  im.bindBackward(() => {
+  vc.inputManager.bindBackward(() => {
     if (global.openApp['app'] == null) {
       vc.floorWindow.webContents.send('keyevent', 'down');
     }
   });
-  im.bindSelect(() => {
+  vc.inputManager.bindSelect(() => {
     if (global.openApp['app'] == null) {
       vc.floorWindow.webContents.send('keyevent', 'select');
     }
