@@ -19,7 +19,9 @@ module.exports = function InputManager() {
      * @param {function} handler 
      */
     this.bind = function(accel, handler) {
-        electron.globalShortcut.register(accel, handler);
+        electron.app.on("ready", () => {
+            electron.globalShortcut.register(accel, handler);
+        });
     };
 
     this.bindForward = function (handler) {
