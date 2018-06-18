@@ -60,25 +60,29 @@ module.exports = function MidiHandler() {
 
     // Initialize Midi Input Device
     this.input = new midi.input();
-    console.log(this.input.getPortCount());
-    console.log(this.input.getPortName(0));
-    this.input.openPort(0); // Open device for use
-    this.input.ignoreTypes(false, false, false); // TODO figure out what this does
-
     
-    // Register Midi Event handler, msg is an array of [inType, inCode, inLevel] from midi device
-    this.input.on('message', function(deltaTime, msg) {
-        console.log("MIDI Event: " + msg[0] + " " + msg[1] + " " + msg[2]);
-        // Check if input type is knob & a handler is registered to that input
-        if (msg[0] == INPUT_TYPE.KNOB && typeof knobHandler[msg[1]] === 'function') {
-            knobHandler[msg[1]](msg[2]);
-        } else if (msg[0] == INPUT_TYPE.BTN_PRESS && typeof btnPressHandler[msg[1]] === 'function') {
-            btnPressHandler[msg[1]](msg[2]);
-        } else if (msg[0] == INPUT_TYPE.BTN_REL && typeof btnReleaseHandler[msg[1]] === 'function') {
-            btnReleaseHandler[msg[1]](msg[2]);
-        }
-    });
-
+    // Check that MIDI device is available
+    if (this.input.getPortCount() == 0) {
+        console.log("No MIDI Devie available, device bindings will be unavailable")
+    } else {
+        console.log("Midi Device available: " + this.input.getPortName(0));
+        this.input.openPort(0); // Open device for use
+        this.input.ignoreTypes(false, false, false); // TODO figure out what this does
+    
+        // Register Midi Event handler, msg is an array of [inType, inCode, inLevel] from midi device
+        this.input.on('message', function(deltaTime, msg) {
+            console.log("MIDI Event: " + msg[0] + " " + msg[1] + " " + msg[2]);
+            // Check if input type is knob & a handler is registered to that input
+            if (msg[0] == INPUT_TYPE.KNOB && typeof knobHandler[msg[1]] === 'function') {
+                knobHandler[msg[1]](msg[2]);
+            } else if (msg[0] == INPUT_TYPE.BTN_PRESS && typeof btnPressHandler[msg[1]] === 'function') {
+                btnPressHandler[msg[1]](msg[2]);
+            } else if (msg[0] == INPUT_TYPE.BTN_REL && typeof btnReleaseHandler[msg[1]] === 'function') {
+                btnReleaseHandler[msg[1]](msg[2]);
+            }
+        });
+    }
+    
     /**
      * Bind a handler function to a knob turn event
      * @param {Number} knob_code - KNOB_CODE of desired input
