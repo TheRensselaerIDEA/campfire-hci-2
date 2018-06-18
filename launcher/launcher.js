@@ -5,7 +5,7 @@
 
 // Import dependencies
 const path = require('path')
-const ViewController = require('campfire-hci-2');
+const HCI = require('campfire-hci-2');
 const electron = require('electron');
 const ChildUtils = require('./ChildUtils.js');
 
@@ -15,7 +15,7 @@ const floorURL = path.join(docRoot, 'floor.html');
 const wallURL = path.join(docRoot, 'wall.html');
 
 // Create View controller
-var vc = ViewController({
+var hci = new HCI({
   "fullscreen": true,
   "display": true,
   "screenWrap": true,
@@ -28,25 +28,24 @@ var vc = ViewController({
 // Data about the open child process
 global.openApp = {"app":null};
 
-
 electron.app.on('ready', () => {
   // Configure electron to handle quit command when in background
   electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);
-  
+
   // Bind input events to actions on the floorWindow
-  vc.inputManager.bindForward(() => {
+  hci.inputManager.bindForward(() => {
     if (global.openApp['app'] == null) {
-      vc.floorWindow.webContents.send('keyevent', 'up');
+      hci.viewController.floorWindow.webContents.send('keyevent', 'up');
     }
   });
-  vc.inputManager.bindBackward(() => {
+  hci.inputManager.bindBackward(() => {
     if (global.openApp['app'] == null) {
-      vc.floorWindow.webContents.send('keyevent', 'down');
+      hci.viewController.floorWindow.webContents.send('keyevent', 'down');
     }
   });
-  vc.inputManager.bindSelect(() => {
+  hci.inputManager.bindSelect(() => {
     if (global.openApp['app'] == null) {
-      vc.floorWindow.webContents.send('keyevent', 'select');
+      hci.viewController.floorWindow.webContents.send('keyevent', 'select');
     }
   });
 });

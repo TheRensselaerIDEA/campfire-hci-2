@@ -58,7 +58,6 @@ module.exports = function MidiHandler() {
     var btnReleaseHandler = [];
     var knobHandler = [];
 
-
     // Initialize Midi Input Device
     this.input = new midi.input();
     console.log(this.input.getPortCount());
@@ -81,8 +80,8 @@ module.exports = function MidiHandler() {
     });
 
     /**
-     * 
-     * @param {Number} knob_code - KNOB_CODE of specified input
+     * Bind a handler function to a knob turn event
+     * @param {Number} knob_code - KNOB_CODE of desired input
      * @param {Function} handler - handler for knob event, must take 1 number parameter for the knob level (0-127)
      */
     this.bindKnobHandler = function(knob_code, handler) {
@@ -92,7 +91,7 @@ module.exports = function MidiHandler() {
 
     /**
      * Bind a handler to the button release event, occurs once on button release
-     * @param {Number} button_code - BTN_CODE of specified input
+     * @param {Number} button_code - BTN_CODE of desired input
      * @param {Function} handler - event handler, takes 1 argument for button press value (not related to up/down event)
      */
     this.bindButtonReleaseHandler = function(button_code, handler) {
@@ -102,7 +101,7 @@ module.exports = function MidiHandler() {
 
     /**
      * Bind a handler to the button press event, occurs semi-continuously while button is pressed
-     * @param {Number} button_code - BTN_CODE of specified input
+     * @param {Number} button_code - BTN_CODE of desired input
      * @param {Function} handler - event handler, takes 1 argument for button press value (not related to up/down event)
      */
     this.bindButtonPressHandler = function(button_code, handler) {

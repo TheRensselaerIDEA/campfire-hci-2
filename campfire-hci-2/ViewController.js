@@ -2,61 +2,40 @@
 
 // Imports
 const electron = require('electron');
-const MouseListener = require('./MouseListener.js');
-const InputManager = require('./InputManager.js');
 
 // Constants
 const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';
 const DEFAULT_WALL_URL = 'http://bit.ly/CampfireWallSlide';
-
 
 /**
  * Defines a viewcontroller for managing the two campfire displays
  * @constructor
  * @param {Object} args - object containing optional parameters for construction
  */
-function ViewController(args) {
-  /*
-  Simplify argument reading and allow default values for ommitted args
-  */
+module.exports = function ViewController(args) {
+
+  /**
+   * Get an argument or its default value
+   * @param {String} key argument key
+   * @param {*} default_val fallback value if args does not define key
+   */
   this.getArg = function(key, default_val) {
     return (args[key] != undefined) ? args[key] : default_val;
   };
-
-  // Set parameters from args or fall back to a default value
-  this.display = this.getArg('display', true);
-  this.wallWrapEnabled = this.getArg('screenWrap', true);
-  this.centermode = this.getArg('centermode', true);
-  this.fullscreen = this.getArg('fullscreen', true);
-  this.floorURL = this.getArg('floorURL', DEFAULT_FLOOR_URL);
-  this.wallURL = this.getArg('wallURL', DEFAULT_WALL_URL);
-  this.debugEnabled = this.getArg('debugEnabled', false);
-  this.mouseWranglerEnabled = this.getArg('mousewrangler', true);
-  this.nodeIntegration = this.getArg('nodeIntegration', true);
 
   /**
    * Initialize screen variables with electron.
    */
   this.init = function() {
-    // Configure input manager
-    this.inputManager = new InputManager();
     // Configure Screens
     this.setScreens();
     this.createWindow(
-      this.display,
-      this.wallURL,
-      this.floorURL,
-      this.fullscreen
+      this.getArg('display', true),
+      this.getArg('wallURL', DEFAULT_WALL_URL),
+      this.getArg('floorURL', DEFAULT_FLOOR_URL),
+      this.getArg('fullscreen', true),
+      this.getArg('nodeIntegration', true)
     );
-    if (this.mouseWranglerEnabled) {
-      this.listener = new MouseListener(
-        this.floorScreen,
-        this.wallScreen,
-        this.wallWrapEnabled,
-        this.centermode,
-        this.debugEnabled
-      );
-    }
   };
 
   /**
@@ -89,7 +68,7 @@ function ViewController(args) {
    * @param {string} floorURL: URL for floor display
    * @param {boolean} fullScreen: true for fullscreen mode
    */
-  this.createWindow = function(displayEnabled, wallURL, floorURL, fullScreen) {
+  this.createWindow = function(displayEnabled, wallURL, floorURL, fullScreen, nodeIntegrationEnabled) {
 
     // Wall Display Configuration
     this.mainWindow = new electron.BrowserWindow({
@@ -101,7 +80,7 @@ function ViewController(args) {
       frame: false,
       backgroundColor: '#FFFFFF',
       fullscreen: fullScreen,
-      webPreferences:{ nodeIntegration: this.nodeIntegration }
+      webPreferences:{ nodeIntegration: nodeIntegrationEnabled }
     });
     //Forced setting to fit window to campfire screens
     this.mainWindow.setContentSize(6400,800);
@@ -120,7 +99,7 @@ function ViewController(args) {
       frame:false,
       backgroundColor: '#FFFFFF',
       fullscreen: fullScreen,
-      webPreferences:{nodeIntegration: this.nodeIntegration }
+      webPreferences:{nodeIntegration: nodeIntegrationEnabled }
     });
 
     this.floorWindow.setContentSize(1920,1080);
@@ -139,20 +118,8 @@ function ViewController(args) {
     });
   };
 
-}
-
-
-/**
- * Creates a new view controller and returns the reference
- * @param {Object} args - Object of configuration parameters for View Controller
- * @returns a new initialized view controller
- */
-module.exports = function(args) {
-  let vc = new ViewController(args);
-  // Configure application to initialize when electron is ready
-  electron.app.on('ready', function() {
-    vc.init();
+  // Wait for electron to be available for electron specific config
+  electron.app.on('ready', () => {
+    this.init();
   });
-  return vc;
 }
-

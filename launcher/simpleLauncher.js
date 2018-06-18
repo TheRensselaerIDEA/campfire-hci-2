@@ -7,7 +7,7 @@
 
 // Import dependencies
 const electron = require('electron');
-const ViewController = require("campfire-hci-2");
+const HCI = require("campfire-hci-2");
 
 // Get command line argument and check for validitiy
 const argIndex = process.argv[2];
@@ -21,4 +21,4 @@ const ChildUtils = require("./ChildUtils.js");
 const params = ChildUtils.appList[argIndex]["args"];
 
 // Create application by calling ViewController
-const view = ViewController(params);
+const view = new HCI(params);
