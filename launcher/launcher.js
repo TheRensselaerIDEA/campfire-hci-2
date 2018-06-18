@@ -45,6 +45,13 @@ hci.inputManager.bindSelect(() => {
   }
 });
 
+hci.inputManager.midiH.bindKnobHandler(
+  hci.inputManager.midiH.KNOB_CODE.LEVEL_RATE,
+  (pos)=> {
+    hci.viewController.floorWindow.webContents.send('selectEvent', pos);
+  }
+);
+
 electron.app.on('ready', () => {
   // Configure electron to handle quit command when in background
   electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);

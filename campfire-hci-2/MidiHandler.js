@@ -52,6 +52,11 @@ module.exports = function MidiHandler() {
         BTN_16: 43
     };
 
+    // Add constant definitions to object
+    this.BTN_CODE = BTN_CODE;
+    this.KNOB_CODE = KNOB_CODE;
+    this.INPUT_TYPE = INPUT_TYPE;
+
 
     // Configure Event handler lookup array
     var btnPressHandler = [];

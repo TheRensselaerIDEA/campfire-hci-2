@@ -94,3 +94,8 @@ ipcRenderer.on('keyevent', function(event, arg) {
     ChildUtils.openApp(appSelected);
   }
 });
+
+// This will break if appList exceeds 127 entries
+ipcRenderer.on('selectEvent', function(event, arg) {
+  select(arg%ChildUtils.appList.length);
+});
