@@ -94,5 +94,15 @@
       "floorURL": "http://www.blankwebsite.com/",
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph.html"
     }
+  },
+  {
+    "name": "COE",
+    "description": "",
+    "type": "simple_app",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Wall",
+      "nodeIntegration": false
+    }
   }
 ]
