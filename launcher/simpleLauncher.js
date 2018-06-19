@@ -21,4 +21,4 @@ const ChildUtils = require("./ChildUtils.js");
 const params = ChildUtils.appList[argIndex]["args"];
 
 // Create application by calling ViewController
-const view = new HCI(params);
+var view = new HCI(params);
