@@ -70,7 +70,7 @@ module.exports = function MidiHandler() {
     if (this.input.getPortCount() == 0) {
         console.log("No MIDI Devie available, device bindings will be unavailable")
     } else {
-        console.log("Midi Device available: " + this.input.getPortName(0));
+        console.log(`Midi Device available: ${this.input.getPortName(0)}`);
         try {
             this.input.openPort(0); // Open device for use
             this.input.ignoreTypes(false, false, false); // TODO figure out what this does
@@ -81,7 +81,7 @@ module.exports = function MidiHandler() {
     
         // Register Midi Event handler, msg is an array of [inType, inCode, inLevel] from midi device
         this.input.on('message', function(deltaTime, msg) {
-            console.log("MIDI Event: " + msg[0] + " " + msg[1] + " " + msg[2]);
+            console.log(`MIDI Event: ${msg[0]} ${msg[1]} ${msg[2]}`);
             // Check if input type is knob & a handler is registered to that input
             if (msg[0] == INPUT_TYPE.KNOB && typeof knobHandler[msg[1]] === 'function') {
                 knobHandler[msg[1]](msg[2]);
@@ -100,7 +100,7 @@ module.exports = function MidiHandler() {
      */
     this.bindKnobHandler = function(knob_code, handler) {
         knobHandler[knob_code] = handler;
-        console.log("Registered Knob handler for id # " + knob_code);
+        console.log(`Registered Knob handler for id # ${knob_code}`);
     }
 
     /**
@@ -110,7 +110,7 @@ module.exports = function MidiHandler() {
      */
     this.bindButtonReleaseHandler = function(button_code, handler) {
         btnReleaseHandler[button_code] = handler;
-        console.log("Registered ButtonRelease handler for id # " + button_code);
+        console.log(`Registered ButtonRelease handler for id # ${button_code}`);
     }
 
     /**
@@ -120,11 +120,11 @@ module.exports = function MidiHandler() {
      */
     this.bindButtonPressHandler = function(button_code, handler) {
         btnPressHandler[button_code] = handler;
-        console.log("Registered ButtonPress handler for id # " + button_code);
+        console.log(`Registered ButtonPress handler for id # ${button_code}`);
     }
 
     // Bind test handler to level knob
     this.bindKnobHandler(KNOB_CODE.LEVEL_RATE, (pos) => {
-        console.log('Knob at position ' + pos);
+        console.log(`Knob at position ${pos}`);
     });
 }

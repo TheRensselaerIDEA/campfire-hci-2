@@ -42,7 +42,7 @@ module.exports = {
     @param {number} index - the index of the application to open
   */
   openApp: function (index) {
-    console.log("Opening " + this.appList[index].name);
+    console.log(`Opening ${this.appList[index].name}`);
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
@@ -52,7 +52,7 @@ module.exports = {
 
     // Start a basic ViewController only campfire-hci-2 app
     if (this.appList[index]["type"] == "simple_app") {
-      appProcess = child_process.exec("electron simpleLauncher.js " + index);
+      appProcess = child_process.exec(`electron simpleLauncher.js ${index}`);
       console.log(`App opened, value is ${appProcess}`);
       // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
@@ -93,14 +93,14 @@ module.exports = {
   killChildPs: function () {
     console.log(`Attempting to kill ps ${getChildPs()}`);
     if (getChildPs() != null) {
-      console.log("Killing process " + getChildPs().pid);
+      console.log(`Killing process ${getChildPs().pid}`);
       // Use the kill command appropriate for the platform
       if (os.platform() == 'win32') {
         console.log("Killing windows process...")
-        child_process.exec('TaskKill /PID ' + getChildPs().pid + " /F /T"); // Kill the process
+        child_process.exec(`TaskKill /PID ${getChildPs().pid} /F /T`); // Kill the process
         //global.openApp['app'].kill("SIGKILL");
       } else {
-        child_process.exec('pkill -P ' + getChildPs().pid); // Kill the process
+        child_process.exec(`pkill -P ${getChildPs().pid}`); // Kill the process
       }
       // This also happens automatically in the event handler for child exit
       setChildPs(null);
