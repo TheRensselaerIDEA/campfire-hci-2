@@ -53,6 +53,7 @@ module.exports = {
     // Start a basic ViewController only campfire-hci-2 app
     if (this.appList[index]["type"] == "simple_app") {
       appProcess = child_process.exec("electron simpleLauncher.js " + index);
+      console.log(`App opened, value is ${appProcess}`);
       // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
 
@@ -68,7 +69,7 @@ module.exports = {
         }
       );
     } else {
-      console.log("Invalid Application type: " + this.appList[index]["type"]);
+      console.log(`Invalid Application type: ${this.appList[index]["type"]}`);
       return
     }
     appProcess.stdout.on('data', (data) => {
@@ -80,7 +81,7 @@ module.exports = {
 
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
-      console.log("child exited with status " + code);
+      console.log(`child exited with status ${code}`);
       setChildPs(null);
     });
     setChildPs(appProcess);
@@ -90,7 +91,7 @@ module.exports = {
     Terminates a child process if it exists
   */
   killChildPs: function () {
-    console.log("attempting to kill ps " + getChildPs());
+    console.log(`Attempting to kill ps ${getChildPs()}`);
     if (getChildPs() != null) {
       console.log("Killing process " + getChildPs().pid);
       // Use the kill command appropriate for the platform
