@@ -63,7 +63,7 @@ module.exports = {
         [],
         { 
           // Set child working directory from app descriptor if specified
-          cwd: (childWorkingDir != null) ? childWorkingDir : __dirname,
+          cwd: (childWorkingDir != null) ? childWorkingDir : null,
           shell: true 
         }
       );
@@ -71,6 +71,12 @@ module.exports = {
       console.log("Invalid Application type: " + this.appList[index]["type"]);
       return
     }
+    appProcess.stdout.on('data', (data) => {
+      console.log(`child stdout: ${data}`);
+    });
+    appProcess.stderr.on('data', (data) => {
+      console.log(`child stderr: ${data}`);
+    });
 
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
