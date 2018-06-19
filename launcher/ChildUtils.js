@@ -42,6 +42,7 @@ module.exports = {
     @param {number} index - the index of the application to open
   */
   openApp: function (index) {
+    console.log("Opening " + this.appList[index].name);
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open

@@ -16,7 +16,7 @@ const wallURL = path.join(docRoot, 'wall.html');
 
 // Create View controller
 var hci = new HCI({
-  "fullscreen": false,
+  "fullscreen": true,
   "display": true,
   "screenWrap": true,
   "centermode": true,
