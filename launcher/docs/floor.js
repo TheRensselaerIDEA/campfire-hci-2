@@ -8,16 +8,33 @@ var ipcRenderer = electron.ipcRenderer;
 
 var appSelected = 0; // Default selection in system
 
-/**
- * Conveneient setter for element text and backgorund colors, for recoloring buttons
- *
- * @param {Object} element - listElement to color, works with element returned from generateListElement()
- * @param {String} bgColor - a hex color string, sets background color
- * @param {String} nameColor - a hex color string, sets name text color
- * @param {String} descColor - a hex color string, sets description text color
- */
-function setElementColors(element, bgColor, nameColor, descColor) {
-  element.setAttribute('style', "background-color:" + bgColor + ";")
+
+var class_select = [
+  "list-group-item active",
+  "list-group-item list-group-item-success",
+  "list-group-item list-group-item-danger",
+  "list-group-item list-group-item-warning",
+  "list-group-item list-group-item-info"
+]
+
+var style_unselect = [
+  "border-left: 10px solid blue;",
+  "border-left: 10px solid green;",
+  "border-left: 10px solid red;",
+  "border-left: 10px solid yellow;",
+  "border-left: 10px solid cyan;"
+]
+
+function styleElement(index, category) {
+  let el = document.getElementById(`app_${index}`);
+  console.log(`Styling ${index}`)
+  if (index == appSelected) {
+    el.setAttribute('class', class_select[category]);
+    el.scrollIntoView();
+  } else {
+    el.setAttribute('class', "list-group-item");
+    el.setAttribute('style', style_unselect[category]);
+  }
 }
 
 /*
@@ -27,18 +44,10 @@ function select(index) {
   //TODO check index is valid
   if (index < ChildUtils.appList.length && index >= 0) {
     appSelected = index;
-    console.log("Index " + appSelected + " has been selected");
+    console.log(`Index ${appSelected} has been selected`);
     let appIndex;
     for (appIndex in ChildUtils.appList) {
-      let currentIndex = appIndex;
-      // Apply stying based on if element is selected
-      if (currentIndex == appSelected) { // Selected styling
-        let selected = document.getElementById("app_" + currentIndex);
-        selected.setAttribute('class', "list-group-item active");
-        selected.scrollIntoView();
-      } else { // Other styling
-        document.getElementById("app_" + currentIndex).setAttribute('class', "list-group-item");
-      }
+      styleElement(appIndex, appIndex%5);
     }
   }
 }
