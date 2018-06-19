@@ -3,10 +3,6 @@
 // Imports
 const electron = require('electron');
 
-// Constants
-const DEFAULT_FLOOR_URL = 'http://bit.ly/CampfireFloorSlide';
-const DEFAULT_WALL_URL = 'http://bit.ly/CampfireWallSlide';
-
 /**
  * Defines a viewcontroller for managing the two campfire displays
  * @constructor
@@ -31,8 +27,8 @@ module.exports = function ViewController(args) {
     this.setScreens();
     this.createWindow(
       this.getArg('display', true),
-      this.getArg('wallURL', DEFAULT_WALL_URL),
-      this.getArg('floorURL', DEFAULT_FLOOR_URL),
+      this.getArg('wallURL', null),
+      this.getArg('floorURL', null),
       this.getArg('fullscreen', true),
       this.getArg('nodeIntegration', true)
     );
@@ -84,7 +80,9 @@ module.exports = function ViewController(args) {
     });
     //Forced setting to fit window to campfire screens
     this.mainWindow.setContentSize(6400,800);
-    this.mainWindow.loadURL(wallURL);
+    if (wallURL != null) {
+      this.mainWindow.loadURL(wallURL);
+    }
 
     // Floor Display Configuration
     
@@ -103,7 +101,9 @@ module.exports = function ViewController(args) {
     });
 
     this.floorWindow.setContentSize(1920,1080);
-    this.floorWindow.loadURL(floorURL);
+    if (floorURL != null) {
+      this.floorWindow.loadURL(floorURL);
+    }
 
     // Dereference the windows and ensure app closes down properly
     this.mainWindow.on('closed', () => {
