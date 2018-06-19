@@ -21,7 +21,14 @@ try {
   winMousePresent = false;
 }
 
-module.exports = function MouseListener(floorScreen, wallScreen, wallWrapEnabled, centerMode) {
+/**
+ * 
+ * @param {Rectangle} floorBounds - rectangle specifying size of floor screen
+ * @param {Rectangle} wallBounds - rectangle specifying size of wall screen
+ * @param {boolean} wallWrapEnabled
+ * @param {boolean} centerMode 
+ */
+module.exports = function MouseListener(floorBounds, wallBounds, wallWrapEnabled, centerMode) {
 
   var util = {
     /**
@@ -59,8 +66,8 @@ module.exports = function MouseListener(floorScreen, wallScreen, wallWrapEnabled
   };
 
   // These values must be defined in the local scope for event listener
-  var fb = floorScreen.bounds; // TODO: move up into parameter, only use of floorscreen
-  var wb = wallScreen.bounds; // TODO same as above
+  var fb = floorBounds; // TODO: move up into parameter, only use of floorscreen
+  var wb = wallBounds; // TODO same as above
   var mPos = robot.getMousePos();
   var borderOffset = 30;
   var onFloor = false;

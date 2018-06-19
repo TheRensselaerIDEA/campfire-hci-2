@@ -26,7 +26,6 @@ ___
       "fullscreen": true,
       "floorURL": DEFAULT_FLOOR_URL,
       "wallURL": DEFAULT_WALL_URL,
-      "debugEnabled": false,
       "mousewrangler": true,
       "nodeIntegration": true
     }

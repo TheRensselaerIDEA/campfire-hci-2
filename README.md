@@ -34,6 +34,14 @@ cd ./../path/to/campfire-hci/demo_target
 # start electron application via NPM
 npm start
 ```
+
+- If errors exist after installation, try running the following command to rebuild Electron to match compatibility with node modules
+
+```bash
+npm rebuild --runtime=electron --target=1.8.2 --disturl=https://atom.io/download/atom-shell --abi=48
+```
+
+
 ___
 
 ## Additional dependencies:

@@ -1,5 +1,6 @@
 const electron = require('electron');
 const MidiHandler = require('./MidiHandler.js')
+
 /**
  * Defines the InputManager class
  * WARNING: Calls to this class must be made after electron is ready, calls before may cause errors. To protect against this, enclose uses in electron.app.on('ready', () => { usage here })
@@ -12,7 +13,7 @@ module.exports = function InputManager() {
     const SELECT_ACCELERATOR = "F8";
 
     this.midiH = new MidiHandler();
-
+    
     /**
      * Binds a function to the specified accelerator, allows way binding is handled to be changed centrally
      * @param {string} accel 

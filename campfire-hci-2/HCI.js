@@ -27,11 +27,10 @@ module.exports = function HCI (args) {
     electron.app.on('ready', () => {
         if (this.getArg('mousewrangler', true)) {
             this.mouseListener = new MouseListener(
-                this.viewController.floorScreen,
-                this.viewController.wallScreen,
+                this.viewController.floorScreen.bounds,
+                this.viewController.wallScreen.bounds,
                 this.getArg('screenWrap', true),
-                this.getArg('centermode', true),
-                this.getArg('debugEnabled', false)
+                this.getArg('centermode', true)
             );
         }
     });

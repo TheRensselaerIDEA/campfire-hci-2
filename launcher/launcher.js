@@ -16,13 +16,13 @@ const wallURL = path.join(docRoot, 'wall.html');
 
 // Create View controller
 var hci = new HCI({
-  "fullscreen": true,
+  "fullscreen": false,
   "display": true,
   "screenWrap": true,
-  "centermode": false,
+  "centermode": true,
   "floorURL": floorURL,
   "wallURL": wallURL,
-  "mousewrangler": false
+  "mousewrangler": true
 });
 
 // Data about the open child process
@@ -47,7 +47,7 @@ hci.inputManager.bindSelect(() => {
 
 hci.inputManager.midiH.bindKnobHandler(
   hci.inputManager.midiH.KNOB_CODE.LEVEL_RATE,
-  (pos)=> {
+  (pos) => {
     hci.viewController.floorWindow.webContents.send('selectEvent', pos);
   }
 );

@@ -1,20 +1,48 @@
-# campfire-hci-2
+# campfire-hci-2 framework
+- This document outlines usage of the framework for building campfire apps
 
-- Framework for developing electron apps for the Rensselaer IDEA Campfire.
+## Creating a new project
+To use campfire-hci-2 to develop applications, you should have some familiarity with javascript, nodejs, npm, and command line.
 
-# Installation Tips
-
-If errors exist after installation, try running the following command to rebuild Electron to match compatibility with node modules
-
+- Create a package for the project and install dependencies
 ```bash
-npm rebuild --runtime=electron --target=1.8.2 --disturl=https://atom.io/download/atom-shell --abi=48
+# Change to project directory
+cd ../my/project/dir
+# Create an npm package for the project, customize fields as needed
+npm init
+# Install the campfire-hci-2 library and add it to project dependencies
+npm install --save campfire-hci-2
+```
+- Add the following to index.js:
+```javascript
+// Include the framework code
+const HCI = require('campfire-hci-2');
 ```
 
-## Install python / buildtools via terminal
-```bash
-# Install Build tools
-npm install --global --production windows-build-tools
-# Install Node GYP
-npm install --global node-gyp
-```
+- The library is ready to be used! See the following sections for usage and descriptions of the available modules
 
+# Modules
+- The following components makeup the campfire-hci-2 library. They are organized by functionality, and break down the framework into loosely coupled components
+
+## HCI.js
+- Top Level Library Object, foundation of library
+- Control access/creation of library components, provides a global context for accessing them
+
+## InputManager.js
+- Streamlines user input handling, organizes input binding code into 1 consistent interface
+
+## MidiHandler.js
+- A subcomponent of InputManager.js
+- Provides high level access to Midi Controller input
+- Responsible for binding handlers to MIDI Controller events
+
+## MouseListener.js
+- Modular version of MouseWrangler by Tommy Fang
+- Allows more seamless mouse use on the campfire via:
+    - Cursor continuous wrap around on wall
+    - Cursor transitions from floor/wall
+- Depends on ViewController.js to provide display context
+
+## ViewController.js
+- Easy management for the Floor and Wall views on the campfire
+- Highly paramatized to allow for customization as needed
