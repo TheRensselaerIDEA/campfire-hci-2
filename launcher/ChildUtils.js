@@ -63,7 +63,7 @@ module.exports = {
         [],
         { 
           // Set child working directory from app descriptor if specified
-          cwd: (childWorkingDir != null) ? childWorkingDir : null,
+          cwd: (childWorkingDir != null) ? childWorkingDir : __dirname,
           shell: true 
         }
       );

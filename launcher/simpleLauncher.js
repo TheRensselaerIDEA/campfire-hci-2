@@ -19,6 +19,6 @@ if (argIndex == undefined) {
 // Retrieve the arguments through ChildUtils
 const ChildUtils = require("./ChildUtils.js");
 const params = ChildUtils.appList[argIndex]["args"];
-
+ 
 // Create application by calling ViewController
 var view = new HCI(params);

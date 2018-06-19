@@ -4,7 +4,8 @@
   "description": "An application launcher for the campfire",
   "main": "launcher.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "simple_launcher": "electron simpleLauncher.js 1"
   },
   "dependencies": {
     "campfire-hci-2": "../campfire-hci-2",
