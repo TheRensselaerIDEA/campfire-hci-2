@@ -71,8 +71,13 @@ module.exports = function MidiHandler() {
         console.log("No MIDI Devie available, device bindings will be unavailable")
     } else {
         console.log("Midi Device available: " + this.input.getPortName(0));
-        this.input.openPort(0); // Open device for use
-        this.input.ignoreTypes(false, false, false); // TODO figure out what this does
+        try {
+            this.input.openPort(0); // Open device for use
+            this.input.ignoreTypes(false, false, false); // TODO figure out what this does
+        } catch (err) {
+            console.log(`Could not open MIDI Device, is another Process using it? Err: ${err}`);
+        }
+        
     
         // Register Midi Event handler, msg is an array of [inType, inCode, inLevel] from midi device
         this.input.on('message', function(deltaTime, msg) {
