@@ -78,7 +78,7 @@ module.exports = function ViewController(args) {
       height: this.wallScreen.bounds.height,
       show: displayEnabled,
       frame: false,
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#21252b',
       fullscreen: fullScreen,
       webPreferences:{ nodeIntegration: nodeIntegrationEnabled }
     });
@@ -97,7 +97,7 @@ module.exports = function ViewController(args) {
       height:this.floorScreen.bounds.height,
       show: displayEnabled,
       frame:false,
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#21252b',
       fullscreen: fullScreen,
       webPreferences:{nodeIntegration: nodeIntegrationEnabled }
     });
