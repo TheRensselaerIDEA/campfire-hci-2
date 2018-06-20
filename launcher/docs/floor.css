@@ -9,3 +9,8 @@ h1 {
 h2 {
   color: white;
 }
+
+.listDiv {
+  height: 75vh;
+  overflow: auto;
+} 
