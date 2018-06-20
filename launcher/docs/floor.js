@@ -112,8 +112,10 @@ electron.ipcRenderer.on('keyevent', function(event, arg) {
   console.log("Key event detected!");
   if (arg == 'up') {
     select(appSelected + 1);
+    document.getElementById('listDiv').scrollTop += 30;
   } else if (arg == 'down') {
     select(appSelected - 1);
+    document.getElementById('listDiv').scrollTop -= 30;
   } else if (arg == 'select') {
     ChildUtils.openApp(appSelected);
   }
