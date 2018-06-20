@@ -18,7 +18,7 @@ ___
   {
     "name": "Simple Electron App name goes here",
     "description": "Simple Electron App description goes here",
-    "group": 0
+    "group": "default",
     "type": "simple_app",
     "args": {
       "display": true,
@@ -37,7 +37,13 @@ ___
 
 **description** - secondary text for list item
 
-**group** - defines the category, used for styling (0-4)
+**group** - defines the category, used for styling. 
+- Valid Values:
+  - default
+  - classic
+  - science
+  - summer2018
+  - hacks
 
 ## External app
 - Any application that can be launched through the command line is supported through this app type

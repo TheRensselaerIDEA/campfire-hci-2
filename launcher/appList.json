@@ -2,12 +2,14 @@
   {
     "name": "Wrangler Grid Demo",
     "description": "Simple static demo that displays an alignment target on the wall and floor",
+    "group": "hacks",
     "type": "external_app",
     "start_cmd": "electron ../demos/demo_target.js"
   },
   {
     "name": "Google Slides Demo",
     "description": "Demonstration of an animated visualization using google slides",
+    "group": "hacks",
     "type": "simple_app",
     "args": {
       "centermode": false,
@@ -18,6 +20,7 @@
   {
     "name": "Basic Multi Window Shiny Demo",
     "description": "R based visualizations being computed on the IDEA cluster",
+    "group": "hacks",
     "type": "simple_app",
     "args": {
       "centermode": false,
@@ -29,6 +32,7 @@
   {
     "name": "Comparative Analysis Demo (Slides)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet",
+    "group": "summer2018",
     "type": "simple_app",
     "args": {
       "centermode": false,
@@ -39,6 +43,7 @@
   {
     "name": "HDHE (Multi Window Shiny)",
     "description": "IDEA Hackathon entry",
+    "group": "summer2018",
     "type": "simple_app",
     "args": {
       "centermode": false,
@@ -50,24 +55,28 @@
   {
     "name": "Google Streetview Navigator",
     "description": "Campfire Demo using google streetview",
+    "group": "classic",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
   },
   {
     "name": "Semnext",
     "description": "",
+    "group": "science",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
   },
   {
     "name": "WebGL Terrain Explorer",
     "description": "",
+    "group": "classic",
     "type": "external_app",
     "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
   },
   {
     "name": "Slide Wrangler",
     "description": "",
+    "group": "hacks",
     "type": "external_app",
     "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
     "start_cmd": "electron ."
@@ -75,6 +84,7 @@
   {
     "name": "Tiles",
     "description": "",
+    "group": "classic",
     "type": "external_app",
     "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
     "start_cmd": "nw ."
@@ -82,6 +92,7 @@
   {
     "name": "SWOTR Electron Demo",
     "description": "",
+    "group": "science",
     "type": "external_app",
     "start_dir": "C:\\SWOTR-Electron-Demo",
     "start_cmd": "electron ."
@@ -89,6 +100,7 @@
   {
     "name": "Erickson Twitter Data",
     "description": "Streamgraph of John Erickson's Twitter Stream (18K tweets, 2008-2018)",
+    "group": "hacks",
     "type": "simple_app",
     "args": {
       "floorURL": "http://www.blankwebsite.com/",
@@ -98,6 +110,7 @@
   {
     "name": "COE",
     "description": "",
+    "group": "science",
     "type": "simple_app",
     "args": {
       "centermode": false,
@@ -105,5 +118,12 @@
       "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Wall",
       "nodeIntegration": false
     }
+  },
+  {
+    "name": "Twitter Demo (Alex)",
+    "description": "",
+    "group": "summer2018",
+    "type": "simple_app",
+    "args": {}
   }
 ]
