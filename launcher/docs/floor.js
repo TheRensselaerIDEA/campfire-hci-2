@@ -1,60 +1,71 @@
 'use strict';
 
 const electron = require('electron');
-const child_process = require('child_process');
 const ChildUtils = require('../ChildUtils.js');
 
-var ipcRenderer = electron.ipcRenderer;
+// Current selection in appList
+var appSelected = 0;
 
-var appSelected = 0; // Default selection in system
-
-
-var class_select = [
-  "list-group-item active",
-  "list-group-item list-group-item-success",
-  "list-group-item list-group-item-danger",
-  "list-group-item list-group-item-warning",
-  "list-group-item list-group-item-info"
-]
-
-var style_unselect = [
-  "border-left: 10px solid blue;",
-  "border-left: 10px solid green;",
-  "border-left: 10px solid red;",
-  "border-left: 10px solid yellow;",
-  "border-left: 10px solid cyan;"
-]
-
-function styleElement(index, category) {
-  let el = document.getElementById(`app_${index}`);
-  console.log(`Styling ${index}`)
-  if (index == appSelected) {
-    el.setAttribute('class', class_select[category]);
-    el.scrollIntoView();
-  } else {
-    el.setAttribute('class', "list-group-item");
-    el.setAttribute('style', style_unselect[category]);
+// Defines the styling used for each app group
+var group_style = {
+  default: {
+    class_selected: "",
+    color: "#ffffff"
+  },
+  classic: {
+    class_selected: "list-group-item-success",
+    color: "#28a745;"
+  },
+  science: {
+    class_selected: "active",
+    color: "#007aff;"
+  },
+  summer2018: {
+    class_selected: "list-group-item-warning",
+    color: "#ffc108;"
+  },
+  hacks: {
+    class_selected: "list-group-item-danger",
+    color: "#dc3645;"
   }
 }
 
-/*
-  Updates selection and view
-*/
+/**
+ * Syles the list element corresponding to the appDescriptor in ChildUtils.appList at index
+ * @param {number} index - index of the app in ChildUtils.appList to style
+ */
+function styleElement(index) {
+  // Get the group or use default
+  let category = (ChildUtils.appList[index].group != undefined) ? ChildUtils.appList[index].group : 'default';
+  // Get the element for the app at index
+  let el = document.getElementById(`app_${index}`);
+  if (index == appSelected) {
+    el.setAttribute('class', `list-group-item ${group_style[category].class_selected}`);
+  } else {
+    el.setAttribute('class', "list-group-item");
+    el.setAttribute('style', `border-left: 10px solid ${group_style[category].color}`);
+  }
+}
+
+/**
+ * Updates the styling for all list elements and the selected app variable
+ * @param {*} index - index of app that is being selected
+ */
 function select(index) {
-  //TODO check index is valid
   if (index < ChildUtils.appList.length && index >= 0) {
     appSelected = index;
     console.log(`Index ${appSelected} has been selected`);
     let appIndex;
     for (appIndex in ChildUtils.appList) {
-      styleElement(appIndex, appIndex%5);
+      styleElement(appIndex);
     }
   }
 }
 
-/*
-  Generates the element for a list item with specified parameters
-*/
+/**
+ * Creates the list element for the app descriptor at the specified index
+ * @param {*} index - app descriptor index to use for populating list element fields
+ */
 function generateListElement(index) {
   // Create list container element & add event listeners
   let listContainer = document.createElement('a');
@@ -79,7 +90,7 @@ function generateListElement(index) {
 }
 
 /*
-  Load the app list based off of the values from the main index.js
+  Load the list of available apps based off of the app descriptors defined in appList.json
 */
 function loadAppTable() {
   let listDiv = document.getElementById('listDiv');
@@ -92,8 +103,12 @@ function loadAppTable() {
   select(0);
 }
 
-// Check for keypress events from main electron hread
-ipcRenderer.on('keyevent', function(event, arg) {
+// Code below is run when script is loaded
+
+loadAppTable();
+
+// Check for keypress events from main electron thread
+electron.ipcRenderer.on('keyevent', function(event, arg) {
   console.log("Key event detected!");
   if (arg == 'up') {
     select(appSelected + 1);
@@ -105,6 +120,7 @@ ipcRenderer.on('keyevent', function(event, arg) {
 });
 
 // This will break if appList exceeds 127 entries
-ipcRenderer.on('selectEvent', function(event, arg) {
+electron.ipcRenderer.on('selectEvent', function(event, arg) {
   select(arg%ChildUtils.appList.length);
 });
+
