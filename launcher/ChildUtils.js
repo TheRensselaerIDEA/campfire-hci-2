@@ -8,6 +8,7 @@ const os = require('os');
 module.exports = {
 
   appList: require('./appList.json'),
+  childPS: null,
 
   /*
     Opens the application at the specified index in appList
@@ -19,7 +20,7 @@ module.exports = {
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
-    if (global.openApp["app"] != null) {
+    if (this.childPS != null) {
       this.killChildPs();
     }
 
@@ -53,9 +54,9 @@ module.exports = {
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
       console.log(`child exited with status ${code}`);
-      global.openApp["app"] = null;
+      this.childPS = null;
     });
-    global.openApp["app"] = appProcess;
+    this.childPS = appProcess;
   },
 
   /*
@@ -63,19 +64,18 @@ module.exports = {
     @warn will fail if called outside of the main thread
   */
   killChildPs: function () {
-    console.log(`Attempting to kill ps ${global.openApp["app"]}`);
-    if (global.openApp["app"] != null) {
-      console.log(`Killing process ${global.openApp["app"].pid}`);
+    console.log(`Attempting to kill ps ${this.childPS}`);
+    if (this.childPS != null) {
+      console.log(`Killing process ${this.childPS.pid}`);
       // Use the kill command appropriate for the platform
       if (os.platform() == 'win32') {
         console.log("Killing windows process...")
-        child_process.exec(`TaskKill /PID ${global.openApp["app"].pid} /F /T`); // Kill the process
-        //global.openApp['app'].kill("SIGKILL");
+        child_process.exec(`TaskKill /PID ${this.childPS.pid} /F /T`); // Kill the process
       } else {
-        child_process.exec(`pkill -P ${global.openApp["app"].pid}`); // Kill the process
+        child_process.exec(`pkill -P ${this.childPS.pid}`); // Kill the process
       }
       // This also happens automatically in the event handler for child exit
-      global.openApp["app"] = null;
+      this.childPS = null;
     }
   }
 }

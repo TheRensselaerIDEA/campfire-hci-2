@@ -25,9 +25,6 @@ var hci = new HCI({
   "mousewrangler": true
 });
 
-// Data about the open child process
-global.openApp = {"app":null};
-
 function openChild(appIndex) {
   hci.inputManager.midiH.stop();
   ChildUtils.openApp(appIndex);
@@ -40,17 +37,17 @@ function closeChild() {
 
  // Bind input events to actions on the floorWindow
 hci.inputManager.bindForward(() => {
-  if (global.openApp['app'] == null) {
+  if (ChildUtils.childPS == null) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'up');
   }
 });
 hci.inputManager.bindBackward(() => {
-  if (global.openApp['app'] == null) {
+  if (ChildUtils.childPS == null) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'down');
   }
 });
 hci.inputManager.bindSelect(() => {
-  if (global.openApp['app'] == null) {
+  if (ChildUtils.childPS == null) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'select');
   }
 });
