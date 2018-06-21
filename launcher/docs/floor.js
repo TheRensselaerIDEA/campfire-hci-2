@@ -128,10 +128,12 @@ electron.ipcRenderer.on('keyevent', function(event, arg) {
   }
 });
 
-
-
 // This will break if appList exceeds 127 entries
 electron.ipcRenderer.on('selectEvent', function(event, arg) {
   select(arg%ChildUtils.appList.length);
 });
 
+electron.ipcRenderer.on('rotate-event', function(event, arg) {
+  let rotation = arg * 10;
+  document.getElementById('owner').setAttribute('style', `transform: rotate(${rotation}deg); transform-origin: 50% 50%;transition-duration:100ms;`);
+});
