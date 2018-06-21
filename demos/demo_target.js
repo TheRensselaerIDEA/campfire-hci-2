@@ -19,3 +19,10 @@ var demoApp = new HCI({
   "wallURL": wallURL,
   "mousewrangler": true
 });
+
+demoApp.inputManager.midiH.bindKnobHandler(
+  demoApp.inputManager.midiH.KNOB_CODE.LEVEL_RATE,
+  (pos) => {
+    console.log(`my midi LEVEL/RATE knob position is ${pos}!`);
+  }
+);

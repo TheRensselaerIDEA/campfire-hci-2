@@ -28,6 +28,16 @@ var hci = new HCI({
 // Data about the open child process
 global.openApp = {"app":null};
 
+function openChild(appIndex) {
+  hci.inputManager.midiH.stop();
+  ChildUtils.openApp(appIndex);
+}
+
+function closeChild() {
+  ChildUtils.killChildPs();
+  hci.inputManager.midiH.start();
+}
+
  // Bind input events to actions on the floorWindow
 hci.inputManager.bindForward(() => {
   if (global.openApp['app'] == null) {
@@ -54,13 +64,12 @@ hci.inputManager.midiH.bindKnobHandler(
 
 electron.app.on('ready', () => {
   // Configure electron to handle quit command when in background
-  electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);
+  electron.globalShortcut.register('CommandOrControl+K', closeChild);
   electron.ipcMain.on('open-app', function(event, appIndex) {
-    ChildUtils.openApp(appIndex);
+    openChild(appIndex);
   });
 });
 
 
-
 // Configure electron to kill any subprocesses on exit
-electron.app.on('quit', ChildUtils.killChildPs);
+electron.app.on('quit', closeChild);

@@ -1,5 +1,5 @@
 const midi = require('midi');
-
+const electron = require('electron');
 // TODO handle input type 144
 
 /**
@@ -136,4 +136,5 @@ module.exports = function MidiHandler() {
 
     // Start the MIDI Input device
     this.start();
+
 }
