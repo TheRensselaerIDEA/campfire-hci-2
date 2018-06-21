@@ -10,6 +10,12 @@ const electron = require('electron');
  */
 module.exports = function ViewController(args) {
 
+  const BG_COLOR = '#21252b';
+  const FLOOR_X = 1920;
+  const FLOOR_Y = 1080;
+  const WALL_X = 6400;
+  const WALL_Y = 800;
+
   /**
    * Get an argument or its default value
    * @param {String} key argument key
@@ -25,7 +31,7 @@ module.exports = function ViewController(args) {
   this.init = function() {
     // Configure Screens
     this.setScreens();
-    this.createWindow(
+    this.createWindows(
       this.getArg('display', true),
       this.getArg('wallURL', null),
       this.getArg('floorURL', null),
@@ -41,19 +47,15 @@ module.exports = function ViewController(args) {
   this.setScreens = function() {
     this.wallScreen = null;
     this.floorScreen = null;
-    var allScreens = electron.screen.getAllDisplays();
-    // If only 1 monitor is present, display both on primary display
+    let displayList = electron.screen.getAllDisplays();
     try {
-      if (allScreens[0].size.width > allScreens[1].size.width) {
-        this.wallScreen = allScreens[0];
-        this.floorScreen = allScreens[1]
-      } else {
-        this.floorScreen = allScreens[0];
-        this.wallScreen = allScreens[1];
-      }
+      // Assign the longer display to the wall, the other to the floor
+      let primaryScreenLonger = (displayList[0].size.width > displayList[1].size.width);
+      this.wallScreen = displayList[(primaryScreenLonger) ? 0 : 1];
+      this.floorScreen = displayList[(primaryScreenLonger) ? 1 : 0];
     } catch(err) { // Set both to primary if there is only 1 display available
-      this.wallScreen = allScreens[0];
-      this.floorScreen = allScreens[0];
+      this.wallScreen = displayList[0];
+      this.floorScreen = displayList[0];
     }
   };
 
@@ -64,58 +66,36 @@ module.exports = function ViewController(args) {
    * @param {string} floorURL: URL for floor display
    * @param {boolean} fullScreen: true for fullscreen mode
    */
-  this.createWindow = function(displayEnabled, wallURL, floorURL, fullScreen, nodeIntegrationEnabled) {
+  this.createWindows = function(displayEnabled, wallURL, floorURL, fullScreen, nodeIntegrationEnabled) {
 
-    // Wall Display Configuration
-    this.mainWindow = new electron.BrowserWindow({
-      x: this.wallScreen.bounds.x,
-      y: this.wallScreen.bounds.y,
-      width: this.wallScreen.bounds.width,
-      height: this.wallScreen.bounds.height,
-      show: displayEnabled,
-      frame: false,
-      backgroundColor: '#21252b',
-      fullscreen: fullScreen,
-      webPreferences:{ nodeIntegration: nodeIntegrationEnabled }
-    });
-    //Forced setting to fit window to campfire screens
-    this.mainWindow.setContentSize(6400,800);
-    if (wallURL != null) {
-      this.mainWindow.loadURL(wallURL);
-    }
-
-    // Floor Display Configuration
-    
-    //this.floorScreen.bounds.width=1920;
-    //this.floorScreen.bounds.height=1080;
-    this.floorWindow = new electron.BrowserWindow({
-      x:this.floorScreen.bounds.x,
-      y:this.floorScreen.bounds.y,
-      width:this.floorScreen.bounds.width,
-      height:this.floorScreen.bounds.height,
-      show: displayEnabled,
-      frame:false,
-      backgroundColor: '#21252b',
-      fullscreen: fullScreen,
-      webPreferences:{nodeIntegration: nodeIntegrationEnabled }
-    });
-
-    this.floorWindow.setContentSize(1920,1080);
-    if (floorURL != null) {
-      this.floorWindow.loadURL(floorURL);
-    }
-
-    // Dereference the windows and ensure app closes down properly
-    this.mainWindow.on('closed', () => {
-      this.mainWindow = null;
+    function closeVC() {
+      this.wallWindow = null;
       this.floorWindow = null;
       electron.app.quit();
-    });
-    this.floorWindow.on('closed', () => {
-      this.mainWindow = null;
-      this.floorWindow = null;
-      electron.app.quit();
-    });
+    };
+
+    function createWindow(screen, sizeX, sizeY, url) {
+      let w = new electron.BrowserWindow({
+        x: screen.bounds.x,
+        y: screen.bounds.y,
+        width: screen.bounds.width,
+        height: screen.bounds.height,
+        show: displayEnabled,
+        frame: false,
+        backgroundColor: BG_COLOR,
+        fullscreen: fullScreen,
+        webPreferences:{ nodeIntegration: nodeIntegrationEnabled }
+      });
+      w.setContentSize(sizeX, sizeY);
+      if (url != null) {
+        w.loadURL(url);
+      }
+      w.on('closed', closeVC); // Dereference windows and quit when closed event occurs
+      return w;
+    }
+
+    this.wallWindow = createWindow(this.wallScreen, WALL_X, WALL_Y, wallURL);
+    this.floorWindow = createWindow(this.floorScreen, FLOOR_X, FLOOR_Y, floorURL);
   };
 
   // Wait for electron to be available for electron specific config
