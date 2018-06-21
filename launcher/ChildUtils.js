@@ -5,38 +5,13 @@
 const child_process = require('child_process');
 const os = require('os');
 
-/*
-  Thread agnostic way of retrieving the reference to the child process
-  @return {Object} ChildProcess of launcher if any, else null
-*/
-function getChildPs() {
-  try {
-    return electron.remote.getGlobal('openApp')["app"];
-  } catch (err) {
-    return global.openApp["app"];
-  }
-}
-
-/*
-  Thread agnostic way of retrieving the reference to the child process
-  @return {Object} ChildProcess of launcher if any, else null
-*/
-function setChildPs(newPS) {
-  try {
-    electron.remote.getGlobal('openApp')["app"] = newPS;
-  } catch (err) {
-    global.openApp["app"] = newPS;
-  }
-}
-
 module.exports = {
 
   appList: require('./appList.json'),
 
   /*
     Opens the application at the specified index in appList
-    // TODO eliminate warning
-    @warn behavior of function undefined/untested if called outside of a renderer thread
+    @warn - will fail if called outside of the main thread
     @param {number} index - the index of the application to open
   */
   openApp: function (index) {
@@ -44,7 +19,7 @@ module.exports = {
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
-    if (getChildPs() != null) {
+    if (global.openApp["app"] != null) {
       this.killChildPs();
     }
 
@@ -78,28 +53,29 @@ module.exports = {
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
       console.log(`child exited with status ${code}`);
-      setChildPs(null);
+      global.openApp["app"] = null;
     });
-    setChildPs(appProcess);
+    global.openApp["app"] = appProcess;
   },
 
   /*
     Terminates a child process if it exists
+    @warn will fail if called outside of the main thread
   */
   killChildPs: function () {
-    console.log(`Attempting to kill ps ${getChildPs()}`);
-    if (getChildPs() != null) {
-      console.log(`Killing process ${getChildPs().pid}`);
+    console.log(`Attempting to kill ps ${global.openApp["app"]}`);
+    if (global.openApp["app"] != null) {
+      console.log(`Killing process ${global.openApp["app"].pid}`);
       // Use the kill command appropriate for the platform
       if (os.platform() == 'win32') {
         console.log("Killing windows process...")
-        child_process.exec(`TaskKill /PID ${getChildPs().pid} /F /T`); // Kill the process
+        child_process.exec(`TaskKill /PID ${global.openApp["app"].pid} /F /T`); // Kill the process
         //global.openApp['app'].kill("SIGKILL");
       } else {
-        child_process.exec(`pkill -P ${getChildPs().pid}`); // Kill the process
+        child_process.exec(`pkill -P ${global.openApp["app"].pid}`); // Kill the process
       }
       // This also happens automatically in the event handler for child exit
-      setChildPs(null);
+      global.openApp["app"] = null;
     }
   }
 }
