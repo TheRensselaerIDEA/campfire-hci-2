@@ -4,37 +4,47 @@
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
     "group": "classic",
     "type": "external_app",
-    "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
-    "start_cmd": "nw ."
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
+      "start_cmd": "nw ."
+    }
   },
   {
     "name": "Google Streetview Navigator",
     "description": "Campfire Demo using google streetview",
     "group": "classic",
     "type": "external_app",
-    "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
+    "args": {
+      "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
+    }
   },
   {
     "name": "WebGL Terrain Explorer",
     "description": "Exploring the capabilities of WebGL on the Campfire platform",
     "group": "classic",
     "type": "external_app",
-    "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
+    "args": {
+      "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
+    }
   },
   {
     "name": "SWOT Clock (Classic; interactive)",
     "description": "Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",
     "type": "external_app",
-    "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
+    "args": {
+      "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
+    }
   },
   {
     "name": "SWOT Clock (R; Multi-window Shiny)",
     "description": "Susceptibility Windows Ontological Transcriptome Clock. NOTE: Requires external controller; go to http://bit.ly/swot_clock",
     "group": "science",
     "type": "external_app",
-    "start_dir": "C:\\SWOTR-Electron-Demo",
-    "start_cmd": "electron ."
+    "args": {
+      "start_dir": "C:\\SWOTR-Electron-Demo",
+      "start_cmd": "electron ."
+    }
   },
   {
     "name": "Circadian Ontology Explorer",
@@ -83,7 +93,9 @@
     "description": "Simple static demo that displays an alignment target on the wall and floor",
     "group": "hacks",
     "type": "external_app",
-    "start_cmd": "electron ../demos/demo_target.js"
+    "args": {
+      "start_cmd": "electron ../demos/demo_target.js"
+    }
   },
   {
     "name": "Google Slides Demo",
@@ -113,8 +125,10 @@
     "description": "Select your own Walls and Floors!",
     "group": "hacks",
     "type": "external_app",
-    "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
-    "start_cmd": "electron ."
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
+      "start_cmd": "electron ."
+    }
   },
   {
     "name": "Erickson Twitter Data",

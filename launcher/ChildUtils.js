@@ -1,9 +1,7 @@
-/*
-  A set of utilities for managing a child process
-*/
+/**
+ * A set of utilities for managing a child process
+ */
 'use strict';
-
-// Import Dependenciess
 const child_process = require('child_process');
 const os = require('os');
 
@@ -56,11 +54,9 @@ module.exports = {
       console.log(`App opened, value is ${appProcess}`);
       // Run an external command to start an application
     } else if (this.appList[index]["type"] == "external_app") {
-
-      let childWorkingDir = this.appList[index]['start_dir'];
- 
+      let childWorkingDir = this.appList[index]["args"]["start_dir"];
       appProcess = child_process.spawn(
-        this.appList[index]["start_cmd"],
+        this.appList[index]["args"]["start_cmd"],
         [],
         { 
           // Set child working directory from app descriptor if specified
