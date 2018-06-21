@@ -55,6 +55,9 @@ hci.inputManager.midiH.bindKnobHandler(
 electron.app.on('ready', () => {
   // Configure electron to handle quit command when in background
   electron.globalShortcut.register('CommandOrControl+K', ChildUtils.killChildPs);
+  electron.ipcMain.on('open-app', function(event, appIndex) {
+    ChildUtils.openApp(appIndex);
+  });
 });
 
 

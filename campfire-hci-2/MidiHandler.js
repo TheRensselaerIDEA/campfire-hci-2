@@ -63,68 +63,77 @@ module.exports = function MidiHandler() {
     var btnReleaseHandler = [];
     var knobHandler = [];
 
-    // Initialize Midi Input Device
-    this.input = new midi.input();
-    
-    // Check that MIDI device is available
-    if (this.input.getPortCount() == 0) {
-        console.log("No MIDI Devie available, device bindings will be unavailable")
-    } else {
-        console.log(`Midi Device available: ${this.input.getPortName(0)}`);
-        try {
-            this.input.openPort(0); // Open device for use
-            this.input.ignoreTypes(false, false, false); // TODO figure out what this does
-        } catch (err) {
-            console.log(`Could not open MIDI Device, is another Process using it? Err: ${err}`);
-        }
-        
-    
-        // Register Midi Event handler, msg is an array of [inType, inCode, inLevel] from midi device
-        this.input.on('message', function(deltaTime, msg) {
-            console.log(`MIDI Event: ${msg[0]} ${msg[1]} ${msg[2]}`);
-            // Check if input type is knob & a handler is registered to that input
-            if (msg[0] == INPUT_TYPE.KNOB && typeof knobHandler[msg[1]] === 'function') {
-                knobHandler[msg[1]](msg[2]);
-            } else if (msg[0] == INPUT_TYPE.BTN_PRESS && typeof btnPressHandler[msg[1]] === 'function') {
-                btnPressHandler[msg[1]](msg[2]);
-            } else if (msg[0] == INPUT_TYPE.BTN_REL && typeof btnReleaseHandler[msg[1]] === 'function') {
-                btnReleaseHandler[msg[1]](msg[2]);
+    /**
+     * Initialize the MIDI controller and bind events to handler array
+     */
+    this.start = function () {
+        // Initialize Midi Input Device
+        this.input = new midi.input();
+        // Check that MIDI device is available
+        if (this.input.getPortCount() == 0) {
+            console.log("No MIDI Devie available, device bindings will be unavailable")
+        } else {
+            console.log(`Midi Device available: ${this.input.getPortName(0)}`);
+            try {
+                this.input.openPort(0); // Open device for use
+                this.input.ignoreTypes(false, false, false); // TODO figure out what this does
+            } catch (err) {
+                console.log(`Could not open MIDI Device, is another Process using it? Err: ${err}`);
             }
-        });
+            // Register Midi Event handler, msg is an array of [inType, inCode, inLevel] from midi device
+            this.input.on('message', function(deltaTime, msg) {
+                console.log(`MIDI Event: ${msg[0]} ${msg[1]} ${msg[2]}`);
+                // Check if input type is knob & a handler is registered to that input
+                if (msg[0] == INPUT_TYPE.KNOB && typeof knobHandler[msg[1]] === 'function') {
+                    knobHandler[msg[1]](msg[2]);
+                } else if (msg[0] == INPUT_TYPE.BTN_PRESS && typeof btnPressHandler[msg[1]] === 'function') {
+                    btnPressHandler[msg[1]](msg[2]);
+                } else if (msg[0] == INPUT_TYPE.BTN_REL && typeof btnReleaseHandler[msg[1]] === 'function') {
+                    btnReleaseHandler[msg[1]](msg[2]);
+                }
+            });
+        }
     }
+
+    this.stop = function () {
+        this.input.closePort();
+    };
     
     /**
      * Bind a handler function to a knob turn event
      * @param {Number} knob_code - KNOB_CODE of desired input
      * @param {Function} handler - handler for knob event, must take 1 number parameter for the knob level (0-127)
      */
-    this.bindKnobHandler = function(knob_code, handler) {
+    this.bindKnobHandler = function (knob_code, handler) {
         knobHandler[knob_code] = handler;
         console.log(`Registered Knob handler for id # ${knob_code}`);
-    }
+    };
 
     /**
      * Bind a handler to the button release event, occurs once on button release
      * @param {Number} button_code - BTN_CODE of desired input
      * @param {Function} handler - event handler, takes 1 argument for button press value (not related to up/down event)
      */
-    this.bindButtonReleaseHandler = function(button_code, handler) {
+    this.bindButtonReleaseHandler = function (button_code, handler) {
         btnReleaseHandler[button_code] = handler;
         console.log(`Registered ButtonRelease handler for id # ${button_code}`);
-    }
+    };
 
     /**
      * Bind a handler to the button press event, occurs semi-continuously while button is pressed
      * @param {Number} button_code - BTN_CODE of desired input
      * @param {Function} handler - event handler, takes 1 argument for button press value (not related to up/down event)
      */
-    this.bindButtonPressHandler = function(button_code, handler) {
+    this.bindButtonPressHandler = function (button_code, handler) {
         btnPressHandler[button_code] = handler;
         console.log(`Registered ButtonPress handler for id # ${button_code}`);
-    }
+    };
 
     // Bind test handler to level knob
     this.bindKnobHandler(KNOB_CODE.LEVEL_RATE, (pos) => {
         console.log(`Knob at position ${pos}`);
     });
+
+    // Start the MIDI Input device
+    this.start();
 }

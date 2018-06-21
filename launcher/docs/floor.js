@@ -70,7 +70,7 @@ function generateListElement(index) {
   // Create list container element & add event listeners
   let listContainer = document.createElement('a');
   listContainer.id = "app_" + index;
-  listContainer.addEventListener("click", () => { ChildUtils.openApp(index); });
+  listContainer.addEventListener("click", () => { openApp(index); });
   listContainer.addEventListener("mouseover", () => { select(index); });
 
   // Create title element
@@ -103,6 +103,13 @@ function loadAppTable() {
   select(0);
 }
 
+/**
+ * Call ChildUtils in the main thread and open the desired application
+ */
+function openApp(appIndex) {
+  electron.ipcRenderer.send('open-app', appIndex);
+}
+
 // Code below is run when script is loaded
 
 loadAppTable();
@@ -117,9 +124,11 @@ electron.ipcRenderer.on('keyevent', function(event, arg) {
     select(appSelected - 1);
     document.getElementById('listDiv').scrollTop -= 30;
   } else if (arg == 'select') {
-    ChildUtils.openApp(appSelected);
+    openApp(appSelected);
   }
 });
+
+
 
 // This will break if appList exceeds 127 entries
 electron.ipcRenderer.on('selectEvent', function(event, arg) {
