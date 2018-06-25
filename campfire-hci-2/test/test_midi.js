@@ -14,6 +14,6 @@ mh.bindButtonReleaseHandler(mh.BTN_CODE.BTN_01, (val) => {
 });
 
 // Stopping controller 
-mh.stop();
+//mh.stop();
 // Starting again
-mh.start();
+//mh.start();
