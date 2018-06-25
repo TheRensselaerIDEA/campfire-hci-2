@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "main": "HCI.js",
   "scripts": {
-    "midi_test": "node test/test_midi.js"
+    "test": "node test/test_midi.js"
   },
   "devDependencies": {
     "electron-rebuild": "^1.7.3"
