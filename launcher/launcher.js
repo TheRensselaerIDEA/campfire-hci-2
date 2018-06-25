@@ -25,6 +25,8 @@ var hci = new HCI({
   "mousewrangler": true
 });
 
+global.childps = {"app": null};
+
 /**
  * Opens a child app and frees resources that will be required by the app
  * @param {number} appIndex - ChildUtils.appList index of app to open
@@ -44,17 +46,17 @@ function closeChild() {
 
  // Bind input events to ipc events so that the floorWindow can handle them
 hci.inputManager.bindForward(() => {
-  if (ChildUtils.childPS == null) {
+  if (global.childps.app == null) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'up');
   }
 });
 hci.inputManager.bindBackward(() => {
-  if (ChildUtils.childPS == null) {
+  if (global.childps.app == null) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'down');
   }
 });
 hci.inputManager.bindSelect(() => {
-  if (ChildUtils.childPS == null) {
+  if (global.childps.app == null) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'select');
   }
 });

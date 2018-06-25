@@ -8,7 +8,6 @@ const os = require('os');
 module.exports = {
 
   appList: require('./appList.json'),
-  childPS: null,
 
   /*
     Opens the application at the specified index in appList
@@ -20,8 +19,12 @@ module.exports = {
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
-    if (this.childPS != null) {
-      this.killChildPs();
+    if (global.childps.app != null) {
+      try {
+        this.killChildPs();
+      } catch(err) {
+        console.log(`Cant kill child, ${err}`);
+      }
     }
 
     // Start a basic ViewController only campfire-hci-2 app
@@ -54,9 +57,9 @@ module.exports = {
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
       console.log(`child exited with status ${code}`);
-      this.childPS = null;
+      global.childps.app = null;
     });
-    this.childPS = appProcess;
+    global.childps.app = appProcess;
   },
 
   /*
@@ -64,18 +67,18 @@ module.exports = {
     @warn will fail if called outside of the main thread
   */
   killChildPs: function () {
-    console.log(`Attempting to kill ps ${this.childPS}`);
-    if (this.childPS != null) {
-      console.log(`Killing process ${this.childPS.pid}`);
+    console.log(`Attempting to kill ps ${global.childps.app}`);
+    if (global.childps.app != null) {
+      console.log(`Killing process ${global.childps.app.pid}`);
       // Use the kill command appropriate for the platform
       if (os.platform() == 'win32') {
         console.log("Killing windows process...")
-        child_process.exec(`TaskKill /PID ${this.childPS.pid} /F /T`); // Kill the process
+        child_process.exec(`TaskKill /PID ${global.childps.app.pid} /F /T`); // Kill the process
       } else {
-        child_process.exec(`pkill -P ${this.childPS.pid}`); // Kill the process
+        child_process.exec(`pkill -P ${global.childps.app.pid}`); // Kill the process
       }
       // This also happens automatically in the event handler for child exit
-      this.childPS = null;
+      global.childps.app = null;
     }
   }
 }
