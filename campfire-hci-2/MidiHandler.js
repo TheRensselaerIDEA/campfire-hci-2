@@ -1,5 +1,4 @@
 const midi = require('midi');
-const electron = require('electron');
 // TODO handle input type 144
 
 /**

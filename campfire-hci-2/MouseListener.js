@@ -68,9 +68,7 @@ module.exports = function MouseListener(floorBounds, wallBounds, wallWrapEnabled
   // These values must be defined in the local scope for event listener
   var fb = floorBounds; // TODO: move up into parameter, only use of floorscreen
   var wb = wallBounds; // TODO same as above
-  var mPos = robot.getMousePos();
   var borderOffset = 30;
-  var onFloor = false;
   //These functions are created in local scope to be used by the event listener.
 
   var wallListener = function(x, y, fCx, fCy, fRadius, wallOffset, borderOffset) {
