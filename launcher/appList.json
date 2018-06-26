@@ -86,7 +86,10 @@
     "description": "",
     "group": "summer2018",
     "type": "simple_app",
-    "args": {}
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
+      "wallURL": "http://tweetdeck.twitter.com"
+    }
   },
   {
     "name": "Wrangler Grid Demo",
