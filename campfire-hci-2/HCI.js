@@ -1,7 +1,9 @@
 const InputManager = require('./InputManager.js');
+const MidiManager = require('./MidiManager.js')
 const ViewController = require('./ViewController.js');
 const MouseListener = require('./MouseListener.js');
 const electron = require('electron');
+
 
 /**
  * Provides a top level state/context for the HCI features.
@@ -21,6 +23,9 @@ module.exports = function HCI (args) {
 
     // Create the input manager
     this.inputManager = new InputManager();
+
+    // Create the MIDI manager
+    this.midiManager = new MidiManager();
 
     // Create the mouse listener if enabled
     // Must wait for electron to initialize

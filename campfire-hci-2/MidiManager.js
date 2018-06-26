@@ -1,11 +1,12 @@
-const midi = require('midi');
-// TODO handle input type 144
+var midi = require('midi');
+
+// TODO: handle input type 144
 
 /**
  * Handles Abstraction and event binding for raw midi input events and makes them available in a more useful way
  * 
  */
-module.exports = function MidiHandler() {
+module.exports = function MidiManager() {
     // The type of input event (Knob, Button up, Button down)
     var INPUT_TYPE = {
         KNOB: 176,
@@ -95,7 +96,9 @@ module.exports = function MidiHandler() {
     }
 
     this.stop = function () {
-        this.input.closePort();
+        if (this.input != undefined) {
+            this.input.closePort();
+        }
     };
     
     /**

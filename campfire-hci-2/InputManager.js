@@ -1,5 +1,4 @@
 const electron = require('electron');
-const MidiHandler = require('./MidiHandler.js')
 
 /**
  * Defines the InputManager class
@@ -11,8 +10,6 @@ module.exports = function InputManager() {
     const BACKWARD_ACCELERATOR = "F6";
     const FORWARD_ACCELERATOR = "F7";
     const SELECT_ACCELERATOR = "F8";
-
-    this.midiH = new MidiHandler();
     
     /**
      * Binds a function to the specified accelerator, allows way binding is handled to be changed centrally

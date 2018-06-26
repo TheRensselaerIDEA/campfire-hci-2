@@ -24,4 +24,4 @@ const params = ChildUtils.appList[argIndex]["args"];
 var view = new HCI(params);
 
 // Set the midi controller to shutdown before closing windows
-electron.app.on('before-quit', view.inputManager.midiH.stop);
+electron.app.on('before-quit', view.midiManager.stop);

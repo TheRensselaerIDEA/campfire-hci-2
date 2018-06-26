@@ -55,10 +55,10 @@ module.exports = {
     });
 
     // Add exit handler to remove reference to currently opened child on child close
-    // appProcess.on('exit', function (code, signal) {
-    //   console.log(`child exited with status ${code}`);
-    //   global.childps.app = null;
-    // });
+    appProcess.on('exit', function (code, signal) {
+      console.log(`child exited with status ${code}`);
+      global.childps.app = null;
+    });
     global.childps.app = appProcess;
   },
 

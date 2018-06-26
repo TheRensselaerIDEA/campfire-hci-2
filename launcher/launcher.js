@@ -32,7 +32,7 @@ global.childps = {"app": null};
  * @param {number} appIndex - ChildUtils.appList index of app to open
  */
 function openChild(appIndex) {
-  hci.inputManager.midiH.stop();
+  hci.midiManager.stop();
   ChildUtils.openApp(appIndex);
 }
 
@@ -41,7 +41,7 @@ function openChild(appIndex) {
  */
 function closeChild() {
   ChildUtils.killChildPs();
-  hci.inputManager.midiH.start();
+  hci.midiManager.start();
 }
 
  // Bind input events to ipc events so that the floorWindow can handle them
@@ -60,14 +60,14 @@ hci.inputManager.bindSelect(() => {
     hci.viewController.floorWindow.webContents.send('keyevent', 'select');
   }
 });
-hci.inputManager.midiH.bindKnobHandler(
-  hci.inputManager.midiH.KNOB_CODE.LEVEL_RATE,
+hci.midiManager.bindKnobHandler(
+  hci.midiManager.KNOB_CODE.LEVEL_RATE,
   (pos) => {
     hci.viewController.floorWindow.webContents.send('selectEvent', pos);
   }
 );
-hci.inputManager.midiH.bindKnobHandler(
-  hci.inputManager.midiH.KNOB_CODE.KNOB_01,
+hci.midiManager.bindKnobHandler(
+  hci.midiManager.KNOB_CODE.KNOB_01,
   (pos) => {
     hci.viewController.floorWindow.webContents.send('rotate-event', pos);
   }
