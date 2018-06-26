@@ -93,9 +93,9 @@ module.exports = function ViewController(args) {
       w.on('closed', closeVC); // Dereference windows and quit when closed event occurs
       return w;
     }
-
-    this.wallWindow = createWindow(this.wallScreen, WALL_X, WALL_Y, wallURL);
+    
     this.floorWindow = createWindow(this.floorScreen, FLOOR_X, FLOOR_Y, floorURL);
+    this.wallWindow = createWindow(this.wallScreen, WALL_X, WALL_Y, wallURL);
   };
 
   // Wait for electron to be available for electron specific config

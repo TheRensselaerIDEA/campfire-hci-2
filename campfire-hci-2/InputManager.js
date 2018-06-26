@@ -24,10 +24,12 @@ module.exports = function InputManager() {
 
     this.bindForward = function (handler) {
         this.bind(FORWARD_ACCELERATOR, handler);
+        this.bind("DOWN", handler);
     };
 
     this.bindBackward = function (handler) {
         this.bind(BACKWARD_ACCELERATOR, handler);
+        this.bind("UP", handler);
     };
     
     this.bindSelect = function (handler) {
