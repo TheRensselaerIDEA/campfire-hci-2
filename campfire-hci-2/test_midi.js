@@ -1,5 +1,6 @@
 'use strict';
 const MidiHandler = require('./MidiHandler.js');
+const electron = require('electron');
 
 console.log('Midi Test...');
 
