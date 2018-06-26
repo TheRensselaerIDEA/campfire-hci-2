@@ -77,7 +77,7 @@
     "type": "simple_app",
     "args": {
       "centermode": false,
-      "floorURL": "https://lp01.idea.rpi.edu/rstudio-ose/?view=shiny",
+      "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
       "wallURL": "https://docs.google.com/presentation/d/14PRCr90QDENrT5B_5MN5cmd95n82MiWsn03m3bSE4s8/present?slide=id.p"
     }
   },
