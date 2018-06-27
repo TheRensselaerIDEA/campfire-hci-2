@@ -11,20 +11,18 @@ const electron = require('electron');
  */
 module.exports = function HCI (args) {
 
-    /*
-    Simplify argument reading and allow default values for ommitted args
-    */
+    /**
+     * Read a value from the args object, or fallback to a default value if there is none
+     * @param {string} key the key for the value to get in the args object
+     * @param {*} default_val Value to use if key is not in the args object
+     */
     this.getArg = function(key, default_val) {
         return (args[key] != undefined) ? args[key] : default_val;
     };
 
-    // Create the view controller
+    // Initialize the HCI Modules
     this.viewController = new ViewController(args);
-
-    // Create the input manager
     this.inputManager = new InputManager();
-
-    // Create the MIDI manager
     this.midiManager = new MidiManager();
 
     // Create the mouse listener if enabled

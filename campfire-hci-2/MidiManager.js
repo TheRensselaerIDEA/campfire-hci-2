@@ -93,8 +93,11 @@ module.exports = function MidiManager() {
                 }
             });
         }
-    }
+    };
 
+    /**
+     * Closes the midi device, neccessary to make the port available to other programs that want to use it
+     */
     this.stop = function () {
         if (this.input != undefined) {
             this.input.closePort();
@@ -131,6 +134,7 @@ module.exports = function MidiManager() {
         console.log(`Registered ButtonPress handler for id # ${button_code}`);
     };
 
+    // TODO remove
     // Bind test handler to level knob
     this.bindKnobHandler(KNOB_CODE.LEVEL_RATE, (pos) => {
         console.log(`Knob at position ${pos}`);

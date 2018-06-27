@@ -127,8 +127,6 @@ module.exports = function MouseListener(floorBounds, wallBounds, wallWrapEnabled
   //Center of screen is (origin + length) / 2
   var fCx = fb.x + (fb.width)/2;
   var fCy = fb.y + (fb.height)/2;
-  var wCx = wb.x + (wb.width)/2;
-  var wCy = (wb.y + wb.height)/2;
       //Radius of floor circle, used to determine threshold for transitioning to wall.
   var fRadius = (fb.height/2)-1;
       //These two offsets determine an origin angle for both screens.
@@ -136,8 +134,6 @@ module.exports = function MouseListener(floorBounds, wallBounds, wallWrapEnabled
   var floorOffset = 0.75;
   var wallOffset = 0.25;
   var isOnFloor = false;
-  var lastX = null;
-  var lastY = null;
   // Event Listener: Receives x and y positions of the mouse
   if (winMousePresent) {
     winMouse.on('move', function(mouseX, mouseY) {

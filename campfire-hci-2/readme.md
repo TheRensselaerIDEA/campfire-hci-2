@@ -29,10 +29,9 @@ const HCI = require('campfire-hci-2');
 - Control access/creation of library components, provides a global context for accessing them
 
 ## InputManager.js
-- Streamlines user input handling, organizes input binding code into 1 consistent interface
+- Provides simple interface for binding keypresses to handlers
 
 ## MidiHandler.js
-- A subcomponent of InputManager.js
 - Provides high level access to Midi Controller input
 - Responsible for binding handlers to MIDI Controller events
 
