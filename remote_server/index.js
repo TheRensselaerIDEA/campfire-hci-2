@@ -4,8 +4,8 @@ const httpServer = http.Server();
 const electron = require('electron');
 
 const PORT = 5000;
-
 var viewController = null;
+
 
 function openURL(url) {
     if (viewController != null) {
@@ -13,7 +13,6 @@ function openURL(url) {
     } else {
         console.log("opening view controller...");
         viewController = new RemoteViewController({'url': url});
-        return true;
     }
 }
 
@@ -21,6 +20,7 @@ function closeVC() {
     if (viewController != null) {
         console.log("Closing ViewController...");
         viewController.close();
+        viewController = null;
     }
 }
 
@@ -29,14 +29,14 @@ function handleRequest(req, res) {
     let respData = {'success': true};
     res.writeHead(200, { 'Content-Type': 'application/json' });
 
-    // Handle commands
+    // Handle post commands
     if (req.headers.cmd == "open") {
         console.log("CMD Received: open");
         if (req.headers.url == undefined) {
             respData.success = false;
             respData.error = 'URL is undefined'
         } else {
-            respData.success = openURL(req.headers.url);
+            openURL(req.headers.url);
         }
     } else if (req.headers.cmd == "close") {
         console.log("CMD Received: close")

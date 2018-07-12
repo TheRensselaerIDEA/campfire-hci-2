@@ -18,7 +18,6 @@ module.exports = function RemoteViewController(args) {
         return (args[key] != undefined) ? args[key] : default_val;
     };
 
-
     this.init = function() {
         this.screen = electron.screen.getPrimaryDisplay();
         this.window = new electron.BrowserWindow({
