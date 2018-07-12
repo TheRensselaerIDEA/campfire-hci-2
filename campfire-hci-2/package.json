@@ -13,7 +13,6 @@
     "keypress": "^0.2.1",
     "midi": "0.9.5",
     "mouse": "0.0.1",
-    "request": "^2.87.0",
     "robotjs": "^0.4.7"
   },
   "optionalDependencies": {

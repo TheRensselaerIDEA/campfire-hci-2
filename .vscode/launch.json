@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Electron Main",
+            "name": "Launcher Debug",
             "runtimeExecutable": "${workspaceFolder}/launcher/node_modules/.bin/electron",
             "program": "${workspaceFolder}/launcher/launcher.js",
             "protocol": "inspector"

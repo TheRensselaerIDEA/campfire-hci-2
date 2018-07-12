@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "campfire-hci-2": "../campfire-hci-2",
-    "electron": "^1.8.6"
+    "electron": "^1.8.6",
+    "request": "^2.87.0"
   },
   "author": "Antonio Fiol-Mahon",
   "license": "ISC"
