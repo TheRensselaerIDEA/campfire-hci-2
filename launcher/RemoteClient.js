@@ -9,7 +9,8 @@ module.exports = {
      * Send server request to open the specified URL
      * @param {string} target_url - URL to open in remote view controller
      */
-    setURL: function (target_url) {
+    openURL: function (target_url) {
+        console.log(`RemoteClient: Opening Remote Page ${target_url}`);
         let options = {
             method: 'GET',
             headers: {
@@ -24,7 +25,8 @@ module.exports = {
     /**
      * Close remote view controller display
      */
-    closeVC: function() {
+    closeURL: function() {
+        console.log("RemoteClient: Closing Remote Page");
         let options = {
             method: 'GET',
             headers: {

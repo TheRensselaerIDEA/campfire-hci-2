@@ -40,26 +40,27 @@ function openChild(appIndex) {
  * Closes the child app and reacquire resources that were made available to child process
  */
 function closeChild() {
-  ChildUtils.killChildPs();
+  ChildUtils.closeApp();
   hci.midiManager.start();
 }
 
  // Bind input events to ipc events so that the floorWindow can handle them
 hci.inputManager.bindForward(() => {
-  if (global.childps.app == null) {
+  if (!ChildUtils.isChildOpen()) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'up');
   }
 });
 hci.inputManager.bindBackward(() => {
-  if (global.childps.app == null) {
+  if (!ChildUtils.isChildOpen()) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'down');
   }
 });
 hci.inputManager.bindSelect(() => {
-  if (global.childps.app == null) {
+  if (!ChildUtils.isChildOpen()) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'select');
   }
 });
+
 hci.midiManager.bindKnobHandler(
   hci.midiManager.KNOB_CODE.LEVEL_RATE,
   (pos) => {

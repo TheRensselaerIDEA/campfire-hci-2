@@ -97,6 +97,7 @@
     "description": "Simple static demo that displays an alignment target on the wall and floor",
     "group": "hacks",
     "type": "external_app",
+    "remoteURL": "https://google.com/",
     "args": {
       "start_cmd": "electron ../demos/demo_target.js"
     }
