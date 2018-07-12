@@ -4,8 +4,7 @@
   "description": "Simple Demo of campfire-hci capabilities",
   "main": "demo_target.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "dependencies": {
     "campfire-hci-2": "../campfire-hci-2",

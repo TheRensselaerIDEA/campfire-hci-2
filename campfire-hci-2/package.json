@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "main": "HCI.js",
   "scripts": {
-    "test": "electron test_midi.js"
+    "test": "electron test_remote.js"
   },
   "devDependencies": {
     "electron-rebuild": "^1.7.3"
@@ -11,9 +11,10 @@
   "dependencies": {
     "electron": "^1.8.6",
     "keypress": "^0.2.1",
+    "midi": "0.9.5",
     "mouse": "0.0.1",
-    "robotjs": "^0.4.7",
-    "midi": "0.9.5"
+    "request": "^2.87.0",
+    "robotjs": "^0.4.7"
   },
   "optionalDependencies": {
     "win-mouse": "^1.1.2"

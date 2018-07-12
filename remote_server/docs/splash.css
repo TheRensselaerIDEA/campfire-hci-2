@@ -1,0 +1,11 @@
+body {
+    background: rgb(33, 37, 43) !important;
+} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+  
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+}

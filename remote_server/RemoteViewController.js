@@ -41,7 +41,7 @@ module.exports = function RemoteViewController(args) {
         }
     };
 
-    this.close = function() {
+    this.closeVC = function() {
         this.window.close();
     };
 
