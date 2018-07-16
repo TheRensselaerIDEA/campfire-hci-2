@@ -5,6 +5,7 @@ const url = require('url');
 var SERVER_URL = 'http://127.0.0.1:5000/';
 
 module.exports = {
+
     /**
      * Send server request to open the specified URL
      * @param {string} target_url - URL to open in remote view controller
@@ -19,7 +20,9 @@ module.exports = {
                 'url': target_url
             }
         };
-        request(SERVER_URL, options, null);
+        request(SERVER_URL, options, null).on('error', function(err) {
+            console.log(`remote_server request failed: "${err}"`);
+        });
     },
 
     /**
@@ -34,6 +37,8 @@ module.exports = {
                 'cmd': 'close',
             }
         };
-        request(SERVER_URL, options, null);
+        request(SERVER_URL, options, null).on('error', function(err) {
+            console.log(`remote_server request failed: "${err}"`);
+        });
     }
 }
