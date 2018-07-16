@@ -103,7 +103,7 @@
     "type": "external_app",
     "remoteURL": "http://empac.rpi.edu/content/campfire",
     "args": {
-      "start_cmd": "electron ../demos/demo_target.js"
+      "start_cmd": "electron ../demo/demo_target.js"
     }
   },
   {
