@@ -10,25 +10,32 @@ var appSelected = 0;
 var group_style = {
   default: {
     class_selected: "",
-    color: "#ffffff"
+    color: "#ffffff",
+    title: ""
   },
   classic: {
     class_selected: "list-group-item-success",
-    color: "#28a745;"
+    color: "#28a745;",
+    title: "Classic"
   },
   science: {
     class_selected: "active",
-    color: "#007aff;"
+    color: "#007aff;",
+    title: "Science"
   },
   summer2018: {
     class_selected: "list-group-item-warning",
-    color: "#ffc108;"
+    color: "#ffc108;",
+    title: "Summer 2018"
   },
   hacks: {
     class_selected: "list-group-item-danger",
-    color: "#dc3645;"
+    color: "#dc3645;",
+    title: "Hack"
   }
 }
+
+const CLASS_CONTAINER = "list-group-item list-group-item-action flex-column align-items-start";
 
 /**
  * Syles the list element corresponding to the appDescriptor in ChildUtils.appList at index
@@ -40,9 +47,9 @@ function styleElement(index) {
   // Get the element for the app at index
   let el = document.getElementById(`app_${index}`);
   if (index == appSelected) {
-    el.setAttribute('class', `list-group-item ${group_style[category].class_selected}`);
+    el.setAttribute('class', CLASS_CONTAINER + ` ${group_style[category].class_selected}`);
   } else {
-    el.setAttribute('class', "list-group-item");
+    el.setAttribute('class', CLASS_CONTAINER);
     el.setAttribute('style', `border-left: 10px solid ${group_style[category].color}`);
   }
 }
@@ -72,19 +79,31 @@ function generateListElement(index) {
   listContainer.id = "app_" + index;
   listContainer.addEventListener("click", () => { openApp(index); });
   listContainer.addEventListener("mouseover", () => { select(index); });
+  listContainer.setAttribute('class', CLASS_CONTAINER);
 
-  // Create title element
-  let title = document.createElement('h4');
+  // Create title display div
+  let divTitle = document.createElement('div');
+  divTitle.setAttribute('class', 'd-flex w-100 justify-content-between');
+
+  // Create Title element
+  let title = document.createElement('h5');
+  title.setAttribute('class', 'mb-1');
   title.innerHTML = ChildUtils.appList[index]['name'];
-  title.setAttribute('class', 'list-group-item-heading');
+
+  // Create Category label element
+  let categoryLabel = document.createElement('small');
+  let category = (ChildUtils.appList[index].group != undefined) ? ChildUtils.appList[index].group : 'default';
+  categoryLabel.innerHTML = group_style[category].title;
 
   // Create description element
   let desc = document.createElement('p');
   desc.innerHTML = ChildUtils.appList[index]['description'];
-  desc.setAttribute('class', 'list-group-item-text');
+  desc.setAttribute('class', 'mb-1');
 
-  // Add children and return element
-  listContainer.appendChild(title);
+  // Build heirarchy and return element
+  divTitle.appendChild(title);
+  divTitle.appendChild(categoryLabel);
+  listContainer.appendChild(divTitle);
   listContainer.appendChild(desc);
   return listContainer;
 }
