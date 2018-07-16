@@ -10,7 +10,7 @@ const RemoteClient = require('./RemoteClient.js');
 module.exports = {
 
   appList: require('./appList.json'),
-  
+
   /**
    * Checks if a child process is currently open
    * @returns true if a child process is open, false otherwise
@@ -25,7 +25,10 @@ module.exports = {
     @param {number} index - the index of the application to open
   */
   openApp: function (index) {
-    console.log(`Opening App '${this.appList[index].name}'`);
+
+    let appDescriptor = this.appList[index];
+    console.log(`Opening App '${appDescriptor.name}'`);
+
     let appProcess = null;
     // If an app is open, close it
     // Ensure an app isnt already open
@@ -37,13 +40,9 @@ module.exports = {
       }
     }
 
-    let appDescriptor = this.appList[index];
     // Ask remoteServer to open the remoteURL if one is specified
     if (typeof appDescriptor['remoteURL'] == 'string') {
-      console.log("RemoteURL Found! Opening..");
       RemoteClient.openURL(appDescriptor['remoteURL']);
-    } else {
-      console.log("No remoteURL found... skipping!");
     }
 
     // Start a basic ViewController only campfire-hci-2 app
@@ -53,14 +52,13 @@ module.exports = {
 
       // Run an external command to start an application
     } else if (appDescriptor["type"] == "external_app") {
-      let childWorkingDir = appDescriptor["args"]["start_dir"];
       appProcess = child_process.spawn(
         appDescriptor["args"]["start_cmd"],
         [],
-        { 
+        {
           // Set child working directory from app descriptor if specified
-          cwd: (childWorkingDir != null) ? childWorkingDir : null,
-          shell: true 
+          cwd: appDescriptor["args"]["start_dir"],
+          shell: true
         }
       );
     } else {
@@ -68,12 +66,9 @@ module.exports = {
       return
     }
 
-    appProcess.stdout.on('data', (data) => {
-      console.log(`child stdout: ${data}`);
-    });
-    appProcess.stderr.on('data', (data) => {
-      console.log(`child stderr: ${data}`);
-    });
+    // Redirect child stdout/stderr to the js console
+    appProcess.stdout.on('data', (data) => { console.log(`child stdout: ${data}`); });
+    appProcess.stderr.on('data', (data) => { console.log(`child stderr: ${data}`); });
 
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
@@ -81,6 +76,8 @@ module.exports = {
       RemoteClient.closeURL();
       global.childps.app = null;
     });
+    
+    // Assign childPS to variable
     global.childps.app = appProcess;
   },
 
@@ -99,7 +96,7 @@ module.exports = {
       } else {
         child_process.exec(`pkill -P ${global.childps.app.pid}`); // Kill the process
       }
-      // This also happens automatically in the event handler for child exit
+      // This dereference also occurs in the event handler for child exit
       global.childps.app = null;
     }
   }

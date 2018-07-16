@@ -4,6 +4,7 @@
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
     "group": "classic",
     "type": "external_app",
+    "remoteURL": "https://electronjs.org/",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
       "start_cmd": "nw ."
@@ -14,6 +15,7 @@
     "description": "Campfire Demo using google streetview",
     "group": "classic",
     "type": "external_app",
+    "remoteURL": "https://www.google.com/streetview/",
     "args": {
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
     }
@@ -23,6 +25,7 @@
     "description": "Exploring the capabilities of WebGL on the Campfire platform",
     "group": "classic",
     "type": "external_app",
+    "remoteURL": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
     "args": {
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
     }
@@ -86,6 +89,7 @@
     "description": "",
     "group": "summer2018",
     "type": "simple_app",
+    "remoteURL": "https://about.twitter.com/",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
       "wallURL": "http://tweetdeck.twitter.com",
@@ -97,7 +101,7 @@
     "description": "Simple static demo that displays an alignment target on the wall and floor",
     "group": "hacks",
     "type": "external_app",
-    "remoteURL": "https://google.com/",
+    "remoteURL": "http://empac.rpi.edu/content/campfire",
     "args": {
       "start_cmd": "electron ../demos/demo_target.js"
     }
@@ -107,6 +111,7 @@
     "description": "Demonstration of an animated visualization using google slides",
     "group": "hacks",
     "type": "simple_app",
+    "remoteURL": "https://www.google.com/slides/about/",
     "args": {
       "centermode": false,
       "floorURL": "http://bit.ly/CampfireFloorSlideFull",
@@ -140,6 +145,7 @@
     "description": "Streamgraph of John Erickson's Twitter Stream (18K tweets, 2008-2018)",
     "group": "hacks",
     "type": "simple_app",
+    "remoteURL": "https://about.twitter.com/",
     "args": {
       "floorURL": "https://twitter.com/olyerickson",
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph.html"
