@@ -61,18 +61,22 @@ hci.inputManager.bindSelect(() => {
   }
 });
 
-hci.midiManager.bindKnobHandler(
-  hci.midiManager.KNOB_CODE.LEVEL_RATE,
-  (pos) => {
-    hci.viewController.floorWindow.webContents.send('selectEvent', pos);
+var rotatePosition = 0;
+const UNIT_ROTATION = 10;
+
+hci.inputManager.bindForwardPress(() => {
+  if (!ChildUtils.isChildOpen()) {
+    rotatePosition += UNIT_ROTATION;
+    hci.viewController.floorWindow.webContents.send('rotate-event', rotatePosition);
   }
-);
-hci.midiManager.bindKnobHandler(
-  hci.midiManager.KNOB_CODE.KNOB_01,
-  (pos) => {
-    hci.viewController.floorWindow.webContents.send('rotate-event', pos);
+});
+
+hci.inputManager.bindBackwardPress(() => {
+  if (!ChildUtils.isChildOpen()) {
+    rotatePosition -= UNIT_ROTATION;
+    hci.viewController.floorWindow.webContents.send('rotate-event', rotatePosition);
   }
-);
+});
 
 // Configuration in this block must occur after electron has been initialized, so it is deferred until the ready event occurs
 electron.app.on('ready', () => {

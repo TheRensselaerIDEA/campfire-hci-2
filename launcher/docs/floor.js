@@ -152,7 +152,6 @@ electron.ipcRenderer.on('selectEvent', function(event, arg) {
   select(arg%ChildUtils.appList.length);
 });
 
-electron.ipcRenderer.on('rotate-event', function(event, arg) {
-  let rotation = arg * 10;
+electron.ipcRenderer.on('rotate-event', function(event, rotation) {
   document.getElementById('owner').setAttribute('style', `transform: rotate(${rotation}deg); transform-origin: 50% 50%;transition-duration:100ms;`);
 });

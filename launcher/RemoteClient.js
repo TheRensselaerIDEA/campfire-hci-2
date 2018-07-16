@@ -2,7 +2,7 @@ const request = require('request');
 
 const url = require('url');
 
-var SERVER_URL = 'http://127.0.0.1:5000/';
+var SERVER_URL = 'http://128.113.130.179:5000/';
 
 module.exports = {
 

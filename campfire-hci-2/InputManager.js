@@ -11,6 +11,8 @@ module.exports = function InputManager() {
     const SELECT_ACCELERATOR = "F8";
     const BACKWARD_ACCEL_ALT = "UP";
     const FORWARD_ACCEL_ALT = "DOWN";
+    const BCK_PRESS_ACCEL = "F9"
+    const FWD_PRESS_ACCEL = "F10";
     
     /**
      * Binds a function to the specified accelerator, allows way binding is handled to be changed centrally
@@ -49,5 +51,22 @@ module.exports = function InputManager() {
     this.bindSelect = function (handler) {
         this.bind(SELECT_ACCELERATOR, handler);
     };
+
+    /**
+     * Bind a handler to a "backward and pressed" navigation action
+     * @param {function} handler - handler that is invoked when the backward and pressed action occurs
+     */
+    this.bindBackwardPress = function (handler) {
+        this.bind(BCK_PRESS_ACCEL, handler);
+    };
+
+    /**
+     * Bind a handler to a "forward and pressed" navigation action
+     * @param {function} handler - handler that is invoked when the forward and pressed action occurs
+     */
+    this.bindForwardPress = function (handler) {
+        this.bind(FWD_PRESS_ACCEL, handler);
+    };
+
 }
 
