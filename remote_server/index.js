@@ -49,7 +49,7 @@ function handleRequest(req, res) {
 // Initialize app and register request handler
 electron.app.on('ready', () => {
     httpServer.on('request', handleRequest);
-    viewController = new RemoteViewController({'url': SPLASH_URL});
+    viewController = new RemoteViewController({'url': SPLASH_URL, 'nodeIntegration': false});
 });
 
 httpServer.listen(PORT, () => {
