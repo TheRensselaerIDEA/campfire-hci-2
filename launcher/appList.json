@@ -89,10 +89,10 @@
     "description": "",
     "group": "summer2018",
     "type": "simple_app",
-    "remoteURL": "https://about.twitter.com/",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
-      "wallURL": "http://tweetdeck.twitter.com",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Wall",
       "nodeIntegration": false
     }
   },
