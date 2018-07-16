@@ -4,7 +4,7 @@
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
     "group": "classic",
     "type": "external_app",
-    "remoteURL": "https://electronjs.org/",
+    "remoteURL": "https://idea.tw.rpi.edu/",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
       "start_cmd": "nw ."

@@ -32,7 +32,6 @@ global.childps = {"app": null};
  * @param {number} appIndex - ChildUtils.appList index of app to open
  */
 function openChild(appIndex) {
-  hci.midiManager.stop();
   ChildUtils.openApp(appIndex);
 }
 
@@ -41,7 +40,6 @@ function openChild(appIndex) {
  */
 function closeChild() {
   ChildUtils.closeApp();
-  hci.midiManager.start();
 }
 
  // Bind input events to ipc events so that the floorWindow can handle them

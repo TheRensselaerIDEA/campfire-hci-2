@@ -31,10 +31,6 @@ const HCI = require('campfire-hci-2');
 ## InputManager.js
 - Provides simple interface for binding keypresses to handlers
 
-## MidiHandler.js
-- Provides high level access to Midi Controller input
-- Responsible for binding handlers to MIDI Controller events
-
 ## MouseListener.js
 - Modular version of MouseWrangler by Tommy Fang
 - Allows more seamless mouse use on the campfire via:
