@@ -31,8 +31,8 @@
     }
   },
   {
-    "name": "SWOT Clock (Classic; interactive)",
-    "description": "Susceptibility Windows Ontological Transcriptome Clock",
+    "name": "SWOT Clock",
+    "description": "(Classic; interactive) Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",
     "type": "external_app",
     "args": {
@@ -40,8 +40,8 @@
     }
   },
   {
-    "name": "SWOT Clock (R; Multi-window Shiny)",
-    "description": "Susceptibility Windows Ontological Transcriptome Clock. NOTE: Requires external controller; go to http://bit.ly/swot_clock",
+    "name": "SWOT Clock",
+    "description": "(R; Multi-window Shiny) Susceptibility Windows Ontological Transcriptome Clock. NOTE: Requires external controller; go to http://bit.ly/swot_clock",
     "group": "science",
     "type": "external_app",
     "args": {
@@ -62,8 +62,8 @@
     }
   },
   {
-    "name": "High Dimensional Health Explorer (Multi Window Shiny)",
-    "description": "IDEA Hackathon entry",
+    "name": "High Dimensional Health Explorer",
+    "description": "(Multi Window Shiny) IDEA Hackathon entry",
     "group": "summer2018",
     "type": "simple_app",
     "args": {
@@ -74,8 +74,8 @@
     }
   },
   {
-    "name": "Comparative Analysis Demo (Slides)",
-    "description": "NYS Health Data Explorer. By the Caffinated Quintuplet",
+    "name": "Comparative Analysis Demo",
+    "description": "(Google Slides) NYS Health Data Explorer. By the Caffinated Quintuplet",
     "group": "summer2018",
     "type": "simple_app",
     "args": {
