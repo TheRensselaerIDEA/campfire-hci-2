@@ -41,7 +41,7 @@
   },
   {
     "name": "SWOT Clock",
-    "description": "(R; Multi-window Shiny) Susceptibility Windows Ontological Transcriptome Clock. NOTE: Requires external controller; go to http://bit.ly/swot_clock",
+    "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny),
     "group": "science",
     "type": "external_app",
     "args": {
@@ -51,7 +51,7 @@
   },
   {
     "name": "Circadian Ontology Explorer",
-    "description": "Explore enriched ECHO results for mouse data",
+    "description": "Explore enriched ECHO results for mouse data (R; Multi-window Shiny)",
     "group": "science",
     "type": "simple_app",
     "args": {
@@ -63,7 +63,7 @@
   },
   {
     "name": "High Dimensional Health Explorer",
-    "description": "(Multi Window Shiny) IDEA Hackathon entry",
+    "description": "IDEA Hackathon entry (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
     "args": {
@@ -75,7 +75,7 @@
   },
   {
     "name": "Comparative Analysis Demo",
-    "description": "(Google Slides) NYS Health Data Explorer. By the Caffinated Quintuplet",
+    "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
     "group": "summer2018",
     "type": "simple_app",
     "args": {
@@ -86,7 +86,7 @@
   },
   {
     "name": "Twitter Demo (Alex)",
-    "description": "",
+    "description": "Interactive network visualization of related twitter streams (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
@@ -97,7 +97,7 @@
     }
   },
   {
-    "name": "Wrangler Grid Demo",
+    "name": "Mouse Wrangler Grid Demo",
     "description": "Simple static demo that displays an alignment target on the wall and floor",
     "group": "hacks",
     "type": "external_app",
@@ -108,7 +108,7 @@
   },
   {
     "name": "Google Slides Demo",
-    "description": "Demonstration of an animated visualization using google slides",
+    "description": "Demonstration of an animated visualization using Google Slides",
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "https://www.google.com/slides/about/",
@@ -120,7 +120,7 @@
   },
   {
     "name": "Basic Multi Window Shiny Demo",
-    "description": "R based visualizations being computed on the IDEA cluster",
+    "description": "R based visualizations being computed on the IDEA cluster (R; Multi-window Shiny)",
     "group": "hacks",
     "type": "simple_app",
     "args": {
@@ -132,7 +132,7 @@
   },
   {
     "name": "Smorgasbord",
-    "description": "Select your own Walls and Floors!",
+    "description": "Select your own Walls and Floors! Includes audio...",
     "group": "hacks",
     "type": "external_app",
     "args": {
