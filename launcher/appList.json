@@ -123,6 +123,7 @@
     "description": "R based visualizations being computed on the IDEA cluster (R; Multi-window Shiny)",
     "group": "hacks",
     "type": "simple_app",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Monitor",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Floor",
