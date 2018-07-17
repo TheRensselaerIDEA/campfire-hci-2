@@ -145,7 +145,7 @@
     "description": "Streamgraph of John Erickson's Twitter Stream (18K tweets, 2008-2018)",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://about.twitter.com/",
+    "remoteURL": "https://twitter.com/olyerickson",
     "args": {
       "floorURL": "https://twitter.com/olyerickson",
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph2.html",
