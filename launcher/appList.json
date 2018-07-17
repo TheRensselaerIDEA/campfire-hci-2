@@ -41,7 +41,7 @@
   },
   {
     "name": "SWOT Clock",
-    "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny),
+    "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny)",
     "group": "science",
     "type": "external_app",
     "args": {
@@ -148,7 +148,8 @@
     "remoteURL": "https://about.twitter.com/",
     "args": {
       "floorURL": "https://twitter.com/olyerickson",
-      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph.html"
+      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph.html",
+      "nodeIntegration": false
     }
   }
 ]
