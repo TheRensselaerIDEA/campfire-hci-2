@@ -35,6 +35,7 @@
     "description": "(Classic; interactive) Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",
     "type": "external_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/SemNExT_Poster.png",
     "args": {
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
     }
