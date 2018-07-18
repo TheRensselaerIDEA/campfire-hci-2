@@ -120,15 +120,15 @@
     }
   },
   {
-    "name": "Basic Multi Window Shiny Demo",
-    "description": "R based visualizations being computed on the IDEA cluster (R; Multi-window Shiny)",
+    "name": "Fruit Data Explorer: A Basic Multi-window Shiny Demo",
+    "description": "R-based data visualizations computed on the IDEA cluster (R; Multi-window Shiny)",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Monitor",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mws-example/?Monitor",
     "args": {
       "centermode": false,
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mwsdemo/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mws-example/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mws-example/?Wall",
       "nodeIntegration": false
     }
   },
