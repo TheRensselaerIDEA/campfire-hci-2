@@ -124,11 +124,11 @@
     "description": "R-based data visualizations computed on the IDEA cluster (R; Multi-window Shiny)",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mws-example/?Monitor",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Monitor",
     "args": {
       "centermode": false,
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mws-example/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/mws-example/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Wall",
       "nodeIntegration": false
     }
   },
