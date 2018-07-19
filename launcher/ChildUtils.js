@@ -34,7 +34,7 @@ module.exports = {
     // Ensure an app isnt already open
     if (this.isChildOpen()) {
       try {
-        this.killChildPs();
+        this.closeApp();
       } catch(err) {
         console.log(`Cant kill child, ${err}`);
       }
@@ -48,7 +48,6 @@ module.exports = {
     // Start a basic ViewController only campfire-hci-2 app
     if (appDescriptor["type"] == "simple_app") {
       appProcess = child_process.exec(`electron simpleLauncher.js ${index}`);
-      console.log(`App opened, value is ${appProcess}`);
 
       // Run an external command to start an application
     } else if (appDescriptor["type"] == "external_app") {
@@ -62,8 +61,8 @@ module.exports = {
         }
       );
     } else {
-      console.log(`Invalid Application type: ${appDescriptor["type"]}`);
-      return
+      console.log(`ChildUtils: Invalid Application type: ${appDescriptor["type"]}`);
+      return;
     }
 
     // Redirect child stdout/stderr to the js console
@@ -72,13 +71,14 @@ module.exports = {
 
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
-      console.log(`child exited with status ${code}`);
+      console.log(`ChildUtils: child exited with status ${code}`);
       RemoteClient.closeURL();
       global.childps.app = null;
     });
     
     // Assign childPS to variable
     global.childps.app = appProcess;
+    console.log(`ChildUtils: App ${appDescriptor.name} open with PID ${global.childps.app.pid}`);
   },
 
   /*
@@ -86,17 +86,18 @@ module.exports = {
     @warn will fail if called outside of the main thread
   */
   closeApp: function () {
-    console.log("ChildUtils: closeApp() Invoked...");
+    console.log("ChildUtils: closeApp() Invoked... ");
     if (this.isChildOpen()) {
-      console.log(`Killing process ${global.childps.app.pid}`);
+      console.log(`ChildUtils: Killing process ${global.childps.app.pid}`);
       // Use the kill command appropriate for the platform
       if (os.platform() == 'win32') {
-        console.log("Killing windows process...")
+        console.log("ChildUtils: Killing windows process...");
         child_process.exec(`TaskKill /PID ${global.childps.app.pid} /F /T`); // Kill the process
       } else {
         child_process.exec(`pkill -P ${global.childps.app.pid}`); // Kill the process
       }
       // This dereference also occurs in the event handler for child exit
+      console.log(`ChildUtils: Clearing app with PID ${global.childps.app.pid}`);
       global.childps.app = null;
     }
   }

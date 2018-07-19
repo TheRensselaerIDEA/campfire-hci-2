@@ -28,14 +28,6 @@ var hci = new HCI({
 global.childps = {"app": null};
 
 /**
- * Opens a child app and frees resources that will be required by the app
- * @param {number} appIndex - ChildUtils.appList index of app to open
- */
-function openChild(appIndex) {
-  ChildUtils.openApp(appIndex);
-}
-
-/**
  * Closes the child app and reacquire resources that were made available to child process
  */
 function closeChild() {
@@ -82,7 +74,7 @@ electron.app.on('ready', () => {
   electron.globalShortcut.register('CommandOrControl+K', closeChild);
   // handle the open-app event
   electron.ipcMain.on('open-app', function(event, appIndex) {
-    openChild(appIndex);
+    ChildUtils.openApp(appIndex);
   });
 });
 
