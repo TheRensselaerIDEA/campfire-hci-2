@@ -1,9 +1,23 @@
-# appList.json Usage
-- appList.json is a JSON file that the launcher uses to populate the app list. Each entry specifies how the app is displayed in the menu and provides arguments for how the launcher should start the app.
-- These list entries are referred to as **AppDescriptors**
+# Launcher
+The campfire launcher makes interacting with the campfire and its various demos straightforward.
+
+## Installation
+Unix-Like platform
+```bash
+./path/to/campfire-hci-2/launcher/install.sh
+```
+
+## Running
+```bash
+cd ../path/to/campfire-hci-2/launcher/
+npm start
+```
+
 ___
 
-# App Descriptor Definition
+## App Descriptors (For Adding/Changing Launcher Entries)
+- App Descriptors are defined in appList.json
+- Each entry specifies how an app is display in menu/launched
 - All AppDescriptors share some common parameters outlined below
 ```javascript
 {
@@ -15,7 +29,7 @@ ___
   "args": {}
 }
 ```
-## Parameters
+### Parameters
 - **name** - The display name of the application
 - **description** - A brief description of the application for users
 - **group** - The category for the entry, this determines styling in the app display list, the available options are as follows
@@ -32,10 +46,10 @@ ___
 - **remoteURL** - The URL of a supplimental page to be launched on the campfire perimeter monitor through the remote server, if omitted no URL will be loaded.
 - **args** - Additional parameters that are specific to the **type** of the app.
 
-## Types
+### Types
 - each type requires an **args** object that specifies how the app is launched, the section below details their use
 
-### Simple App
+#### Simple App
 
 - Standalone instance of the **campfire-hci-2.ViewController**
 - Common Use cases
@@ -60,7 +74,7 @@ ___
 ```
 
 
-### External app
+#### External app
 - Any application that can be launched through the command line is supported through this app type
 
 ```javascript
