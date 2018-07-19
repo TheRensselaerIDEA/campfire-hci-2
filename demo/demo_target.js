@@ -3,7 +3,7 @@
  */
 
 const path = require("path");
-const HCI = require("campfire-hci-2");
+const HCI = require("../campfire-hci-2");
 const electron = require('electron');
 
 const fileDir = 'file://' + __dirname;
