@@ -13,16 +13,17 @@ const ChildUtils = require('./ChildUtils.js');
 const docRoot = path.join('file://', __dirname, 'docs');
 const floorURL = path.join(docRoot, 'floor.html');
 const wallURL = path.join(docRoot, 'wall.html');
+const QUIT_ACCELERATOR = 'CommandOrControl+K'
 
 // Create instance of HCI library
 var hci = new HCI({
-  "fullscreen": true,
-  "display": true,
-  "screenWrap": true,
-  "centermode": true,
-  "floorURL": floorURL,
-  "wallURL": wallURL,
-  "mousewrangler": true
+  'fullscreen': true,
+  'display': true,
+  'screenWrap': true,
+  'centermode': true,
+  'floorURL': floorURL,
+  'wallURL': wallURL,
+  'mousewrangler': true
 });
 
 global.childps = {"app": null};
@@ -70,8 +71,15 @@ hci.inputManager.bindBackwardPress(() => {
 
 // Configuration in this block must occur after electron has been initialized, so it is deferred until the ready event occurs
 electron.app.on('ready', () => {
-  // handle quit keyboard shortcut while launcher is open in foreground/background
-  electron.globalShortcut.register('CommandOrControl+K', closeChild);
+  // handle quit shortcut
+  electron.globalShortcut.register(QUIT_ACCELERATOR, () => {
+    if (ChildUtils.isChildOpen) {
+      ChildUtils.closeApp();
+    } else {
+      electron.app.quit();
+    }
+  });
+
   // handle the open-app event
   electron.ipcMain.on('open-app', function(event, appIndex) {
     ChildUtils.openApp(appIndex);

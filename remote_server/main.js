@@ -1,3 +1,12 @@
+/**
+ * main.js
+ * 
+ * Entry Point/Business logic for launcher remote server
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
+
+// Imports
 const RemoteViewController = require('./RemoteViewController.js');
 const http = require('http');
 const httpServer = http.Server();
@@ -6,8 +15,7 @@ const path = require('path')
 
 // Static Variable definitions
 const PORT = 5000;
-const DOC_ROOT = path.join('file://', __dirname, 'docs');
-const SPLASH_URL = path.join(DOC_ROOT, 'splash.html');
+const SPLASH_URL = path.join('file://', __dirname, 'docs', 'splash.html');
 
 var viewController = null;
 

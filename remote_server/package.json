@@ -2,9 +2,9 @@
   "name": "remote_server",
   "version": "1.0.0",
   "description": "Remote display server for campfire-hci-2",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron index.js"
+    "start": "electron main.js"
   },
   "dependencies": {
     "electron": "^1.8.6"
