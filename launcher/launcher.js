@@ -1,5 +1,6 @@
 /*
   Entry point for Campfire Launcher
+
   Author: Antonio Fiol-Mahon
 */
 
@@ -9,11 +10,15 @@ const HCI = require('campfire-hci-2');
 const electron = require('electron');
 const ChildUtils = require('./ChildUtils.js');
 
-// Static Variable definitions
-const docRoot = path.join('file://', __dirname, 'docs');
-const floorURL = path.join(docRoot, 'floor.html');
-const wallURL = path.join(docRoot, 'wall.html');
+// Constant definitions
+const FLOOR_URL = path.join('file://', __dirname, 'docs', 'floor.html');
+const WALL_URL = path.join('file://', __dirname, 'docs', 'wall.html');
 const QUIT_ACCELERATOR = 'CommandOrControl+K'
+const UNIT_ROTATION = 10; // Smallest rotation increment for launcher reorientation
+
+
+var launcherRotation = 0; // Current Launcher UI offset (in degrees)
+global.childps = {'app': null};
 
 // Create instance of HCI library
 var hci = new HCI({
@@ -21,21 +26,12 @@ var hci = new HCI({
   'display': true,
   'screenWrap': true,
   'centermode': true,
-  'floorURL': floorURL,
-  'wallURL': wallURL,
+  'floorURL': FLOOR_URL,
+  'wallURL': WALL_URL,
   'mousewrangler': true
 });
 
-global.childps = {"app": null};
-
-/**
- * Closes the child app and reacquire resources that were made available to child process
- */
-function closeChild() {
-  ChildUtils.closeApp();
-}
-
- // Bind input events to ipc events so that the floorWindow can handle them
+ // Bind keyboard input to IPC events so that the UI Thread can handle them appropriately
 hci.inputManager.bindForward(() => {
   if (!ChildUtils.isChildOpen()) {
     hci.viewController.floorWindow.webContents.send('keyevent', 'up');
@@ -51,21 +47,16 @@ hci.inputManager.bindSelect(() => {
     hci.viewController.floorWindow.webContents.send('keyevent', 'select');
   }
 });
-
-var rotatePosition = 0;
-const UNIT_ROTATION = 10;
-
 hci.inputManager.bindForwardPress(() => {
   if (!ChildUtils.isChildOpen()) {
-    rotatePosition += UNIT_ROTATION;
-    hci.viewController.floorWindow.webContents.send('rotate-event', rotatePosition);
+    launcherRotation += UNIT_ROTATION;
+    hci.viewController.floorWindow.webContents.send('rotate-event', launcherRotation);
   }
 });
-
 hci.inputManager.bindBackwardPress(() => {
   if (!ChildUtils.isChildOpen()) {
-    rotatePosition -= UNIT_ROTATION;
-    hci.viewController.floorWindow.webContents.send('rotate-event', rotatePosition);
+    launcherRotation -= UNIT_ROTATION;
+    hci.viewController.floorWindow.webContents.send('rotate-event', launcherRotation);
   }
 });
 
@@ -73,10 +64,10 @@ hci.inputManager.bindBackwardPress(() => {
 electron.app.on('ready', () => {
   // handle quit shortcut
   electron.globalShortcut.register(QUIT_ACCELERATOR, () => {
-    if (ChildUtils.isChildOpen) {
+    if (ChildUtils.isChildOpen()) {
       ChildUtils.closeApp();
     } else {
-      electron.app.quit();
+      electron.app.exit();
     }
   });
 
@@ -85,6 +76,3 @@ electron.app.on('ready', () => {
     ChildUtils.openApp(appIndex);
   });
 });
-
-// Configure electron to kill any subprocesses on exit
-electron.app.on('quit', closeChild);
