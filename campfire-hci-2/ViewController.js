@@ -1,4 +1,13 @@
-'use strict'; // Ensure variables are declared explicitly
+/**
+ * ViewController.js
+ * 
+ * Provides a view controller that is talored to the campfires unique setup.
+ * Manages the 2 fullscreen windows and makes configuring a view for common use cases easy
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
+
+'use strict';
 
 // Imports
 const electron = require('electron');

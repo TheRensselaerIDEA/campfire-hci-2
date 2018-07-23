@@ -1,15 +1,13 @@
 # campfire-hci-2
+Author: Antonio Fiol-Mahon
 
-	Author: Antonio Fiol-Mahon
-	
-	Extensions to campfire-hci (starting Summer 2018)
-
-	Contains Several Utilities developed to make using the campfire better
+Extensions to campfire-hci (starting Summer 2018) Contains Several Utilities developed to make using the campfire better
 ___
 
 ## Getting Started with campfire-hci-2
+The campfire-hci-2 repository consists of several related software packages for working with the campfire, each project has its own README, this document provides a general outline of each package.
 - Ensure NPM is installed before continuing
-- See Additional Dependencies for other required software
+- See Additional Dependencies for other required software if issues arise
 
 ## Package Descriptions
 
@@ -21,9 +19,13 @@ ___
 ### launcher
 - This application is build on campfire-hci-2 and provides a convenient way to switch between various applications and demos available on the campfire.
 
-### demo_target
+### demo
 - This package is a minimal example of an application built with campfire-hci-2
 - Displays an alignment/calibration target on the campfire
+
+### remote_server
+- Simple server that displays URLS that clients request.
+- Allows the campfire launcher to take advantage of displays on remote machines
 ___
 
 ## Additional dependencies:

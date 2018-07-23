@@ -1,6 +1,9 @@
 /**
- * View controller for remote view server
- * Created by Antonio Fiol-Mahon
+ * RemoteViewController.js
+ * 
+ * Simple view controller for displaying content from the main campfire applcation
+ * 
+ * Author: Antonio Fiol-Mahon
  */
 
 const electron = require('electron');

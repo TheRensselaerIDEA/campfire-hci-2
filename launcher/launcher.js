@@ -1,8 +1,13 @@
-/*
-  Entry point for Campfire Launcher
+/**
+ * launcher.js
+ * 
+ * Entry point for campfire launcher
+ * Manages High level app coordination and input/output handling
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
 
-  Author: Antonio Fiol-Mahon
-*/
+'use strict';
 
 // Import dependencies
 const path = require('path')

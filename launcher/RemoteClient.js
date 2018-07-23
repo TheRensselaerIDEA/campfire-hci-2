@@ -1,3 +1,13 @@
+/**
+ * RemoteClient.js
+ * 
+ * Provides an interface to access functionality on Remote Server over the network
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
+
+ 'use strict';
+
 const request = require('request');
 
 const url = require('url');

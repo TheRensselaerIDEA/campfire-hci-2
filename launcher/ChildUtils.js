@@ -1,7 +1,12 @@
 /**
+ * ChildUtils.js
+ * 
  * A set of utilities for managing a child process
  * Sends relevant events to the remote client on app entry/exit
+ * 
+ * Author: Antonio Fiol-Mahon
  */
+
 'use strict';
 const child_process = require('child_process');
 const os = require('os');

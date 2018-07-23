@@ -1,6 +1,12 @@
 /**
+ * demo_target.js
+ * 
  * Example of a barebones campfire-hci-2 application
+ * 
+ * Author: Antonio Fiol-Mahon
  */
+
+'use strict';
 
 const path = require("path");
 const HCI = require("../campfire-hci-2");

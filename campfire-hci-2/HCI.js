@@ -1,3 +1,15 @@
+/**
+ * HCI.js
+ * 
+ * High level object that manages the functionality provided by the campfire-hci modules
+ * Basic building block of a campfire app, includes the view controller and input/output utilities
+ * 
+ * Author: Antonio Fiol-mahon
+ */
+
+'use strict';
+
+
 const InputManager = require('./InputManager.js');
 const ViewController = require('./ViewController.js');
 const MouseListener = require('./MouseListener.js');

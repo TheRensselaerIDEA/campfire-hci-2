@@ -1,3 +1,12 @@
+/**
+ * floor.js
+ * 
+ * Javascript code executed by renderer thread on floor window
+ * Binds HTML interface to main thread functionality
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
+
 'use strict';
 
 const electron = require('electron');

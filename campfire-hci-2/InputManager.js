@@ -1,3 +1,14 @@
+/**
+ * InputManager.js
+ * 
+ * Input event handling helper class
+ * Provides access to the input devices available on the campfire for binding event handlers/managing global keymaps
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
+
+ 'use strict';
+
 const electron = require('electron');
 
 /**

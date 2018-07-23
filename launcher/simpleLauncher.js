@@ -1,9 +1,13 @@
-'use strict';
+/**
+ * simpleLauncher.js
+ * 
+ * Simple ViewController that initializes from the arguments
+ * of the App Definition at the specified index in appList.json
+ * 
+ * Author: Antonio Fiol-Mahon
+ */
 
-/*
-  Simple ViewController that initializes from the arguments
-  of the App Definition at the specified index in appList.json
-*/
+'use strict';
 
 // Import dependencies
 const electron = require('electron');
