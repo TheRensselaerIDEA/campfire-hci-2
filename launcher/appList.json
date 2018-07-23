@@ -97,6 +97,18 @@
     }
   },
   {
+    "name": "NYS Health Data Explorer",
+    "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
+    "group": "summer2018",
+    "type": "simple_app",
+    "remoteURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/5480/?Monitor",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/5480/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/5480/?Wall"
+    }
+  },
+  {
     "name": "Twitter Demo (Alex)",
     "description": "Interactive network visualization of related twitter streams (R; Multi-window Shiny)",
     "group": "summer2018",
