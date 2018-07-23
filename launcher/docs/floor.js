@@ -138,10 +138,16 @@ electron.ipcRenderer.on('keyevent', function(event, arg) {
   console.log("Key event detected!");
   if (arg == 'up') {
     select(appSelected + 1);
-    document.getElementById('listDiv').scrollTop += 30;
+    if (appSelected >= 4) {
+      let el = document.getElementById(`app_${appSelected}`);
+      document.getElementById('listDiv').scrollTop += el.clientHeight;
+    }
   } else if (arg == 'down') {
     select(appSelected - 1);
-    document.getElementById('listDiv').scrollTop -= 30;
+    if (appSelected <= ChildUtils.appList.length - 5) {
+      let el = document.getElementById(`app_${appSelected}`);
+      document.getElementById('listDiv').scrollTop -= el.clientHeight;
+    }
   } else if (arg == 'select') {
     openApp(appSelected);
   }
