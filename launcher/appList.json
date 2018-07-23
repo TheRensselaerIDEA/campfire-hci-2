@@ -31,6 +31,17 @@
     }
   },
   {
+    "name": "Panoloader",
+    "description": "Circular Image Viewer",
+    "group": "classic",
+    "type": "external_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\old-demos\\panoloader",
+      "start_cmd": "C:\\processing-2.2.1\\processing-java.exe --sketch=%cd% --output=%cd%/output --force --run"
+    }
+  },
+  {
     "name": "SWOT Clock",
     "description": "(Classic; interactive) Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",

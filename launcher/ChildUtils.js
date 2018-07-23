@@ -46,22 +46,22 @@ module.exports = {
     }
 
     // Start a basic ViewController only campfire-hci-2 app
-    if (appDescriptor["type"] == "simple_app") {
+    if (appDescriptor['type'] == 'simple_app') {
       appProcess = child_process.exec(`electron simpleLauncher.js ${index}`);
 
       // Run an external command to start an application
-    } else if (appDescriptor["type"] == "external_app") {
+    } else if (appDescriptor['type'] == 'external_app') {
       appProcess = child_process.spawn(
-        appDescriptor["args"]["start_cmd"],
+        appDescriptor['args']['start_cmd'],
         [],
         {
           // Set child working directory from app descriptor if specified
-          cwd: appDescriptor["args"]["start_dir"],
+          cwd: appDescriptor['args']['start_dir'],
           shell: true
         }
       );
     } else {
-      console.log(`ChildUtils: Invalid Application type: ${appDescriptor["type"]}`);
+      console.log(`ChildUtils: Invalid Application type: ${appDescriptor['type']}`);
       return;
     }
 
@@ -86,12 +86,12 @@ module.exports = {
     @warn will fail if called outside of the main thread
   */
   closeApp: function () {
-    console.log("ChildUtils: closeApp() Invoked... ");
+    console.log('ChildUtils: closeApp() Invoked... ');
     if (this.isChildOpen()) {
       console.log(`ChildUtils: Killing process ${global.childps.app.pid}`);
       // Use the kill command appropriate for the platform
       if (os.platform() == 'win32') {
-        console.log("ChildUtils: Killing windows process...");
+        console.log('ChildUtils: Killing windows process...');
         child_process.exec(`TaskKill /PID ${global.childps.app.pid} /F /T`); // Kill the process
       } else {
         child_process.exec(`pkill -P ${global.childps.app.pid}`); // Kill the process
