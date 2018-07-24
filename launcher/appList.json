@@ -114,11 +114,11 @@
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/6666/?Monitor",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Monitor",
     "args": {
       "centermode": false,
-      "floorURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/6666/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/rstudio-ose/p/6666/?Wall"
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Wall"
     }
   },
   {
