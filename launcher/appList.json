@@ -86,7 +86,7 @@
     }
   },
   {
-    "name": "Comparative Analysis Demo",
+    "name": "NYS Health Comparative Analysis Demo (storyboard)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
     "group": "summer2018",
     "type": "simple_app",
@@ -94,6 +94,18 @@
       "centermode": false,
       "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
       "wallURL": "https://docs.google.com/presentation/d/14PRCr90QDENrT5B_5MN5cmd95n82MiWsn03m3bSE4s8/present?slide=id.p"
+    }
+  },
+    {
+    "name": "NYS Health Comparative Analysis Demo (live)",
+    "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
+    "group": "summer2018",
+    "type": "simple_app",
+    "remoteURL": "http://lp01.idea.rpi.edu/shiny/erickj4/NYS/?Floor",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/NYS/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/NYS/?Wall"
     }
   },
   {
