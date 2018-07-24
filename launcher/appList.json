@@ -66,6 +66,7 @@
     "description": "Explore enriched ECHO results for mouse data (R; Multi-window Shiny)",
     "group": "science",
     "type": "simple_app",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Monitor",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Floor",
