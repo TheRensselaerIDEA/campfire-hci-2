@@ -106,7 +106,8 @@
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Wall"
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Wall",
+      "nodeIntegration": false
     }
   },
   {
