@@ -133,7 +133,19 @@
     }
   },
   {
-    "name": "Google Slides Demo",
+    "name": "Google Slides Demo (IDEA Template)",
+    "description": "Prototype of IDEA Template (includes Floor, Wall and Monitor)",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "https://docs.google.com/presentation/d/1fJK4qwSE1k9tvyI6zsM7aFQEHRmioavdpcCXSD7YhfM/present",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://docs.google.com/presentation/d/1ot91NASRAb5Bw_sudgay4cohEt8q-nULwmbdEatLEVQ/present",
+      "wallURL": "https://docs.google.com/presentation/d/1MgjFQRFPFa9zst6da585Kas-jMa5zx96a4rG8u1pctA/present"
+    }
+  },
+  {
+    "name": "Google Slides Demo (Penguin)",
     "description": "Demonstration of an animated visualization using Google Slides",
     "group": "hacks",
     "type": "simple_app",
