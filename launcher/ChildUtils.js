@@ -45,10 +45,7 @@ module.exports = {
       }
     }
 
-    // Ask remoteServer to open the remoteURL if one is specified
-    if (typeof appDescriptor['remoteURL'] == 'string') {
-      RemoteClient.openURL(appDescriptor['remoteURL']);
-    }
+    RemoteClient.openURL(appDescriptor['remoteURL'], appDescriptor['splashURL']);
 
     // Start a basic ViewController only campfire-hci-2 app
     if (appDescriptor['type'] == 'simple_app') {

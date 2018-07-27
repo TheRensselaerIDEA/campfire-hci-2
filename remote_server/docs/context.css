@@ -1,0 +1,35 @@
+body {
+    background: rgb(33, 37, 43) !important;
+} /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+
+#background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+#content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    text-align: left;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+/* Used on heading to control vertical alignment */
+.heading {
+    margin-top: 10%;
+}
+
+.vertical-center {
+    min-height: 95%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 95vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+}
