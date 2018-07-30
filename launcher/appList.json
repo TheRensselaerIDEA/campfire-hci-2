@@ -98,7 +98,7 @@
     "name": "NYS Health Comparative Analysis Demo (storyboard)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
     "group": "summer2018",
-    "type": "simple_app",
+    "type": "google_slides",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,

@@ -1,5 +1,5 @@
 /**
- * simpleLauncher.js
+ * ViewSimple.js
  * 
  * Simple ViewController that initializes from the arguments
  * of the App Definition at the specified index in appList.json

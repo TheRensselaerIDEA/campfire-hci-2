@@ -75,6 +75,30 @@ ___
 }
 ```
 
+#### Google Slides App
+
+- Standalone instance of the **campfire-hci-2.ViewController** with extensions for slide navigation via campfire input manager
+- Use cases
+  - Google slides presentation
+  - Any application desiring synchronous fwd/backward navigation on the wall and floor via keyboard input
+- All of the properties defined in the simple_app **args** object below are accessable. If omitted, they will fall back to their defaults shown below.
+
+```javascript
+{
+  "type": "google_slides",
+  "args": {
+    "display": true,
+    "screenWrap": true,
+    "centermode": true,
+    "fullscreen": true,
+    "floorURL": DEFAULT_FLOOR_URL,
+    "wallURL": DEFAULT_WALL_URL,
+    "mousewrangler": true,
+    "nodeIntegration": true
+  }
+}
+```
+
 
 #### External app
 - Any application that can be launched through the command line is supported through this app type
