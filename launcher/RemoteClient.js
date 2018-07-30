@@ -10,11 +10,21 @@
 
 const request = require('request');
 
-var SERVER_URL = 'http://128.113.130.179:5000/';
-// var SERVER_URL = 'http://127.0.0.1:5000/';
+try {
+    var settings = require('./settings.json');
+} catch(err) {
+    var settings = {
+        "remote_ip": "127.0.0.1"
+    };
+}
+
+//const SERVER_IP = '128.113.130.179';
+const SERVER_IP = settings.remote_ip;
+const SERVER_PORT = 5000;
+
+var server_url = `http://${SERVER_IP}:${SERVER_PORT}/`;
 
 module.exports = {
-
     /**
      * Send server request to open the specified URL
      * @param {string} context_url - URL to open in remote view controller context monitor
@@ -31,7 +41,7 @@ module.exports = {
                 'splash_url': splash_url
             }
         };
-        request(SERVER_URL, options, null).on('error', function(err) {
+        request(server_url, options, null).on('error', function(err) {
             console.log(`remote_server request failed: "${err}"`);
         });
     },
@@ -48,7 +58,7 @@ module.exports = {
                 'cmd': 'close',
             }
         };
-        request(SERVER_URL, options, null).on('error', function(err) {
+        request(server_url, options, null).on('error', function(err) {
             console.log(`remote_server request failed: "${err}"`);
         });
     }

@@ -8,3 +8,4 @@ dist
 *.log
 demo_target/build
 package-lock.json
+launcher/settings.json

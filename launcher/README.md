@@ -26,7 +26,7 @@ ___
   "group": "default",
   "type": ""
   "remoteURL": "http://myExampleURL.org/page",
-  "splashURL": "http://myExampleURL.org/page"
+  "splashURL": "http://myExampleURL.org/page",
   "args": {}
 }
 ```

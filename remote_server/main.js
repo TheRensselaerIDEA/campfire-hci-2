@@ -63,7 +63,7 @@ electron.app.on('ready', () => {
         'url': SPLASH_URL,
         'nodeIntegration': false,
         'primaryScreen': false
-    })
+    });
 
 });
 
