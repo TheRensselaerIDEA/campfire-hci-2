@@ -5,6 +5,7 @@
     "group": "classic",
     "type": "external_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\fauxmosomes",
       "start_cmd": "nw ."
@@ -16,6 +17,7 @@
     "group": "classic",
     "type": "external_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
     }
@@ -26,6 +28,7 @@
     "group": "classic",
     "type": "external_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
     }
@@ -36,6 +39,7 @@
     "group": "classic",
     "type": "external_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\old-demos\\panoloader",
       "start_cmd": "C:\\processing-2.2.1\\processing-java.exe --sketch=%cd% --output=%cd%/output --force --run"
@@ -47,6 +51,7 @@
     "group": "science",
     "type": "external_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/SemNExT_Poster.png",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
     }
@@ -56,6 +61,7 @@
     "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny)",
     "group": "science",
     "type": "external_app",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\SWOTR-Electron-Demo",
       "start_cmd": "electron ."
@@ -67,6 +73,7 @@
     "group": "science",
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Monitor",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Floor",
@@ -79,6 +86,7 @@
     "description": "IDEA Hackathon entry (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/HDHE/?Floor",
@@ -91,6 +99,7 @@
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
     "group": "summer2018",
     "type": "simple_app",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
@@ -103,6 +112,7 @@
     "group": "summer2018",
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Monitor",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Floor",
@@ -116,6 +126,7 @@
     "group": "summer2018",
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Wall",
@@ -128,6 +139,7 @@
     "group": "hacks",
     "type": "external_app",
     "remoteURL": "http://empac.rpi.edu/content/campfire",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_cmd": "electron ../demo/demo_target.js"
     }
@@ -138,6 +150,7 @@
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "https://docs.google.com/presentation/d/1fJK4qwSE1k9tvyI6zsM7aFQEHRmioavdpcCXSD7YhfM/present",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "https://docs.google.com/presentation/d/1ot91NASRAb5Bw_sudgay4cohEt8q-nULwmbdEatLEVQ/present",
@@ -150,6 +163,7 @@
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "https://www.google.com/slides/about/",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "http://bit.ly/CampfireFloorSlideFull",
@@ -162,6 +176,7 @@
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Monitor",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Floor",
@@ -174,6 +189,7 @@
     "description": "Select your own Walls and Floors! Includes audio...",
     "group": "hacks",
     "type": "external_app",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
       "start_cmd": "electron ."
@@ -185,6 +201,7 @@
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "https://twitter.com/olyerickson",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "floorURL": "https://twitter.com/olyerickson",
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/twitter_streamgraph2.html",

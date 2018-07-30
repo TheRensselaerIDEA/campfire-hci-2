@@ -25,7 +25,8 @@ ___
   "description": "My nice app description",
   "group": "default",
   "type": ""
-  "remoteURL": "http://myExampleURL.org/page"
+  "remoteURL": "http://myExampleURL.org/page",
+  "splashURL": "http://myExampleURL.org/page"
   "args": {}
 }
 ```
@@ -43,7 +44,8 @@ ___
   - Valid Values:
       - simple_app
       - external_app
-- **remoteURL** - The URL of a supplimental page to be launched on the campfire perimeter monitor through the remote server, if omitted no URL will be loaded.
+- **remoteURL** - The URL of a supplimental page to be launched on the campfire context monitor through the remote server, if omitted no URL will be loaded.
+- **splashURL** - The URL of a supplimental page to be launched on the campfire splashscreen monitor through the remote server, if omitted no URL will be loaded.
 - **args** - Additional parameters that are specific to the **type** of the app.
 
 ### Types
