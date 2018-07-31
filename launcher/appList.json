@@ -71,7 +71,7 @@
     }
   },
   {
-    "name": "SWOT Clock",
+    "name": "SWOT Clock (Classic)",
     "description": "(Classic; interactive) Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",
     "type": "external_app",
@@ -82,7 +82,7 @@
     }
   },
   {
-    "name": "SWOT Clock",
+    "name": "SWOT Clock (Data INCITE)",
     "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny)",
     "group": "science",
     "type": "external_app",
@@ -120,7 +120,7 @@
     }
   },
   {
-    "name": "NYS Health Comparative Analysis Demo (storyboard)",
+    "name": "NYS Health Data Explorer (storyboard)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
     "group": "summer2018",
     "type": "google_slides",
@@ -132,7 +132,7 @@
     }
   },
   {
-    "name": "NYS Health Data Explorer",
+    "name": "NYS Health Data Explorer (live demo)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
