@@ -3,7 +3,7 @@
     "name": "The Rensselaer IDEA",
     "description": "Introduction to the Rensselaer IDEA (Google Slides)",
     "group": "classic",
-    "type": "simple_app",
+    "type": "google_slides",
     "remoteURL": "https://docs.google.com/presentation/d/1QZ3SEzKkWOIhSbuTapFznPRPlPP08HHcDKRD3aNbnjY/present",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
