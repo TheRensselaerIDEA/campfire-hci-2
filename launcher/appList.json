@@ -1,4 +1,17 @@
 [
+    {
+    "name": "The Rensselaer IDEA",
+    "description": "Introduction to the Rensselaer IDEA (Google Slides)",
+    "group": "classic",
+    "type": "simple_app",
+    "remoteURL": "https://docs.google.com/presentation/d/1QZ3SEzKkWOIhSbuTapFznPRPlPP08HHcDKRD3aNbnjY/present",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://docs.google.com/presentation/d/1aLHa1tYsg_wdnkupgSX8uigFgixHFFssPAya1Pvj1os/present",
+      "wallURL": "https://docs.google.com/presentation/d/13S-tikLVCkc24Wx_q1XNUdPKP3eEq3K4OQtH829S_C4/present"
+    }
+  },
   {
     "name": "Tiles",
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
