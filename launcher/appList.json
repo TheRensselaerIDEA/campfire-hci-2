@@ -1,5 +1,5 @@
 [
-    {
+  {
     "name": "The Rensselaer IDEA",
     "description": "Introduction to the Rensselaer IDEA (Google Slides)",
     "group": "classic",
@@ -10,6 +10,18 @@
       "centermode": false,
       "floorURL": "https://docs.google.com/presentation/d/1aLHa1tYsg_wdnkupgSX8uigFgixHFFssPAya1Pvj1os/present",
       "wallURL": "https://docs.google.com/presentation/d/13S-tikLVCkc24Wx_q1XNUdPKP3eEq3K4OQtH829S_C4/present"
+    }
+  },
+  {
+    "name": "2016 Election Data",
+    "description": "US 2016 Election Results and Twitter Activity (Electron)",
+    "group": "classic",
+    "type": "external_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\us_election2016\\",
+      "start_cmd": "npm start"
     }
   },
   {
