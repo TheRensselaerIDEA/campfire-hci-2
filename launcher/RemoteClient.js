@@ -22,7 +22,7 @@ try {
 const SERVER_IP = settings.remote_ip;
 const SERVER_PORT = 5000;
 
-var server_url = `http://${SERVER_IP}:${SERVER_PORT}/`;
+const SERVER_URL = `http://${SERVER_IP}:${SERVER_PORT}/`;
 
 module.exports = {
     /**
@@ -41,7 +41,7 @@ module.exports = {
                 'splash_url': splash_url
             }
         };
-        request(server_url, options, null).on('error', function(err) {
+        request(SERVER_URL, options, null).on('error', function(err) {
             console.log(`remote_server request failed: "${err}"`);
         });
     },
@@ -58,7 +58,7 @@ module.exports = {
                 'cmd': 'close',
             }
         };
-        request(server_url, options, null).on('error', function(err) {
+        request(SERVER_URL, options, null).on('error', function(err) {
             console.log(`remote_server request failed: "${err}"`);
         });
     }

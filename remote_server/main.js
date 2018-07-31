@@ -18,8 +18,8 @@ const PORT = 5000;
 const SPLASH_URL = path.join('file://', __dirname, 'docs', 'splash.html');
 const CONTEXT_URL = path.join('file://', __dirname, 'docs', 'context.html');
 
-var contextViewController = null;
 var splashViewController = null;
+var contextViewController = null;
 
 function handleRequest(req, res) {
     // Initialize Header
@@ -33,12 +33,12 @@ function handleRequest(req, res) {
         let ctx_url = req.headers.context_url;
         let spl_url = req.headers.splash_url;
         // Open any URLs defined in the HTTP request
-        contextViewController.openURL((ctx_url == undefined) ? CONTEXT_URL:  ctx_url)
         splashViewController.openURL((spl_url == undefined) ? SPLASH_URL : spl_url)
+        contextViewController.openURL((ctx_url == undefined) ? CONTEXT_URL:  ctx_url)
     } else if (req.headers.cmd == 'close') {
         console.log("CMD Received: close");
-        contextViewController.openURL(CONTEXT_URL);
         splashViewController.openURL(SPLASH_URL);
+        contextViewController.openURL(CONTEXT_URL);
     } else {
         respData.success = false;
         respData.error = `Invalid command '${req.headers.cmd}'`;
@@ -53,18 +53,17 @@ function handleRequest(req, res) {
 electron.app.on('ready', () => {
     httpServer.on('request', handleRequest);
 
-    contextViewController = new RemoteViewController({
-        'url': CONTEXT_URL,
-        'nodeIntegration': false,
-        'primaryScreen': true
-    });
-    
     splashViewController = new RemoteViewController({
         'url': SPLASH_URL,
         'nodeIntegration': false,
         'primaryScreen': false
     });
 
+    contextViewController = new RemoteViewController({
+        'url': CONTEXT_URL,
+        'nodeIntegration': false,
+        'primaryScreen': true
+    });
 });
 
 // Start listening for requests
