@@ -9,9 +9,10 @@
 // Imports
 const RemoteViewController = require('./RemoteViewController.js');
 const http = require('http');
-const httpServer = http.Server();
 const electron = require('electron');
 const path = require('path');
+
+const httpServer = http.Server();
 
 // Static Variable definitions
 const PORT = 5000;
