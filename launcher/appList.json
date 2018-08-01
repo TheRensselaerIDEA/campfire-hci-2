@@ -13,18 +13,6 @@
     }
   },
   {
-    "name": "2016 Election Data",
-    "description": "US 2016 Election Results and Twitter Activity (Electron)",
-    "group": "classic",
-    "type": "external_app",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "start_dir": "C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\us_election2016\\",
-      "start_cmd": "npm start"
-    }
-  },
-  {
     "name": "Tiles",
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
     "group": "classic",
@@ -218,6 +206,18 @@
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
       "start_cmd": "electron ."
+    }
+  },
+    {
+    "name": "2016 Election Data",
+    "description": "US 2016 Election Results and Twitter Activity (Electron)",
+    "group": "hacks",
+    "type": "external_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\us_election2016\\",
+      "start_cmd": "npm start"
     }
   },
   {
