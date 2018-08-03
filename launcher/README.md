@@ -27,6 +27,7 @@ ___
   "type": ""
   "remoteURL": "http://myExampleURL.org/page",
   "splashURL": "http://myExampleURL.org/page",
+  "demoable": true,
   "args": {}
 }
 ```
@@ -46,6 +47,7 @@ ___
       - external_app
 - **remoteURL** - The URL of a supplimental page to be launched on the campfire context monitor through the remote server, if omitted no URL will be loaded.
 - **splashURL** - The URL of a supplimental page to be launched on the campfire splashscreen monitor through the remote server, if omitted no URL will be loaded.
+- **demoable** - Indicates if the demo should be included in the demo mode applist, if the parameter is ommitted/false, the demo will not appear in the applist while in demo mode
 - **args** - Additional parameters that are specific to the **type** of the app.
 
 ### Types

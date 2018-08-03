@@ -65,6 +65,7 @@ hci.inputManager.bindBackwardPress(() => {
   }
 });
 
+
 // Configuration in this block must occur after electron has been initialized, so it is deferred until the ready event occurs
 electron.app.on('ready', () => {
   // handle quit shortcut
@@ -74,6 +75,11 @@ electron.app.on('ready', () => {
     } else {
       electron.app.exit();
     }
+  });
+
+  // Handle appList load requests from the floor thread
+  electron.ipcMain.on('applist-load', function(event, arg) {
+    event.returnValue = ChildUtils.appList;
   });
 
   // handle the open-app event
