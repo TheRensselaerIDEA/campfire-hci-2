@@ -26,7 +26,10 @@ ___
   "group": "default",
   "type": ""
   "remoteURL": "http://myExampleURL.org/page",
-  "splashURL": "http://myExampleURL.org/page"
+
+  "splashURL": "http://myExampleURL.org/page",
+  "controllerURL": "http://myExampleURL.org/controller",
+  "demoable": true,
   "args": {}
 }
 ```
@@ -44,8 +47,11 @@ ___
   - Valid Values:
       - simple_app
       - external_app
-- **remoteURL** - The URL of any page to load on the primary remote monitor, if omitted no URL will be loaded.
-- **splashURL** - The URL of any page to laod on the secondary remote monitor, if omitted no URL will be loaded.
+
+- **remoteURL** - The URL of a supplimental page to be launched on the campfire context monitor through the remote server, if omitted no URL will be loaded.
+- **splashURL** - The URL of a supplimental page to be launched on the campfire splashscreen monitor through the remote server, if omitted no URL will be loaded.
+- **controllerURL** - If the app has a controller webpage, providing the link here will make it available on the mobile controller.
+- **demoable** - Indicates if the demo should be included in the demo mode applist, if the parameter is ommitted/false, the demo will not appear in the applist while in demo mode
 - **args** - Additional parameters that are specific to the **type** of the app.
 
 ### Types
@@ -62,6 +68,30 @@ ___
 ```javascript
 {
   "type": "simple_app",
+  "args": {
+    "display": true,
+    "screenWrap": true,
+    "centermode": true,
+    "fullscreen": true,
+    "floorURL": DEFAULT_FLOOR_URL,
+    "wallURL": DEFAULT_WALL_URL,
+    "mousewrangler": true,
+    "nodeIntegration": true
+  }
+}
+```
+
+#### Google Slides App
+
+- Standalone instance of the **campfire-hci-2.ViewController** with extensions for slide navigation via campfire input manager
+- Use cases
+  - Google slides presentation
+  - Any application desiring synchronous fwd/backward navigation on the wall and floor via keyboard input
+- All of the properties defined in the simple_app **args** object below are accessable. If omitted, they will fall back to their defaults shown below.
+
+```javascript
+{
+  "type": "google_slides",
   "args": {
     "display": true,
     "screenWrap": true,

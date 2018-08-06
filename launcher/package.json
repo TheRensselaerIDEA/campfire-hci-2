@@ -5,7 +5,8 @@
   "main": "launcher.js",
   "scripts": {
     "start": "electron .",
-    "simple_launcher": "electron simpleLauncher.js 1"
+    "start-demo": "electron . demo",
+    "simple_launcher": "electron ViewSimple.js 1"
   },
   "dependencies": {
     "campfire-hci-2": "../campfire-hci-2",

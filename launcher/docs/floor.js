@@ -10,13 +10,9 @@
 'use strict';
 
 const electron = require('electron');
-const ChildUtils = require('../ChildUtils.js');
-
-// Current selection in appList
-var appSelected = 0;
 
 // Defines the styling used for each app group
-var group_style = {
+const GROUP_STYLES = {
   default: {
     class_selected: "",
     color: "#ffffff",
@@ -46,20 +42,25 @@ var group_style = {
 
 const CLASS_CONTAINER = "list-group-item list-group-item-action flex-column align-items-start";
 
+var launcher_apps = []; // Data for apps currently visible in launcher
+var app_selected = 0; // Current selection in appList
+
 /**
- * Syles the list element corresponding to the appDescriptor in ChildUtils.appList at index
- * @param {number} index - index of the app in ChildUtils.appList to style
+ * Syles the list element corresponding to the appDescriptor in apps at index
+ * @param {number} index - index of the app in apps to style
+ * @param {number} index_selected - the currently selected list index
+ * @param {*} group - grop to style element with
  */
-function styleElement(index) {
-  // Get the group or use default
-  let category = (ChildUtils.appList[index].group != undefined) ? ChildUtils.appList[index].group : 'default';
+function styleElement(index, index_selected, group) {
+  // Use default if group is undefined
+  if (group == undefined) { group = 'default'; }
   // Get the element for the app at index
   let el = document.getElementById(`app_${index}`);
-  if (index == appSelected) {
-    el.setAttribute('class', CLASS_CONTAINER + ` ${group_style[category].class_selected}`);
+  if (index == index_selected) {
+    el.setAttribute('class', CLASS_CONTAINER + ` ${GROUP_STYLES[group].class_selected}`);
   } else {
     el.setAttribute('class', CLASS_CONTAINER);
-    el.setAttribute('style', `border-left: 10px solid ${group_style[category].color}`);
+    el.setAttribute('style', `border-left: 10px solid ${GROUP_STYLES[group].color}`);
   }
 }
 
@@ -68,26 +69,31 @@ function styleElement(index) {
  * @param {*} index - index of app that is being selected
  */
 function select(index) {
-  if (index < ChildUtils.appList.length && index >= 0) {
-    appSelected = index;
-    console.log(`Index ${appSelected} has been selected`);
-    let appIndex;
-    for (appIndex in ChildUtils.appList) {
-      styleElement(appIndex);
+  if (index < launcher_apps.length && index >= 0) {
+    app_selected = index;
+    console.log(`Index ${app_selected} has been selected`);
+    let i;
+    for (i in launcher_apps) {
+      styleElement(i, app_selected, launcher_apps[i]['group']);
     }
   }
 }
 
 /**
  * Creates the list element for the app descriptor at the specified index
- * @param {*} index - app descriptor index to use for populating list element fields
+ * @param {*} view_index - index of element in view
+ * @param {str} name - app display name
+ * @param {str} description - app display description
+ * @param {str} group - the app group name string in GROUP_STYLES, determines element styling
+ * @param {number} desc_index - index in app descriptor of app to open
+ * @returns the DOM element constructed with the provided parameters
  */
-function generateListElement(index) {
+function generateListElement(view_index, name, description, group, desc_index) {
   // Create list container element & add event listeners
   let listContainer = document.createElement('a');
-  listContainer.id = "app_" + index;
-  listContainer.addEventListener("click", () => { openApp(index); });
-  listContainer.addEventListener("mouseover", () => { select(index); });
+  listContainer.id = "app_" + view_index;
+  listContainer.addEventListener("click", () => { openApp(desc_index); });
+  listContainer.addEventListener("mouseover", () => { select(view_index); });
   listContainer.setAttribute('class', CLASS_CONTAINER);
 
   // Create title display div
@@ -97,16 +103,16 @@ function generateListElement(index) {
   // Create Title element
   let title = document.createElement('h5');
   title.setAttribute('class', 'mb-1');
-  title.innerHTML = ChildUtils.appList[index]['name'];
+  title.innerHTML = name;
 
   // Create Category label element
   let categoryLabel = document.createElement('small');
-  let category = (ChildUtils.appList[index].group != undefined) ? ChildUtils.appList[index].group : 'default';
-  categoryLabel.innerHTML = group_style[category].title;
+  let category = (group != undefined) ? group : 'default';
+  categoryLabel.innerHTML = GROUP_STYLES[category].title;
 
   // Create description element
   let desc = document.createElement('p');
-  desc.innerHTML = ChildUtils.appList[index]['description'];
+  desc.innerHTML = description;
   desc.setAttribute('class', 'mb-1');
 
   // Build heirarchy and return element
@@ -117,56 +123,64 @@ function generateListElement(index) {
   return listContainer;
 }
 
-/*
-  Load the list of available apps based off of the app descriptors defined in appList.json
-*/
-function loadAppTable() {
-  let listDiv = document.getElementById('listDiv');
-  let appIndex;
-  for (appIndex in ChildUtils.appList) {
-    var listItem = generateListElement(appIndex);
-    // Add to list
-    listDiv.appendChild(listItem);
+/**
+ * Populate a div container with the provided applist
+ * @param {*} list_div the html div element that will hold the list
+ * @param {*} app_list the full list of apps to load
+ */
+function loadAppTable(list_div, app_list, is_demo_mode) {
+  let i;
+  for (i in app_list) {
+    let demoable = app_list[i]['demoable'] != undefined ? app_list[i]['demoable'] : true;
+    if (!is_demo_mode || (is_demo_mode && demoable)) {
+      // Add item to launcher apps and generate an element
+      let list_index = launcher_apps.push(app_list[i]) - 1;
+      var list_item = generateListElement(list_index, app_list[i]['name'], 
+        app_list[i]['description'], app_list[i]['group'], i
+      );
+      list_div.appendChild(list_item);
+    }
   }
   select(0);
 }
 
 /**
- * Call ChildUtils in the main thread and open the desired application
+ * Call the main thread to open the desired application
+ * @param {number} app_descriptor_index index of app in appList.json to open
  */
-function openApp(appIndex) {
-  electron.ipcRenderer.send('open-app', appIndex);
+function openApp(app_descriptor_index) {
+  electron.ipcRenderer.send('open-app', app_descriptor_index);
 }
 
 // Code below is run when script is loaded
 
-loadAppTable();
+// Get most recent appList from main launcher thread and render app table
+var full_applist = electron.ipcRenderer.sendSync('applist-load', undefined); // All applications
+var demo_mode = electron.ipcRenderer.sendSync('is-demo-mode', undefined);
+console.log(`Demo Mode: ${demo_mode}`);
+loadAppTable(document.getElementById('listDiv'), full_applist, demo_mode);
 
 // Check for keypress events from main electron thread
 electron.ipcRenderer.on('keyevent', function(event, arg) {
   console.log("Key event detected!");
   if (arg == 'up') {
-    select(appSelected + 1);
-    if (appSelected >= 4) {
-      let el = document.getElementById(`app_${appSelected}`);
+    select(app_selected + 1);
+    if (app_selected >= 4) {
+      let el = document.getElementById(`app_${app_selected}`);
       document.getElementById('listDiv').scrollTop += el.clientHeight;
     }
   } else if (arg == 'down') {
-    select(appSelected - 1);
-    if (appSelected <= ChildUtils.appList.length - 5) {
-      let el = document.getElementById(`app_${appSelected}`);
+    select(app_selected - 1);
+    if (app_selected <= apps.length - 5) {
+      let el = document.getElementById(`app_${app_selected}`);
       document.getElementById('listDiv').scrollTop -= el.clientHeight;
     }
   } else if (arg == 'select') {
-    openApp(appSelected);
+    openApp(app_selected);
   }
 });
 
-// This will break if appList exceeds 127 entries
-electron.ipcRenderer.on('selectEvent', function(event, arg) {
-  select(arg%ChildUtils.appList.length);
-});
-
+// Rotate the UI orientation when rotation events are received
 electron.ipcRenderer.on('rotate-event', function(event, rotation) {
   document.getElementById('owner').setAttribute('style', `transform: rotate(${rotation}deg); transform-origin: 50% 50%;transition-duration:100ms;`);
 });
