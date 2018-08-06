@@ -5,6 +5,7 @@
   "main": "launcher.js",
   "scripts": {
     "start": "electron .",
+    "start-demo": "electron . demo",
     "simple_launcher": "electron ViewSimple.js 1"
   },
   "dependencies": {
