@@ -128,11 +128,11 @@ function generateListElement(view_index, name, description, group, desc_index) {
  * @param {*} list_div the html div element that will hold the list
  * @param {*} app_list the full list of apps to load
  */
-function loadAppTable(list_div, app_list) {
+function loadAppTable(list_div, app_list, is_demo_mode) {
   let i;
   for (i in app_list) {
     let demoable = app_list[i]['demoable'] != undefined ? app_list[i]['demoable'] : true;
-    if (demoable) {
+    if (!is_demo_mode || (is_demo_mode && demoable)) {
       // Add item to launcher apps and generate an element
       let list_index = launcher_apps.push(app_list[i]) - 1;
       var list_item = generateListElement(list_index, app_list[i]['name'], 
@@ -156,7 +156,9 @@ function openApp(app_descriptor_index) {
 
 // Get most recent appList from main launcher thread and render app table
 var full_applist = electron.ipcRenderer.sendSync('applist-load', undefined); // All applications
-loadAppTable(document.getElementById('listDiv'), full_applist);
+var demo_mode = electron.ipcRenderer.sendSync('is-demo-mode', undefined);
+console.log(`Demo Mode: ${demo_mode}`);
+loadAppTable(document.getElementById('listDiv'), full_applist, demo_mode);
 
 // Check for keypress events from main electron thread
 electron.ipcRenderer.on('keyevent', function(event, arg) {
