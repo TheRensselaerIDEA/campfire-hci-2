@@ -50,7 +50,7 @@ module.exports = {
     // Determine content type and launch appropriate application
     if (appDescriptor['type'] == 'simple_app') {
       appProcess = child_process.exec(`electron ViewSimple.js ${index}`);
-    } else if (appDescriptor['type'] == 'google_slides'){
+    } else if (appDescriptor['type'] == 'google_slides') {
       appProcess = child_process.exec(`electron ViewSlide.js ${index}`);
     } else if (appDescriptor['type'] == 'external_app') {
       appProcess = child_process.spawn(

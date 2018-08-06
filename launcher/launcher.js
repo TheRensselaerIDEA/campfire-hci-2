@@ -9,7 +9,7 @@
 
 'use strict';
 
-// Import dependencies
+// Imports
 const path = require('path')
 const HCI = require('campfire-hci-2');
 const electron = require('electron');
@@ -18,7 +18,7 @@ const ChildUtils = require('./ChildUtils.js');
 // Constant definitions
 const FLOOR_URL = path.join('file://', __dirname, 'docs', 'floor.html');
 const WALL_URL = path.join('file://', __dirname, 'docs', 'wall.html');
-const QUIT_ACCELERATOR = 'CommandOrControl+K'
+const QUIT_ACCELERATOR = 'CommandOrControl+K';
 const UNIT_ROTATION = 10; // Smallest rotation increment for launcher reorientation
 
 const DEMO_MODE = (process.argv.length >= 3 && process.argv[2] == 'demo') ? true : false;
