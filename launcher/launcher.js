@@ -10,10 +10,11 @@
 'use strict';
 
 // Imports
-const path = require('path')
+const path = require('path');
 const HCI = require('campfire-hci-2');
 const electron = require('electron');
 const ChildUtils = require('./ChildUtils.js');
+const ControllerServer = require('./ControllerServer.js');
 
 // Constant definitions
 const FLOOR_URL = path.join('file://', __dirname, 'docs', 'floor.html');
@@ -27,7 +28,6 @@ console.log(`Demo Mode: ${DEMO_MODE}`);
 var launcherRotation = 0; // Current Launcher UI offset (in degrees)
 global.childps = {'app': null};
 
-
 // Create instance of HCI library
 var hci = new HCI({
   'fullscreen': true,
@@ -36,8 +36,10 @@ var hci = new HCI({
   'centermode': true,
   'floorURL': FLOOR_URL,
   'wallURL': WALL_URL,
-  'mousewrangler': true
+  'mousewrangler': false
 });
+
+var webcontroller = new ControllerServer(4000, ChildUtils.appList);
 
  // Bind keyboard input to IPC events so that the UI Thread can handle them appropriately
 hci.inputManager.bindForward(() => {

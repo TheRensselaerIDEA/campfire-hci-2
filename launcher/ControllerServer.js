@@ -5,7 +5,8 @@
  */
 
 const express = require('express');
-const launcher_client = require('./launcher_client.js');
+const electron = require('electron');
+const ChildUtils = require('./ChildUtils.js');
 
  module.exports = function ControllerServer(port, app_list) {
     
@@ -18,6 +19,7 @@ const launcher_client = require('./launcher_client.js');
     this.webapp.set('view engine', 'pug');
     this.webapp.use(express.static('public'));
     
+    // Configure route behavior
     this.webapp.get('/controller/:app_id', (req, res) => {
         let app_id = req.params['app_id'];
         let open_app = app_list[app_id];
@@ -28,25 +30,27 @@ const launcher_client = require('./launcher_client.js');
     
     this.webapp.get('/open/:app_id', (req, res) => {
         let app_id = req.params['app_id'];
-        let view_code = launcherClient.open_app(app_id);
-        if (view_code == -1) {
-            res.redirect('/launcher');
-        } else {
-            res.redirect(`/controller/${view_code}`);
-        }
-        console.log("no return!");
+        ChildUtils.openApp(app_id);
+        res.redirect(`/controller/${app_id}`);
+    });
+
+    this.webapp.get('/close', (req, res) => {
+        ChildUtils.closeApp();
+        res.redirect('/launcher');
     });
     
     this.webapp.get('/launcher', (req, res) => {
         res.render('launcher', {title: 'Launcher', appList: app_list});
     });
-    
+
     this.webapp.get('/', (req, res) => {
         res.redirect('/launcher');
     });
+
     
-    this.webapp.listen(PORT, () => {
-        console.log(`Server listening on port ${PORT}`);
+    // Start the webserver
+    this.webapp.listen(this.port, () => {
+        console.log(`Controller Server running on port ${this.port}`);
     });
     
  }
