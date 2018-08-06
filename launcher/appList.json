@@ -140,6 +140,7 @@
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Controller",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Wall",

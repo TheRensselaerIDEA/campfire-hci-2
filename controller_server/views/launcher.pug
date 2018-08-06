@@ -24,10 +24,11 @@ html
             id="listDiv"
             class="list-group listDiv"
         )
-            a(
+            each val, index in appList
+                a(
                 class="list-group-item list-group-item-action flex-column align-items-start"
                 style="border-left: 10px solid green"
-                href="controller"
-            ) Twitter Demo
+                href=`/open/${index}`
+                )= val["name"]
         
         script(src="/launcher.js")
