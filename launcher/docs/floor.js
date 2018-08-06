@@ -10,35 +10,7 @@
 'use strict';
 
 const electron = require('electron');
-
-// Defines the styling used for each app group
-const GROUP_STYLES = {
-  default: {
-    class_selected: "",
-    color: "#ffffff",
-    title: ""
-  },
-  classic: {
-    class_selected: "list-group-item-success",
-    color: "#28a745;",
-    title: "Classic"
-  },
-  science: {
-    class_selected: "active",
-    color: "#007aff;",
-    title: "Science"
-  },
-  summer2018: {
-    class_selected: "list-group-item-warning",
-    color: "#ffc108;",
-    title: "Summer 2018"
-  },
-  hacks: {
-    class_selected: "list-group-item-danger",
-    color: "#dc3645;",
-    title: "Hack"
-  }
-}
+const viewtool = require('../public/viewtool.js');
 
 const CLASS_CONTAINER = "list-group-item list-group-item-action flex-column align-items-start";
 
@@ -52,15 +24,13 @@ var app_selected = 0; // Current selection in appList
  * @param {*} group - grop to style element with
  */
 function styleElement(index, index_selected, group) {
-  // Use default if group is undefined
-  if (group == undefined) { group = 'default'; }
   // Get the element for the app at index
   let el = document.getElementById(`app_${index}`);
   if (index == index_selected) {
-    el.setAttribute('class', CLASS_CONTAINER + ` ${GROUP_STYLES[group].class_selected}`);
+    el.setAttribute('class', CLASS_CONTAINER + ` ${viewtool.getGroupSelectClass(group)}`);
   } else {
     el.setAttribute('class', CLASS_CONTAINER);
-    el.setAttribute('style', `border-left: 10px solid ${GROUP_STYLES[group].color}`);
+    el.setAttribute('style', viewtool.getListElementStyle(group));
   }
 }
 
@@ -108,7 +78,7 @@ function generateListElement(view_index, name, description, group, desc_index) {
   // Create Category label element
   let categoryLabel = document.createElement('small');
   let category = (group != undefined) ? group : 'default';
-  categoryLabel.innerHTML = GROUP_STYLES[category].title;
+  categoryLabel.innerHTML = viewtool.getGroupTitle(category);
 
   // Create description element
   let desc = document.createElement('p');

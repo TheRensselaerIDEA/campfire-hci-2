@@ -14,6 +14,8 @@ const RemoteClient = require('./RemoteClient.js');
 
 module.exports = {
 
+  openChild: -1,
+
   appList: require('./appList.json'),
 
   /**
@@ -44,6 +46,8 @@ module.exports = {
         console.log(`Cant kill child, ${err}`);
       }
     }
+
+    this.openChild = index,
 
     RemoteClient.openURL(appDescriptor['remoteURL'], appDescriptor['splashURL']);
 
@@ -102,5 +106,6 @@ module.exports = {
       console.log(`ChildUtils: Clearing app with PID ${global.childps.app.pid}`);
       global.childps.app = null;
     }
+    this.openApp = -1;
   }
 }
