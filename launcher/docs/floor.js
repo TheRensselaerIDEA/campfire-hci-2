@@ -12,9 +12,9 @@
 const electron = require('electron');
 const viewtool = require('../public/viewtool.js');
 
-const CLASS_CONTAINER = "list-group-item list-group-item-action flex-column align-items-start";
+const CLASS_CONTAINER = 'list-group-item list-group-item-action flex-column align-items-start';
 
-const APP_LIST = require("../appList.json");
+const APP_LIST = require('../appList.json');
 
 var launcher_list = []; // List of app_ids in launcher
 var index_selected = 0; // Current selection in launcher_list
@@ -23,11 +23,11 @@ var index_selected = 0; // Current selection in launcher_list
  * Syles the list element corresponding to the appDescriptor in apps at index
  * @param {number} index - index of the app in apps to style
  * @param {number} index_selected - the currently selected list index
- * @param {*} group - grop to style element with
  */
-function styleElement(app_id, is_selected, group) {
+function styleElement(app_id, is_selected) {
   // Get the element for the app at index
   let el = document.getElementById(`app_${app_id}`);
+  let group = APP_LIST[app_id]['group'];
   if (is_selected) {
     el.setAttribute('class', CLASS_CONTAINER + ` ${viewtool.getGroupSelectClass(group)}`);
   } else {
@@ -52,25 +52,25 @@ function select(app_id) {
     if (selected == true) {
       index_selected = i;
     }
-    styleElement(launcher_list[i], selected, APP_LIST[launcher_list[i]]['group']);
+    styleElement(launcher_list[i], selected);
   }
 }
 
 /**
  * Creates the list element for the app descriptor at the specified index
- * @param {*} view_index - index of element in view
- * @param {str} name - app display name
- * @param {str} description - app display description
- * @param {str} group - the app group name string in GROUP_STYLES, determines element styling
- * @param {number} app_id - app_id from applist of app to open
- * @returns the DOM element constructed with the provided parameters
+ * @param {number} app_id - app_id from applist of app to generate element for
+ * @returns the DOM element constructed from the specified app descriptor
  */
-function generateListElement(name, description, group, app_id) {
+function generateListElement(app_id) {
+  console.log(`Generating element for app_id ${app_id}`);
   // Create list container element & add event listeners
+  let name = APP_LIST[app_id]['name'];
+  let description = APP_LIST[app_id]['description'];
+  let group = APP_LIST[app_id]['group'];
   let listContainer = document.createElement('a');
-  listContainer.id = "app_" + app_id;
-  listContainer.addEventListener("click", () => { openApp(app_id); });
-  listContainer.addEventListener("mouseover", () => { select(app_id); });
+  listContainer.id = `app_${app_id}`;
+  listContainer.addEventListener('click', () => { openApp(app_id); });
+  listContainer.addEventListener('mouseover', () => { select(app_id); });
   listContainer.setAttribute('class', CLASS_CONTAINER);
 
   // Create title display div
@@ -104,7 +104,6 @@ function generateListElement(name, description, group, app_id) {
  * Populate a div container with the provided applist
  * @param {*} list_div the html div element that will hold the list
  * @param {string[]} launcher_id_list list to populate with app ids loaded in launcher
- * @param {*} app_list the full list of apps to load
  * @param {bool} is_demo_mode if true, ignores app descriptors with demoable = false
  */
 function loadAppTable(list_div, launcher_id_list, is_demo_mode) {
@@ -117,12 +116,7 @@ function loadAppTable(list_div, launcher_id_list, is_demo_mode) {
     
     let demoable = APP_LIST[app_id]['demoable'] != undefined ? APP_LIST[i]['demoable'] : true;
     if (!is_demo_mode || (is_demo_mode && demoable)) {
-      var list_item = generateListElement(
-        APP_LIST[app_id]['name'],
-        APP_LIST[app_id]['description'], 
-        APP_LIST[app_id]['group'],
-        app_id
-      );
+      var list_item = generateListElement(app_id);
       list_div.appendChild(list_item);
     }
   }
@@ -146,7 +140,7 @@ loadAppTable(document.getElementById('listDiv'), launcher_list, demo_mode);
 
 // Check for keypress events from main electron thread
 electron.ipcRenderer.on('keyevent', function(event, arg) {
-  console.log("Key event detected!");
+  console.log('Key event detected!');
   if (arg == 'up') {
     console.log(`want to select index ${(index_selected + 1)}`)
     select(launcher_list[index_selected + 1]);
