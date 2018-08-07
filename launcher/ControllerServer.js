@@ -3,11 +3,12 @@
  * 
  * Author: Antonio Fiol-Mahon
  */
-
+const ChildUtils = require('./ChildUtils.js');
+const express = require('express');
+const viewtool = require('./public/viewtool.js');
 
  module.exports = function ControllerServer(port, app_list) {
-    const ChildUtils = require('./ChildUtils.js');
-    const express = require('express');
+    
     
     this.webapp = express();
     this.port = port;
@@ -39,7 +40,11 @@
     });
     
     this.webapp.get('/launcher', (req, res) => {
-        res.render('launcher', {title: 'Launcher', appList: app_list});
+        let styles = {};
+        for (let key in app_list) {
+            styles[key] = viewtool.getListElementStyle(app_list[key]['group']);
+        }
+        res.render('launcher', {title: 'Launcher', appList: app_list, styles: styles});
     });
 
     this.webapp.get('/', (req, res) => {
