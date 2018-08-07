@@ -4,10 +4,10 @@
  * Author: Antonio Fiol-Mahon
  */
 
-const express = require('express');
-const ChildUtils = require('./ChildUtils.js');
 
  module.exports = function ControllerServer(port, app_list) {
+    const ChildUtils = require('./ChildUtils.js');
+    const express = require('express');
     
     this.webapp = express();
     this.port = port;

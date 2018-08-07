@@ -81,7 +81,7 @@ module.exports = {
       console.log(`ChildUtils: child exited with status ${code}`);
       RemoteClient.closeURL();
       global.childps.app = null;
-      this.openApp = NO_APP_ID
+      this.openChild = NO_APP_ID
     });
     
     // Assign childPS to variable
@@ -107,7 +107,7 @@ module.exports = {
       // This dereference also occurs in the event handler for child exit
       console.log(`ChildUtils: Clearing app with PID ${global.childps.app.pid}`);
       global.childps.app = null;
-      this.openApp = NO_APP_ID;
+      this.openChild = NO_APP_ID;
     }
   }
 }
