@@ -48,7 +48,7 @@ const ChildUtils = require('./ChildUtils.js');
 
     // Publish the currently open view, -1 for launcher, 0-infinity for current open app index
     this.webapp.get('/status', (req, res) => {
-        res.send(ChildUtils.openChild.toString());
+        res.send(ChildUtils.openChild);
     });
 
     

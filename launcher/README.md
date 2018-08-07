@@ -20,7 +20,7 @@ ___
 - Each entry specifies how an app is display in menu/launched
 - All AppDescriptors share some common parameters outlined below
 ```javascript
-{
+"app_id": {
   "name": "MyAppName",
   "description": "My nice app description",
   "group": "default",
@@ -34,6 +34,7 @@ ___
 }
 ```
 ### Parameters
+- **app_id** - A unique identifer for the app descriptor, should only contain alphanumeric and undersore characters, must be unique
 - **name** - The display name of the application
 - **description** - A brief description of the application for users
 - **group** - The category for the entry, this determines styling in the app display list, the available options are as follows

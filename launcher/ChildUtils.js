@@ -12,9 +12,10 @@ const child_process = require('child_process');
 const os = require('os');
 const RemoteClient = require('./RemoteClient.js');
 
+const NO_APP_ID = "noapp" // App id used when there is no app open
 module.exports = {
 
-  openChild: -1,
+  openChild: NO_APP_ID,
 
   appList: require('./appList.json'),
 
@@ -29,11 +30,11 @@ module.exports = {
   /*
     Opens an app from applist.json
     @warn - will fail if called outside of the main thread
-    @param {number} index - the index of the application to open
+    @param {string} app_id - the app_id of the application to open
   */
-  openApp: function (index) {
+  openApp: function (app_id) {
 
-    let appDescriptor = this.appList[index];
+    let appDescriptor = this.appList[app_id];
     console.log(`Opening App '${appDescriptor.name}'`);
 
     let appProcess = null;
@@ -47,15 +48,15 @@ module.exports = {
       }
     }
 
-    this.openChild = index,
+    this.openChild = app_id,
 
     RemoteClient.openURL(appDescriptor['remoteURL'], appDescriptor['splashURL']);
 
     // Determine content type and launch appropriate application
     if (appDescriptor['type'] == 'simple_app') {
-      appProcess = child_process.exec(`electron ViewSimple.js ${index}`);
+      appProcess = child_process.exec(`electron ViewSimple.js ${app_id}`);
     } else if (appDescriptor['type'] == 'google_slides') {
-      appProcess = child_process.exec(`electron ViewSlide.js ${index}`);
+      appProcess = child_process.exec(`electron ViewSlide.js ${app_id}`);
     } else if (appDescriptor['type'] == 'external_app') {
       appProcess = child_process.spawn(
         appDescriptor['args']['start_cmd'],
@@ -80,6 +81,7 @@ module.exports = {
       console.log(`ChildUtils: child exited with status ${code}`);
       RemoteClient.closeURL();
       global.childps.app = null;
+      this.openApp = NO_APP_ID
     });
     
     // Assign childPS to variable
@@ -105,7 +107,7 @@ module.exports = {
       // This dereference also occurs in the event handler for child exit
       console.log(`ChildUtils: Clearing app with PID ${global.childps.app.pid}`);
       global.childps.app = null;
+      this.openApp = NO_APP_ID;
     }
-    this.openApp = -1;
   }
 }

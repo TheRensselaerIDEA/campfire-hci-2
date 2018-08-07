@@ -82,18 +82,13 @@ electron.app.on('ready', () => {
     }
   });
 
-  // Handle appList load requests from the floor thread
-  electron.ipcMain.on('applist-load', function(event, arg) {
-    event.returnValue = ChildUtils.appList;
-  });
-
   // Handle get demo_mode status
   electron.ipcMain.on('is-demo-mode', function(event, arg) {
     event.returnValue = DEMO_MODE;
   });
 
   // handle the open-app event
-  electron.ipcMain.on('open-app', function(event, appIndex) {
-    ChildUtils.openApp(appIndex);
+  electron.ipcMain.on('open-app', function(event, app_id) {
+    ChildUtils.openApp(app_id);
   });
 });

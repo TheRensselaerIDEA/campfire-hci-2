@@ -1,5 +1,5 @@
-[
-  {
+{
+  "rens_idea": {
     "name": "The Rensselaer IDEA",
     "description": "Introduction to the Rensselaer IDEA (Google Slides)",
     "group": "classic",
@@ -12,7 +12,8 @@
       "wallURL": "https://docs.google.com/presentation/d/13S-tikLVCkc24Wx_q1XNUdPKP3eEq3K4OQtH829S_C4/present"
     }
   },
-  {
+
+  "tiles": {
     "name": "Tiles",
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
     "group": "classic",
@@ -24,7 +25,8 @@
       "start_cmd": "nw ."
     }
   },
-  {
+
+  "google_streetview": {
     "name": "Google Streetview Navigator",
     "description": "Campfire Demo using google streetview",
     "group": "classic",
@@ -35,7 +37,8 @@
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\streetview-navigator"
     }
   },
-  {
+
+  "webgl_terrain": {
     "name": "WebGL Terrain Explorer",
     "description": "Exploring the capabilities of WebGL on the Campfire platform",
     "group": "classic",
@@ -46,7 +49,8 @@
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\webgl-terrain-explorer"
     }
   },
-  {
+
+  "panoloader": {
     "name": "Panoloader",
     "description": "Circular Image Viewer",
     "group": "classic",
@@ -58,7 +62,8 @@
       "start_cmd": "C:\\processing-2.2.1\\processing-java.exe --sketch=%cd% --output=%cd%/output --force --run"
     }
   },
-  {
+
+  "swot_clock_classic": {
     "name": "SWOT Clock (Classic)",
     "description": "(Classic; interactive) Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",
@@ -69,7 +74,8 @@
       "start_cmd": "nw C:\\Users\\EMPAC\\Documents\\GitHub\\CampFire\\nw-apps\\semnext"
     }
   },
-  {
+
+  "swot_clock": {
     "name": "SWOT Clock (Data INCITE)",
     "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny)",
     "group": "science",
@@ -80,7 +86,8 @@
       "start_cmd": "electron ."
     }
   },
-  {
+
+  "circadian_explorer": {
     "name": "Circadian Ontology Explorer",
     "description": "Explore enriched ECHO results for mouse data (R; Multi-window Shiny)",
     "group": "science",
@@ -94,7 +101,8 @@
       "nodeIntegration": false
     }
   },
-  {
+
+  "hdhe": {
     "name": "High Dimensional Health Explorer",
     "description": "IDEA Hackathon entry (R; Multi-window Shiny)",
     "group": "summer2018",
@@ -107,7 +115,8 @@
       "nodeIntegration": false
     }
   },
-  {
+
+  "nys_health_storyboard": {
     "name": "NYS Health Data Explorer (storyboard)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
     "group": "summer2018",
@@ -119,7 +128,8 @@
       "wallURL": "https://docs.google.com/presentation/d/14PRCr90QDENrT5B_5MN5cmd95n82MiWsn03m3bSE4s8/present?slide=id.p"
     }
   },
-  {
+
+  "nys_health_explorer": {
     "name": "NYS Health Data Explorer (live demo)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
     "group": "summer2018",
@@ -133,7 +143,8 @@
       "nodeIntegration": false
     }
   },
-  {
+
+  "twitter_demo": {
     "name": "Twitter Demo (Alex)",
     "description": "Interactive network visualization of related twitter streams (R; Multi-window Shiny)",
     "group": "summer2018",
@@ -147,7 +158,8 @@
       "nodeIntegration": false
     }
   },
-  {
+
+  "mouse_wrangler_grid": {
     "name": "Mouse Wrangler Grid Demo",
     "description": "Simple static demo that displays an alignment target on the wall and floor",
     "group": "hacks",
@@ -158,7 +170,8 @@
       "start_cmd": "electron ../demo/demo_target.js"
     }
   },
-  {
+
+  "google_slides_idea": {
     "name": "Google Slides Demo (IDEA Template)",
     "description": "Prototype of IDEA Template (includes Floor, Wall and Monitor)",
     "group": "hacks",
@@ -171,7 +184,8 @@
       "wallURL": "https://docs.google.com/presentation/d/1MgjFQRFPFa9zst6da585Kas-jMa5zx96a4rG8u1pctA/present"
     }
   },
-  {
+
+  "google_slides_penguin": {
     "name": "Google Slides Demo (Penguin)",
     "description": "Demonstration of an animated visualization using Google Slides",
     "group": "hacks",
@@ -184,7 +198,8 @@
       "wallURL": "http://bit.ly/CampfireWallSlideFull"
     }
   },
-  {
+
+  "fruit_data_mws": {
     "name": "Fruit Data Explorer: A Basic Multi-window Shiny Demo",
     "description": "R-based data visualizations computed on the IDEA cluster (R; Multi-window Shiny)",
     "group": "hacks",
@@ -198,7 +213,8 @@
       "nodeIntegration": false
     }
   },
-  {
+
+  "smorgasbord": {
     "name": "Smorgasbord",
     "description": "Select your own Walls and Floors! Includes audio...",
     "group": "hacks",
@@ -209,7 +225,8 @@
       "start_cmd": "electron ."
     }
   },
-    {
+
+  "election_2016": {
     "name": "2016 Election Data",
     "description": "US 2016 Election Results and Twitter Activity (Electron)",
     "group": "hacks",
@@ -221,7 +238,8 @@
       "start_cmd": "npm start"
     }
   },
-  {
+
+  "cellular_automata": {
     "name": "Cellular Automata Demo",
     "description": "Displays cellular automata on Wall and Floor",
     "group": "hacks",
@@ -234,7 +252,8 @@
       "nodeIntegration": false
     }
   },
-  {
+
+  "erickson_twitter": {
     "name": "Erickson Twitter Data",
     "description": "Streamgraph of John Erickson's Twitter Stream (18K tweets, 2008-2018)",
     "group": "hacks",
@@ -247,4 +266,4 @@
       "nodeIntegration": false
     }
   }
-]
+}
