@@ -222,6 +222,19 @@
     }
   },
   {
+    "name": "Cellular Automata Demo",
+    "description": "Displays cellular automata on Wall and Floor",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "floorURL": "http://jwezorek.com/CA/ca_player.html",
+      "wallURL": "http://jwezorek.com/CA/ca_player.html",
+      "nodeIntegration": false
+    }
+  },
+  {
     "name": "Erickson Twitter Data",
     "description": "Streamgraph of John Erickson's Twitter Stream (18K tweets, 2008-2018)",
     "group": "hacks",
