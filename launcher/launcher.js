@@ -36,7 +36,7 @@ var hci = new HCI({
   'centermode': true,
   'floorURL': FLOOR_URL,
   'wallURL': WALL_URL,
-  'mousewrangler': false
+  'mousewrangler': true
 });
 
 var webcontroller = new ControllerServer(4000, ChildUtils.appList);
