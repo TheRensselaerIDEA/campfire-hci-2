@@ -9,7 +9,6 @@ const viewtool = require('./public/viewtool.js');
 
  module.exports = function ControllerServer(port, app_list) {
     
-    
     this.webapp = express();
     this.port = port;
     this.app_list = app_list;

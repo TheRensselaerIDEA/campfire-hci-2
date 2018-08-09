@@ -11,9 +11,16 @@
 const child_process = require('child_process');
 const os = require('os');
 const RemoteClient = require('./RemoteClient.js');
+const config = require('./config.js');
 
 const NO_APP_ID = "noapp" // App id used when there is no app open
+
+const REMOTE_IP = config.getSettings().remote_ip;
+const REMOTE_PORT = config.getSettings().remote_port;
+
 module.exports = {
+
+  remote_client: new RemoteClient(REMOTE_IP, REMOTE_PORT),
 
   openChild: NO_APP_ID,
 
@@ -50,7 +57,7 @@ module.exports = {
 
     this.openChild = app_id,
 
-    RemoteClient.openURL(appDescriptor['remoteURL'], appDescriptor['splashURL']);
+    this.remote_client.openURL(appDescriptor['remoteURL'], appDescriptor['splashURL']);
 
     // Determine content type and launch appropriate application
     if (appDescriptor['type'] == 'simple_app') {
@@ -79,7 +86,7 @@ module.exports = {
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
       console.log(`ChildUtils: child exited with status ${code}`);
-      RemoteClient.closeURL();
+      remote_client.closeURL();
       global.childps.app = null;
       this.openChild = NO_APP_ID
     });
