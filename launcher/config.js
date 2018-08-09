@@ -20,12 +20,11 @@ module.exports = {
         try {
             var settings = require('./settings.json');
         } catch(err) {
-            var settings = {
-                "hci": {}
-            };
+            var settings = {};
         }
         console.log(`Remote port before is ${settings['remote_port']}`);
         // Configure settings object
+        if (settings[['hci'] == undefined]) { settings['hci'] = {}; }
         if (settings['remote_ip'] == undefined) { settings['remote_ip'] = DEFAULT_REMOTE_IP; }
         if (settings['remote_port'] == undefined) { settings['remote_port'] = DEFAULT_REMOTE_PORT; }
         console.log(`Remote port after is ${settings['remote_port']}`);
