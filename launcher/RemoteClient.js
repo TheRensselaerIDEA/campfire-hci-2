@@ -9,17 +9,20 @@
  'use strict';
 
 const request = require('request');
+const config = require('./config.js');
+const REMOTE_IP = config.getSettings().remote_ip;
+const REMOTE_PORT = config.getSettings().remote_port;
 
-module.exports = function RemoteClient(ip, port) {
+module.exports = {
 
-    this.server_url = `http://${ip}:${port}/`;
+    server_url: `http://${REMOTE_IP}:${REMOTE_PORT}/`,
 
     /**
      * Send server request to open the specified URL
      * @param {string} context_url - URL to open in remote view controller context monitor
      * @param {string} splash_url - URL to open in remote view controller splash monitor
      */
-    this.openURL = function (context_url, splash_url) {
+    openURL: function (context_url, splash_url) {
         console.log(`Remote client with args ${context_url}, ${splash_url}`)
         let options = {
             method: 'GET',
@@ -33,12 +36,12 @@ module.exports = function RemoteClient(ip, port) {
         request(this.server_url, options, null).on('error', function(err) {
             console.log(`remote_server request failed: "${err}"`);
         });
-    };
+    },
 
     /**
      * Close remote view controller display
      */
-    this.closeURL = function() {
+    closeURL: function() {
         console.log("RemoteClient: Closing Remote Page");
         let options = {
             method: 'GET',
@@ -50,5 +53,5 @@ module.exports = function RemoteClient(ip, port) {
         request(this.server_url, options, null).on('error', function(err) {
             console.log(`remote_server request failed: "${err}"`);
         });
-    };
+    }
 }
