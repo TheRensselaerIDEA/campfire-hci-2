@@ -86,7 +86,7 @@ module.exports = {
     // Add exit handler to remove reference to currently opened child on child close
     appProcess.on('exit', function (code, signal) {
       console.log(`ChildUtils: child exited with status ${code}`);
-      remote_client.closeURL();
+      this.remote_client.closeURL();
       global.childps.app = null;
       this.openChild = NO_APP_ID
     });
