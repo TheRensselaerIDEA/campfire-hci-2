@@ -1,24 +1,13 @@
-# Launcher
-The campfire launcher makes interacting with the campfire and its various demos straightforward.
-
-## Installation
-Unix-Like platform
-```bash
-./path/to/campfire-hci-2/launcher/install.sh
-```
-
-## Running
-```bash
-cd ../path/to/campfire-hci-2/launcher/
-npm start
-```
-
-___
+# Applist.json
+- File located at `./campfire-hci-2/launcher/appList.json`
+- Specifies applications that appear in the launcher
+- The file is structured as an object where each property maps to an **App Descriptor**
 
 ## App Descriptors (For Adding/Changing Launcher Entries)
-- App Descriptors are defined in appList.json
 - Each entry specifies how an app is display in menu/launched
 - All AppDescriptors share some common parameters outlined below
+- The specification for an app_descriptor is below
+
 ```javascript
 "app_id": {
   "name": "MyAppName",
