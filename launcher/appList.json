@@ -4,6 +4,7 @@
     "description": "Introduction to the Rensselaer IDEA (Google Slides)",
     "group": "classic",
     "type": "google_slides",
+    "demoable": "true",
     "remoteURL": "https://docs.google.com/presentation/d/1QZ3SEzKkWOIhSbuTapFznPRPlPP08HHcDKRD3aNbnjY/present",
     "splashURL": "https://docs.google.com/presentation/d/1QZ3SEzKkWOIhSbuTapFznPRPlPP08HHcDKRD3aNbnjY/present",
     "args": {
@@ -18,6 +19,7 @@
     "description": "Interactive heatmap and chord diagram demo (ElectronJS)",
     "group": "classic",
     "type": "external_app",
+    "demoable": "true",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
@@ -31,6 +33,7 @@
     "description": "Campfire Demo using google streetview",
     "group": "classic",
     "type": "external_app",
+    "demoable": "true",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
@@ -55,6 +58,7 @@
     "description": "Circular Image Viewer",
     "group": "classic",
     "type": "external_app",
+    "demoable": "true",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
@@ -68,6 +72,7 @@
     "description": "(Classic; interactive) Susceptibility Windows Ontological Transcriptome Clock",
     "group": "science",
     "type": "external_app",
+    "demoable": "true",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/SemNExT_Poster.png",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
@@ -135,6 +140,7 @@
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
+    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Monitor",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Controller",
@@ -151,6 +157,7 @@
     "description": "Interactive network visualization of related twitter streams (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
+    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Controller",
