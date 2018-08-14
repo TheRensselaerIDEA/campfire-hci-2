@@ -136,6 +136,7 @@
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Monitor",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Controller",
     "args": {
       "centermode": false,
       "floorURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Floor",
