@@ -16,9 +16,9 @@ const ChildUtils = require('./ChildUtils.js');
 const ControllerServer = require('./ControllerServer.js');
 
 const config = require('./config.js');
+const SETTINGS = config.getSettings();
 
 // Constant definitions
-const QUIT_ACCELERATOR = 'CommandOrControl+K';
 const UNIT_ROTATION = 10; // Smallest rotation increment for launcher reorientation
 
 const DEMO_MODE = (process.argv.length >= 3 && process.argv[2] == 'demo') ? true : false;
@@ -31,10 +31,10 @@ global.childps = {'app': null};
 var appList = ChildUtils.getAppList(DEMO_MODE);
 
 // Create instance of HCI library
-var hci = new HCI(config.getSettings().hci);
+var hci = new HCI(SETTINGS.hci);
 
 // Create web controller
-var webcontroller = new ControllerServer(config.getSettings().controller_port, appList);
+var webcontroller = new ControllerServer(SETTINGS.controller_port, appList);
 
  // Bind keyboard input to IPC events so that the UI Thread can handle them appropriately
 hci.inputManager.bindForward(() => {
@@ -69,7 +69,7 @@ hci.inputManager.bindBackwardPress(() => {
 // Configuration in this block must occur after electron has been initialized, so it is deferred until the ready event occurs
 electron.app.on('ready', () => {
   // handle quit shortcut
-  electron.globalShortcut.register(QUIT_ACCELERATOR, () => {
+  electron.globalShortcut.register(SETTINGS.quit_accelerator, () => {
     if (ChildUtils.isChildOpen()) {
       ChildUtils.closeApp();
     } else {
