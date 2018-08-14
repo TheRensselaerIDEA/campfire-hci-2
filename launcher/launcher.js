@@ -15,7 +15,7 @@ const electron = require('electron');
 const ChildUtils = require('./ChildUtils.js');
 const ControllerServer = require('./ControllerServer.js');
 
-const config = require('./config.js')
+const config = require('./config.js');
 
 // Constant definitions
 const QUIT_ACCELERATOR = 'CommandOrControl+K';
@@ -27,12 +27,14 @@ console.log(`Demo Mode: ${DEMO_MODE}`);
 var launcherRotation = 0; // Current Launcher UI offset (in degrees)
 global.childps = {'app': null};
 
+// Load appList
+var appList = ChildUtils.getAppList(DEMO_MODE);
 
 // Create instance of HCI library
 var hci = new HCI(config.getSettings().hci);
 
 // Create web controller
-var webcontroller = new ControllerServer(4000, ChildUtils.appList);
+var webcontroller = new ControllerServer(config.getSettings().controller_port, appList);
 
  // Bind keyboard input to IPC events so that the UI Thread can handle them appropriately
 hci.inputManager.bindForward(() => {
@@ -75,9 +77,9 @@ electron.app.on('ready', () => {
     }
   });
 
-  // Handle get demo_mode status
-  electron.ipcMain.on('is-demo-mode', function(event, arg) {
-    event.returnValue = DEMO_MODE;
+
+  electron.ipcMain.on('get-app-list', function(event, arg) {
+    event.returnValue = appList;
   });
 
   // handle the open-app event

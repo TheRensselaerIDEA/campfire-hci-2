@@ -12,6 +12,7 @@ const FLOOR_URL = path.join('file://', __dirname, 'docs', 'floor.html');
 const WALL_URL = path.join('file://', __dirname, 'docs', 'wall.html');
 const DEFAULT_REMOTE_IP = "127.0.0.1"
 const DEFAULT_REMOTE_PORT = 5000;
+const DEFAULT_CONTROLLER_PORT = 4000;
 
 module.exports = {
 
@@ -22,12 +23,11 @@ module.exports = {
         } catch(err) {
             var settings = {};
         }
-        console.log(`Remote port before is ${settings['remote_port']}`);
         // Configure settings object
         if (settings['hci'] == undefined) { settings['hci'] = {}; }
         if (settings['remote_ip'] == undefined) { settings['remote_ip'] = DEFAULT_REMOTE_IP; }
         if (settings['remote_port'] == undefined) { settings['remote_port'] = DEFAULT_REMOTE_PORT; }
-        console.log(`Remote port after is ${settings['remote_port']}`);
+        if (settings['controller_port'] == undefined) { settings['controller_port'] = DEFAULT_CONTROLLER_PORT; }
         settings.hci['floorURL'] = FLOOR_URL;
         settings.hci['wallURL'] = WALL_URL;
         return settings;

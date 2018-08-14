@@ -28,6 +28,29 @@ module.exports = {
     return global.childps.app != null;
   },
 
+  /**
+   * Get a copy of the appList
+   * @param {boolean} - True if demo filtering should occur
+   * @returns Applist with specified filtering
+   */
+  getAppList: function(is_demo_mode) {
+    if (!is_demo_mode) {
+      return this.appList;
+    } else {
+      let list = {};
+      for (let app_id in this.appList) {
+        // Skip non app values
+        if(!this.appList.hasOwnProperty(app_id)) { continue; }
+        // Add all demoable items to list
+        let demoable = this.appList[app_id]['demoable'] != undefined ? this.appList[app_id]['demoable'] : false;
+        if (demoable) {
+          list[app_id] = this.appList[app_id];
+        }
+      }
+      return list;
+    }
+  },
+
   /*
     Opens an app from applist.json
     @warn - will fail if called outside of the main thread

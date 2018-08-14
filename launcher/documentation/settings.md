@@ -8,6 +8,7 @@
 {
     "remote_ip": "127.0.0.1",
     "remote_port": 5000,
+    "controller_port": 4000,
     "hci": {
       // Any HCI.js arguments can be set here
     }
@@ -16,4 +17,5 @@
 ### Parameters
 - `remote_ip` - Remote monitor server IP address
 - `remote_port` - Remote monitor server port
+- `controller_port` - Port that remote controller webserver should bind to
 - `hci` - object defining any values to override the default values for the launchers campfire-hci-2.hci.js Object.

@@ -14,7 +14,8 @@ const viewtool = require('../public/viewtool.js');
 
 const CLASS_CONTAINER = 'list-group-item list-group-item-action flex-column align-items-start';
 
-const APP_LIST = require('../appList.json');
+// Load appList from main launcher thread
+var appList = electron.ipcRenderer.sendSync('get-app-list', undefined);
 
 var launcher_list = []; // List of app_ids in launcher
 var index_selected = 0; // Current selection in launcher_list
@@ -27,7 +28,7 @@ var index_selected = 0; // Current selection in launcher_list
 function styleElement(app_id, is_selected) {
   // Get the element for the app at index
   let el = document.getElementById(`app_${app_id}`);
-  let group = APP_LIST[app_id]['group'];
+  let group = appList[app_id]['group'];
   if (is_selected) {
     el.setAttribute('class', CLASS_CONTAINER + ` ${viewtool.getGroupSelectClass(group)}`);
   } else {
@@ -64,9 +65,9 @@ function select(app_id) {
 function generateListElement(app_id) {
   console.log(`Generating element for app_id ${app_id}`);
   // Create list container element & add event listeners
-  let name = APP_LIST[app_id]['name'];
-  let description = APP_LIST[app_id]['description'];
-  let group = APP_LIST[app_id]['group'];
+  let name = appList[app_id]['name'];
+  let description = appList[app_id]['description'];
+  let group = appList[app_id]['group'];
   let listContainer = document.createElement('a');
   listContainer.id = `app_${app_id}`;
   listContainer.addEventListener('click', () => { openApp(app_id); });
@@ -104,21 +105,17 @@ function generateListElement(app_id) {
  * Populate a div container with the provided applist
  * @param {*} list_div the html div element that will hold the list
  * @param {string[]} launcher_id_list list to populate with app ids loaded in launcher
- * @param {bool} is_demo_mode if true, ignores app descriptors with demoable = false
  */
-function loadAppTable(list_div, launcher_id_list, is_demo_mode) {
-  for (let app_id in APP_LIST) {
-    // Ignore non app properties of app_list object
-    if (!APP_LIST.hasOwnProperty(app_id)) { continue; }
+function loadAppTable(list_div, launcher_id_list) {
+  for (let app_id in appList) {
+    // Ignore non app values in app_list
+    if (!appList.hasOwnProperty(app_id)) { continue; }
 
     // Add app to launcher app_id list for list attribute lookup
     launcher_id_list.push(app_id);
     
-    let demoable = APP_LIST[app_id]['demoable'] != undefined ? APP_LIST[i]['demoable'] : true;
-    if (!is_demo_mode || (is_demo_mode && demoable)) {
-      var list_item = generateListElement(app_id);
-      list_div.appendChild(list_item);
-    }
+    var list_item = generateListElement(app_id);
+    list_div.appendChild(list_item);
   }
   select(launcher_id_list[0]);
 }
@@ -134,9 +131,7 @@ function openApp(app_id) {
 // Code below is run when script is loaded
 
 // Get most recent appList from main launcher thread and render app table
-var demo_mode = electron.ipcRenderer.sendSync('is-demo-mode', undefined);
-console.log(`Demo Mode: ${demo_mode}`);
-loadAppTable(document.getElementById('listDiv'), launcher_list, demo_mode);
+loadAppTable(document.getElementById('listDiv'), launcher_list);
 
 // Check for keypress events from main electron thread
 electron.ipcRenderer.on('keyevent', function(event, arg) {
