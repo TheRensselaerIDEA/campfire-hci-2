@@ -257,8 +257,8 @@
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
-      "floorURL": "http://jwezorek.com/CA/ca_player.html",
-      "wallURL": "http://jwezorek.com/CA/ca_player.html",
+      "floorURL": "http://jwezorek.com/CA/ca_player.html?%7B%22Name%22%3A%22Armada%22%2C%22CellStructure%22%3A%22Hex%2C%206-cell%22%2C%22NeighborhoodFunction%22%3A%22State%20based%20binary%22%2C%22StateTable%22%3A%5B%5B0%2C0%2C0%2C0%5D%2C%5B0%2C0%2C0%2C0%5D%2C%5B0%2C0%2C3%2C0%5D%2C%5B3%2C0%2C0%2C0%5D%2C%5B2%2C0%2C2%2C2%5D%2C%5B0%2C0%2C0%2C0%5D%2C%5B1%2C0%2C0%2C0%5D%2C%5B1%2C2%2C0%2C0%5D%2C%5B0%2C0%2C0%2C1%5D%2C%5B0%2C0%2C2%2C0%5D%2C%5B1%2C0%2C0%2C1%5D%2C%5B2%2C2%2C0%2C0%5D%2C%5B2%2C0%2C1%2C0%5D%2C%5B0%2C0%2C0%2C0%5D%2C%5B0%2C2%2C0%2C1%5D%5D%2C%22CustomColors%22%3A%5B%5B0%2C0%2C0%5D%2C%5B255%2C245%2C64%5D%2C%5B0%2C162%2C232%5D%2C%5B255%2C0%2C0%5D%5D%7D",
+      "wallURL": "http://jwezorek.com/CA/ca_player.html?%7B%22Name%22%3A%22Armada%22%2C%22CellStructure%22%3A%22Hex%2C%206-cell%22%2C%22NeighborhoodFunction%22%3A%22State%20based%20binary%22%2C%22StateTable%22%3A%5B%5B0%2C0%2C0%2C0%5D%2C%5B0%2C0%2C0%2C0%5D%2C%5B0%2C0%2C3%2C0%5D%2C%5B3%2C0%2C0%2C0%5D%2C%5B2%2C0%2C2%2C2%5D%2C%5B0%2C0%2C0%2C0%5D%2C%5B1%2C0%2C0%2C0%5D%2C%5B1%2C2%2C0%2C0%5D%2C%5B0%2C0%2C0%2C1%5D%2C%5B0%2C0%2C2%2C0%5D%2C%5B1%2C0%2C0%2C1%5D%2C%5B2%2C2%2C0%2C0%5D%2C%5B2%2C0%2C1%2C0%5D%2C%5B0%2C0%2C0%2C0%5D%2C%5B0%2C2%2C0%2C1%5D%5D%2C%22CustomColors%22%3A%5B%5B0%2C0%2C0%5D%2C%5B255%2C245%2C64%5D%2C%5B0%2C162%2C232%5D%2C%5B255%2C0%2C0%5D%5D%7D",
       "nodeIntegration": false
     }
   }
