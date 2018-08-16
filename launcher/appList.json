@@ -153,8 +153,8 @@
   },
 
   "twitter_demo": {
-    "name": "Twitter Demo (Alex)",
-    "description": "Interactive network visualization of related twitter streams (R; Multi-window Shiny)",
+    "name": "Twitter Network Explorer",
+    "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
     "demoable": "true",
