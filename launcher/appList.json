@@ -13,6 +13,21 @@
       "wallURL": "https://docs.google.com/presentation/d/13S-tikLVCkc24Wx_q1XNUdPKP3eEq3K4OQtH829S_C4/present"
     }
   },
+  
+    "health_incite": {
+    "name": "Health INCITE",
+    "description": "Introduction to Health INCITE: The Rensselaer Health INCITE Pipeline (Google Slides)",
+    "group": "classic",
+    "type": "google_slides",
+    "demoable": "true",
+    "remoteURL": "https://docs.google.com/presentation/d/1lSB4DaFvaygtFp5fsbsQmzP_xaLO_vYwyxEe7cFgREQ/present",
+    "splashURL": "https://docs.google.com/presentation/d/1lSB4DaFvaygtFp5fsbsQmzP_xaLO_vYwyxEe7cFgREQ/present",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://docs.google.com/presentation/d/1LNgXiwscU7Fc5eY6NTmGg8VXczZBTR0dm8rSQ3Ws_1o/present",
+      "wallURL": "https://docs.google.com/presentation/d/1OEYKfbt79kXcZpkiis4M2jo6XJD6ePo4hsAXALFrQi8/present"
+    }
+  },
 
   "tiles": {
     "name": "Tiles",
