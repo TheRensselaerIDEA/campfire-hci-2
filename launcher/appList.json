@@ -182,6 +182,22 @@
       "nodeIntegration": false
     }
   },
+  
+    "twitter_demo_dev": {
+    "name": "Twitter Network Explorer (DEV)",
+    "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
+    "group": "summer2018",
+    "type": "simple_app",
+    "demoable": "false",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?Monitor",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?URLMonitor",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?Controller",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?Wall",
+      "nodeIntegration": false
+    }
+  },
 
   "mouse_wrangler_grid": {
     "name": "Mouse Wrangler Grid Demo",
