@@ -188,7 +188,6 @@
     "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "demoable": "false",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?URLMonitor",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer-test/?Controller",
@@ -276,6 +275,20 @@
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\code.empac.rpi.edu\\us_election2016\\",
       "start_cmd": "npm start"
+    }
+  },
+
+    "bubble_explorer": {
+    "name": "Hierarchical Bubble Demo",
+    "description": "Displays hierarchical 'bubble' diagram on Floor",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "floorURL": "  https://bl.ocks.org/mbostock/raw/7607535/",
+      "wallURL": "https://mbostock.github.io/d3/talk/20111018/area-gradient.html",
+      "nodeIntegration": false
     }
   },
 
