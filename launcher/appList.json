@@ -287,7 +287,7 @@
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "floorURL": "http://orion.tw.rpi.edu/~olyerickson/bubble_test.html",
-      "wallURL": "https://mbostock.github.io/d3/talk/20111018/area-gradient.html",
+      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/brushzoom_test.html",
       "nodeIntegration": false
     }
   },
