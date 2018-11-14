@@ -286,7 +286,7 @@
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
-      "floorURL": "http://orion.tw.rpi.edu/~olyerickson/bubble_test.html",
+      "floorURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/",
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/brushzoom_test.html",
       "nodeIntegration": false
     }
