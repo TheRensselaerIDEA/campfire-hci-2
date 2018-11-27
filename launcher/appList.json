@@ -113,7 +113,7 @@
     "group": "science",
     "type": "simple_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Monitor",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?URL_Monitor",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/delosh/COE/?Controller",
     "args": {
       "centermode": false,
