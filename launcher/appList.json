@@ -283,7 +283,7 @@
     "description": "Displays hierarchical 'bubble' diagram on Floor",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "remoteURL": "https://docs.google.com/presentation/d/1yHqpce6xX-ZZVrADuX5R5RNAG4Cmytezie_FRSATfho/present",
     "splashURL": "https://docs.google.com/presentation/d/12xNkp4O28CLmQyYjZ_KxjJs8pTR8si8RlUqsNckjxtE/present",
     "args": {
       "floorURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/",
