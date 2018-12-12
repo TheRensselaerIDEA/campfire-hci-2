@@ -279,9 +279,9 @@
     }
   },
 
-    "bubble_explorer": {
-    "name": "Hierarchical Bubble Demo",
-    "description": "Displays hierarchical 'bubble' diagram on Floor",
+    "guidelines_explorer": {
+    "name": "Hierarchical ADA Guidelines Explorer Demo",
+    "description": "Interactive Hierarchical ADA Guidelines Explorer ('bubble diagram')",
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "https://docs.google.com/presentation/d/1yHqpce6xX-ZZVrADuX5R5RNAG4Cmytezie_FRSATfho/present",
