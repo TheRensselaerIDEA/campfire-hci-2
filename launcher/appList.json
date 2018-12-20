@@ -123,20 +123,6 @@
     }
   },
 
-  "hdhe": {
-    "name": "High Dimensional Health Explorer",
-    "description": "IDEA Hackathon entry (R; Multi-window Shiny)",
-    "group": "summer2018",
-    "type": "simple_app",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "centermode": false,
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/HDHE/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/HDHE/?Wall",
-      "nodeIntegration": false
-    }
-  },
-
   "nys_health_storyboard": {
     "name": "NYS Health Data Explorer (storyboard)",
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
@@ -259,6 +245,7 @@
     "description": "Select your own Walls and Floors! Includes audio...",
     "group": "hacks",
     "type": "external_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
@@ -306,6 +293,21 @@
       "wallURL": "https://docs.google.com/presentation/d/1Hh92gWVMfvcqVm3Te3214brKn5NeouaXB9U8BlRoRIQ/present",
       "nodeIntegration": false
     }
-  }
+  },
+  
+    "wall_5_panel_test": {
+    "name": "Multiple Panel Wall Test",
+    "description": "Testing user selection of the Wall view they see across from them",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/embedtest/",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/embedtest/",
+      "nodeIntegration": false
+    }
+    }
+
 
 }
