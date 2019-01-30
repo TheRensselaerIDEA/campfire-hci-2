@@ -271,11 +271,11 @@
     "description": "Interactive Hierarchical ADA Guidelines Explorer ('bubble diagram')",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://docs.google.com/presentation/d/1yHqpce6xX-ZZVrADuX5R5RNAG4Cmytezie_FRSATfho/present",
+    "remoteURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Floor",
     "splashURL": "https://docs.google.com/presentation/d/12xNkp4O28CLmQyYjZ_KxjJs8pTR8si8RlUqsNckjxtE/present",
     "args": {
-      "floorURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/",
-      "wallURL": "https://docs.google.com/presentation/d/1C9VFIqXmkyCUrYo8uVpN0C-gvNRLOmlqXZLH5D1AWTU/present",
+      "floorURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Floor",
+      "wallURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Wall",
       "nodeIntegration": false
     }
   },
