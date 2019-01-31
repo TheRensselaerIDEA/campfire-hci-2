@@ -274,8 +274,8 @@
     "remoteURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Floor",
     "splashURL": "https://docs.google.com/presentation/d/12xNkp4O28CLmQyYjZ_KxjJs8pTR8si8RlUqsNckjxtE/present",
     "args": {
-      "floorURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Floor",
-      "wallURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Wall",
+      "floorURL": "http://lp01.idea.rpi.edu/shiny/erickj4/GuideViz/?Floor",
+      "wallURL": "http://lp01.idea.rpi.edu/shiny/erickj4/GuideViz/?Wall",
       "nodeIntegration": false
     }
   },
