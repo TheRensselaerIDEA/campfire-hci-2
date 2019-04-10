@@ -183,6 +183,21 @@
       "nodeIntegration": false
     }
   },
+  
+  "twitter_demo_dev_am": {
+   "name": "Twitter Time Machine (DEV_AM)",
+   "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
+   "group": "summer2018",
+   "type": "simple_app",
+   "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Monitor",
+   "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?URLMonitor",
+   "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Controller",
+   "args": {
+     "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Floor",
+     "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Wall",
+     "nodeIntegration": false
+   }
+ },
 
   "mouse_wrangler_grid": {
     "name": "Mouse Wrangler Grid Demo",
