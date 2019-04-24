@@ -324,16 +324,16 @@
     }
   },
 
-    "wall_5_panel_test": {
-    "name": "Multiple Panel Wall Test",
-    "description": "Testing user selection of the Wall view they see across from them",
+    "panorama_test": {
+    "name": "Panorama Wall Test",
+    "description": "Testing panoramas on the Wall!",
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/embedtest/",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/embedtest/",
+      "floorURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/panorama.html",
       "nodeIntegration": false
     }
     }
