@@ -336,6 +336,20 @@
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/panorama.html",
       "nodeIntegration": false
     }
+    },
+  
+  "campus_tour": {
+    "name": "Campus Tour Panorama Test",
+    "description": "Click points on the Floor, see panoramas on the Wall!",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Wall",
+      "nodeIntegration": false
+    }
     }
 
 
