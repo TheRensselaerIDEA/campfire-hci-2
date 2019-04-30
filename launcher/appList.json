@@ -169,7 +169,7 @@
     }
   },
   
-    "twitter_demo_dev": {
+  "twitter_demo_dev": {
     "name": "Twitter Time Machine (DEV)",
     "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
     "group": "summer2018",
@@ -281,7 +281,7 @@
     }
   },
 
-    "guidelines_explorer": {
+  "guidelines_explorer": {
     "name": "Hierarchical ADA Guidelines Explorer Demo",
     "description": "Interactive Hierarchical ADA Guidelines Explorer ('bubble diagram')",
     "group": "hacks",
@@ -310,7 +310,7 @@
     }
   },
   
-    "visnetwork": {
+  "visnetwork": {
     "name": "VisNetwork Test",
     "description": "Collapsible/Expandable Network Explorer",
     "group": "hacks",
@@ -324,7 +324,7 @@
     }
   },
 
-    "panorama_test": {
+  "panorama_test": {
     "name": "Panorama Wall Test",
     "description": "Testing panoramas on the Wall!",
     "group": "hacks",
@@ -336,7 +336,7 @@
       "wallURL": "http://orion.tw.rpi.edu/~olyerickson/panorama.html",
       "nodeIntegration": false
     }
-    },
+  },
   
   "campus_tour": {
     "name": "Campus Tour Panorama Test",
@@ -350,7 +350,6 @@
       "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Wall",
       "nodeIntegration": false
     }
-    }
-
+  }
 
 }
