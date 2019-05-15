@@ -343,7 +343,7 @@
     "description": "Click points on the Floor, see panoramas on the Wall!",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://rpi.app.box.com/v/Self-guidedTour",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?LeftMonitor",
     "splashURL": "http://rpi.edu",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Floor",
