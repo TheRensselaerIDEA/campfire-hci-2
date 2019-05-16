@@ -339,10 +339,11 @@
   },
   
   "campus_tour": {
-    "name": "Campus Tour Panorama Test",
-    "description": "Click points on the Floor, see panoramas on the Wall!",
+    "name": "Campus PanoTour",
+    "description": "Click points on the Floor, see panorama video on the Wall!",
     "group": "hacks",
     "type": "simple_app",
+    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?LeftMonitor",
     "splashURL": "http://rpi.edu",
     "args": {
