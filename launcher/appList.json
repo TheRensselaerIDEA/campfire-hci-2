@@ -170,16 +170,16 @@
   },
   
   "twitter_demo_dev": {
-    "name": "Twitter Time Machine (DEV)",
-    "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
+    "name": "Twitter Time Machine (JSE)",
+    "description": "Interactive network visualization and social media analysis (IDEA URPs) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/maherb/TTM/?Monitor",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/maherb/TTM/?URLMonitor",
-    "controllerURL": "https://lp01.idea.rpi.edu/shiny/maherb/TTM/?Controller",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Monitor",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?URLMonitor",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/maherb/TTM/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/maherb/TTM/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Wall",
       "nodeIntegration": false
     }
   },
