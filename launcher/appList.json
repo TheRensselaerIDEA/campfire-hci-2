@@ -366,6 +366,21 @@
       "wallURL": "https://docs.google.com/presentation/d/1NIlS3BE1mI3rd0taB8yNYhhovCyKTLDFi-siTQupkfg/present",
       "nodeIntegration": false
     }
-  }
+  }, 
+  
+    "nyc_tree_tour": {
+    "name": "NYC Tree Tour",
+    "description": "Click points on the Floor, see the tree's view on the Wall!",
+    "group": "hacks",
+    "type": "simple_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/chauhs2/treeview/?LeftMonitor",
+    "splashURL": "http://rpi.edu",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/chauhs2/treeview/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/chauhs2/treeview/?Wall",
+      "nodeIntegration": false
+    }
+  },
 
 }
