@@ -353,6 +353,21 @@
     }
   },
   
+    "campus_tour_taras": {
+    "name": "Campus PanoTour (Taras)",
+    "description": "Click points on the Floor, see panorama video on the Wall!",
+    "group": "hacks",
+    "type": "simple_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/kamint/RPICampusTour_iframe/?LeftMonitor",
+    "splashURL": "http://rpi.edu",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/kamint/RPICampusTour_iframe/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/kamint/RPICampusTour_iframe/?Wall",
+      "nodeIntegration": false
+    }
+  },
+  
     "ahrq_storyboard": {
     "name": "AHRQ MortalityMinder Storyboard",
     "description": "Google slideware",
