@@ -332,7 +332,7 @@
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
-      "floorURL": "http://orion.tw.rpi.edu/~olyerickson/panorama_floor.jpg",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
       "wallURL": "https://docs.google.com/presentation/d/1RHBFEqCjdWyes1bJDrnspcBA8Ddwqh-dcHHtn_y9VhI/present",
       "nodeIntegration": false
     }
