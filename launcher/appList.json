@@ -389,11 +389,11 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/chauhs2/treeview/?LeftMonitor",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?LeftMonitor",
     "splashURL": "http://rpi.edu",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/chauhs2/treeview/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/chauhs2/treeview/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Wall",
       "nodeIntegration": false
     }
   }
