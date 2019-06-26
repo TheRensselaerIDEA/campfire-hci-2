@@ -324,8 +324,8 @@
     }
   },
 
-  "panorama_test": {
-    "name": "Panorama Wall Test",
+  "starwars_wf": {
+    "name": "StarWars Network Wireframe",
     "description": "Testing panoramas on the Wall!",
     "group": "hacks",
     "type": "simple_app",
@@ -333,7 +333,7 @@
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "floorURL": "http://orion.tw.rpi.edu/~olyerickson/panorama_floor.jpg",
-      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/panorama.html",
+      "wallURL": "https://docs.google.com/presentation/d/1RHBFEqCjdWyes1bJDrnspcBA8Ddwqh-dcHHtn_y9VhI/present",
       "nodeIntegration": false
     }
   },
