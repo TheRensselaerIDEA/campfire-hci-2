@@ -324,16 +324,16 @@
     }
   },
 
-  "starwars_wf": {
-    "name": "StarWars Network Wireframe",
-    "description": "Testing panoramas on the Wall!",
+  "starwars": {
+    "name": "StarWars Network Explorer",
+    "description": "Explore StarWars character network by selecting subsets of conversations",
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
-      "wallURL": "https://docs.google.com/presentation/d/1RHBFEqCjdWyes1bJDrnspcBA8Ddwqh-dcHHtn_y9VhI/present",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNet/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNet/?Wall",
       "nodeIntegration": false
     }
   },
