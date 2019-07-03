@@ -122,6 +122,22 @@
       "nodeIntegration": false
     }
   },
+  
+  "encore_demo": {
+    "name": "ENCORE Demo",
+    "description": "Visualize circadian protein-protein interactions for specific gene ontological terms in the Hughes (2009) dataset. (R; Multi-window Shiny)",
+    "group": "science",
+    "type": "simple_app",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/delosh/ENCORE_demo/?Controller",
+    "args": {
+      "centermode": false,
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/ENCORE_demo/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/ENCORE_demo/?Wall",
+      "nodeIntegration": false
+    }
+  },
 
   "nys_health_storyboard": {
     "name": "NYS Health Data Explorer (storyboard)",
