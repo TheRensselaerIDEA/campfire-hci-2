@@ -406,7 +406,7 @@
     "type": "simple_app",
     "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?LeftMonitor",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Controller",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Controller",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Wall",
