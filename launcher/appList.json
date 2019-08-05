@@ -400,16 +400,16 @@
   }, 
   
     "nyc_tree_tour": {
-    "name": "NYC Tree Tour",
-    "description": "Click points on the Floor, see the tree's view on the Wall!",
+    "name": "NYC Tree Explorer",
+    "description": "Click points on the Floor, see the tree's view on the Wall and tree data on the Monitor. Filter using the Controller.",
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?LeftMonitor",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/treeview/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Wall",
       "nodeIntegration": false
     }
   }
