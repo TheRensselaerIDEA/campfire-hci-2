@@ -332,7 +332,7 @@
     "group": "hacks",
     "type": "simple_app",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/kamint/visnetmws/?Wall",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/kamint/visnetmws/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/kamint/visnetmws/?Wall",
