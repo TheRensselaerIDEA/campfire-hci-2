@@ -405,11 +405,11 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/SonnyTreeTour/?Monitor",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/SonnyTreeTour/?Controller",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Monitor",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/SonnyTreeTour/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/SonnyTreeTour/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Wall",
       "nodeIntegration": false
     }
   }
