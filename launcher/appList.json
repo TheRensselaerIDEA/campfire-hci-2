@@ -348,8 +348,8 @@
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNet/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNet/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Wall",
       "nodeIntegration": false
     }
   },
