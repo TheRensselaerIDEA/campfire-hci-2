@@ -175,21 +175,22 @@
     "group": "summer2018",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?URLMonitor",
-    "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Controller",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Monitor",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?URLMonitor",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Wall",
       "nodeIntegration": false
     }
   },
   
   "twitter_demo_dev": {
-    "name": "Twitter Time Machine (JSE)",
+    "name": "Twitter Time Machine (WebSci2019)",
     "description": "Interactive network visualization and social media analysis (IDEA URPs) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
+    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?URLMonitor",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Controller",
@@ -200,21 +201,6 @@
     }
   },
   
-  "twitter_demo_dev_am": {
-   "name": "Twitter Time Machine (DEV_AM)",
-   "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
-   "group": "summer2018",
-   "type": "simple_app",
-   "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Monitor",
-   "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?URLMonitor",
-   "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Controller",
-   "args": {
-     "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Floor",
-     "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterNetworkRData/?Wall",
-     "nodeIntegration": false
-   }
- },
-
   "mouse_wrangler_grid": {
     "name": "Mouse Wrangler Grid Demo",
     "description": "Simple static demo that displays an alignment target on the wall and floor",
@@ -345,6 +331,7 @@
     "description": "Explore StarWars character network by selecting subsets of conversations",
     "group": "hacks",
     "type": "simple_app",
+    "demoable": "true",
     "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
