@@ -174,13 +174,12 @@
     "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Monitor",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?URLMonitor",
-    "controllerURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Controller",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?URLMonitor",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterBrowser/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Wall",
       "nodeIntegration": false
     }
   },
