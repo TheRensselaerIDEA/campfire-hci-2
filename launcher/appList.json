@@ -170,16 +170,17 @@
   },
 
   "twitter_demo": {
-    "name": "Twitter Network Explorer",
+    "name": "Twitter Network Explorer (Classic)",
     "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Monitor",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?URLMonitor",
-    "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Controller",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?Monitor",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?URLMonitor",
+    "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/TwitterBrowserMW/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?Wall",
       "nodeIntegration": false
     }
   },
