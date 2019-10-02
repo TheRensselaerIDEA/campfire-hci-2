@@ -357,13 +357,13 @@
   },
   
     "ahrq_storyboard": {
-    "name": "AHRQ MortalityMinder Storyboard",
+    "name": "MortalityMinder Storyboard",
     "description": "Google slideware",
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
     "remoteURL": "https://docs.google.com/presentation/d/1bGxJemrGWQwVNo6asTNmK4fjrvwV78Piu9GZIDf1j1Y/present",
-    "splashURL": "https://docs.google.com/presentation/d/1hqlrv-5TqDkHvJvMKSZY3Li7e_SRRmf6n8VaHFTTqlE/present",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder.mp4",
     "args": {
       "floorURL": "https://docs.google.com/presentation/d/1kTznoipDJ6Homg3nuyddE4K1qQh6-0YRGwO6dlwu7eo/present",
       "wallURL": "https://docs.google.com/presentation/d/1NIlS3BE1mI3rd0taB8yNYhhovCyKTLDFi-siTQupkfg/present",
