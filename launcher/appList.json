@@ -332,7 +332,7 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Character",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Script",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Floor",
