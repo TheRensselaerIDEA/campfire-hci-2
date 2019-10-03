@@ -363,7 +363,7 @@
     "type": "simple_app",
     "demoable": "true",
     "remoteURL": "http://lp01.idea.rpi.edu/shiny/erickj4/MortalityMinder/",
-    "splashURL": "https://www.youtube.com/watch?time_continue=5&v=QcbgEeQd-4o",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder.mp4",
     "args": {
       "floorURL": "https://docs.google.com/presentation/d/1kTznoipDJ6Homg3nuyddE4K1qQh6-0YRGwO6dlwu7eo/present",
       "wallURL": "https://docs.google.com/presentation/d/1NIlS3BE1mI3rd0taB8yNYhhovCyKTLDFi-siTQupkfg/present",
