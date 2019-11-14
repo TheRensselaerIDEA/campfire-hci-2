@@ -357,12 +357,12 @@
   },
   
     "ahrq_storyboard": {
-    "name": "MortalityMinder Storyboard",
-    "description": "Google slideware",
+    "name": "MortalityMinder Storyboard (Nov 2019)",
+    "description": "Video, live app and overview slides",
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "http://lp01.idea.rpi.edu/shiny/erickj4/MortalityMinder/",
+    "remoteURL": "https://olyerickson.shinyapps.io/mortalityminder/",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder.mp4",
     "args": {
       "floorURL": "https://docs.google.com/presentation/d/1kTznoipDJ6Homg3nuyddE4K1qQh6-0YRGwO6dlwu7eo/present",
