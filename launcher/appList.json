@@ -362,8 +362,8 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://olyerickson.shinyapps.io/mortalityminder/",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder.mp4",
+    "remoteURL": "https://mortalityminder.idea.rpi.edu/",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder_final.mp4",
     "args": {
       "floorURL": "https://docs.google.com/presentation/d/1kTznoipDJ6Homg3nuyddE4K1qQh6-0YRGwO6dlwu7eo/present",
       "wallURL": "https://docs.google.com/presentation/d/1NIlS3BE1mI3rd0taB8yNYhhovCyKTLDFi-siTQupkfg/present",
