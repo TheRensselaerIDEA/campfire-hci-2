@@ -390,11 +390,11 @@
     "description": "Mockup of mwshiny Campfire implementation of MortalityMinder",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://docs.google.com/presentation/d/1PSQe5c38lYyQn4MAty8lDlwxiLrPU64HMAHZ2edlX-Q/present",
-    "splashURL": "https://docs.google.com/presentation/d/1bcOVy5N_go3yFXLf4_5-M36_ap0ooPQEW4DXoSei9Xo/present",
+    "remoteURL": "https://docs.google.com/presentation/d/1bcOVy5N_go3yFXLf4_5-M36_ap0ooPQEW4DXoSei9Xo/present",
+    "splashURL": "https://docs.google.com/presentation/d/1PSQe5c38lYyQn4MAty8lDlwxiLrPU64HMAHZ2edlX-Q/present",
     "args": {
-      "floorURL": "https://docs.google.com/presentation/d/1qZ8DhlrIeRPONnwCft6T5O6sqHueYyoOJNYSXBNyVIM/present",
-      "wallURL": "https://docs.google.com/presentation/d/1whkzgirTCeEN30iawFx_5jTNiaScClFDqS8Af6PYDac/present",
+      "floorURL": "https://docs.google.com/presentation/d/1FPKMB0TBG8wWHeiSIddOEot21ZHPEkhLelXL32pyKqk/present",
+      "wallURL": "https://docs.google.com/presentation/d/1hilhrhRyJDSuZlWdAjch9T93V0qeef8x-bBG1BpuWhM/present",
       "nodeIntegration": false
     }
   }
