@@ -397,21 +397,6 @@
       "wallURL": "https://docs.google.com/presentation/d/1whkzgirTCeEN30iawFx_5jTNiaScClFDqS8Af6PYDac/present",
       "nodeIntegration": false
     }
-  },
-      "sunburst_test": {
-    "name": "Interactive Sunburst Test (Feb 2020)",
-    "description": "Test of interactive 'zoomable' sunburst",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://github.com/timelyportfolio/sunburstR",
-    "splashURL": "https://observablehq.com/@kerryrodden/sequences-sunburst",
-    "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/zoomable/",
-      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-      "nodeIntegration": false
-    }
   }
-
-
 
 }
