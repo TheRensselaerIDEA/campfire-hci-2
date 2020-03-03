@@ -385,7 +385,7 @@
       "nodeIntegration": false
     }
   },
-      "mm_mockup": {
+    "mm_mockup": {
     "name": "MortalityMinder Campfire Mockup (Feb 2020)",
     "description": "Mockup of mwshiny Campfire implementation of MortalityMinder",
     "group": "hacks",
@@ -396,9 +396,10 @@
       "floorURL": "https://docs.google.com/presentation/d/1FPKMB0TBG8wWHeiSIddOEot21ZHPEkhLelXL32pyKqk/present",
       "wallURL": "https://docs.google.com/presentation/d/1hilhrhRyJDSuZlWdAjch9T93V0qeef8x-bBG1BpuWhM/present",
       "nodeIntegration": false
-    },
+    }
+  },
         
-      "mm_campfire": {
+    "mm_campfire": {
     "name": "MortalityMinder Campfire Beta (March 2020)",
     "description": "Preliminary campfire deployment of Mortality Minder",
     "group": "hacks",
