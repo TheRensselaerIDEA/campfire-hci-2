@@ -397,6 +397,19 @@
       "wallURL": "https://docs.google.com/presentation/d/1hilhrhRyJDSuZlWdAjch9T93V0qeef8x-bBG1BpuWhM/present",
       "nodeIntegration": false
     }
+        
+      "mm_campfire": {
+    "name": "MortalityMinder Campfire Beta (March 2020)",
+    "description": "Preliminary campfire deployment of Mortality Minder",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/youngj15/MortalityMinderMWS/?About",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/youngj15/MortalityMinderMWS/?Map",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/youngj15/MortalityMinderMWS/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/youngj15/MortalityMinderMWS/?Wall",
+      "nodeIntegration": false
+    }
   }
 
 }
