@@ -20,7 +20,7 @@ const electron = require('electron');
 module.exports = function ViewController(args) {
 
   const BG_COLOR = '#21252b';
-  const FLOOR_X = 1920;
+  const FLOOR_X = 1080;   // changed 20 Nov 2020 (jse) 
   const FLOOR_Y = 1080;
   const WALL_X = 6400;
   const WALL_Y = 800;
@@ -44,7 +44,8 @@ module.exports = function ViewController(args) {
       this.getArg('display', true),
       this.getArg('wallURL', null),
       this.getArg('floorURL', null),
-      this.getArg('fullscreen', true),
+//      this.getArg('fullscreen', true),
+      this.getArg('fullscreen', false),  // Added 20 Nov 2020 (jse)
       this.getArg('nodeIntegration', true)
     );
   };
@@ -105,6 +106,10 @@ module.exports = function ViewController(args) {
     
     this.floorWindow = createWindow(this.floorScreen, FLOOR_X, FLOOR_Y, floorURL);
     this.wallWindow = createWindow(this.wallScreen, WALL_X, WALL_Y, wallURL);
+    
+    // Added 20 Nov 2020 (jse)
+    this.floorWindow.center();
+    this.wallWindow.center();
   };
 
   // Wait for electron to be available for electron specific config
