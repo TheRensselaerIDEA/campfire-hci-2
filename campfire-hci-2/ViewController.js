@@ -108,8 +108,8 @@ module.exports = function ViewController(args) {
     this.wallWindow = createWindow(this.wallScreen, WALL_X, WALL_Y, wallURL);
     
     // Added 20 Nov 2020 (jse)
-    this.floorWindow.center();
-    this.wallWindow.center();
+    // this.floorWindow.center();
+    // this.wallWindow.center();
   };
 
   // Wait for electron to be available for electron specific config
