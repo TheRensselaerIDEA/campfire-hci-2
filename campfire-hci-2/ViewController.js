@@ -44,8 +44,8 @@ module.exports = function ViewController(args) {
       this.getArg('display', true),
       this.getArg('wallURL', null),
       this.getArg('floorURL', null),
-//      this.getArg('fullscreen', true),
-      this.getArg('fullscreen', false),  // Added 20 Nov 2020 (jse)
+      this.getArg('fullscreen', true),     // JSE 22 Mar 2022
+//      this.getArg('fullscreen', false),  // Added 20 Nov 2020 (jse)
       this.getArg('nodeIntegration', true)
     );
   };
