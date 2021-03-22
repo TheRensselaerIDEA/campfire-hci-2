@@ -21,9 +21,9 @@ module.exports = function ViewController(args) {
 
   const BG_COLOR = '#21252b';
   const FLOOR_X = 1080;   // changed 20 Nov 2020 (jse) 
-  const FLOOR_Y = 1080;
+  const FLOOR_Y = 1000;  // 21 Mar
   const WALL_X = 6400;
-  const WALL_Y = 800;
+  const WALL_Y = 700;   //21 Mar
 
   /**
    * Get an argument or its default value
