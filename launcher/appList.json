@@ -283,20 +283,6 @@
     }
   },
 
-  "guidelines_explorer": {
-    "name": "Hierarchical ADA Guidelines Explorer Demo",
-    "description": "Interactive Hierarchical ADA Guidelines Explorer ('bubble diagram')",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Floor",
-    "splashURL": "https://docs.google.com/presentation/d/12xNkp4O28CLmQyYjZ_KxjJs8pTR8si8RlUqsNckjxtE/present",
-    "args": {
-      "floorURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Floor",
-      "wallURL": "http://lp01.idea.rpi.edu/shiny/imayak/GuideViz/?Wall",
-      "nodeIntegration": false
-    }
-  },
-
   "cellular_automata": {
     "name": "Cellular Automata Demo",
     "description": "Displays cellular automata on Wall and Floor",
@@ -337,6 +323,21 @@
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Wall",
+      "nodeIntegration": false
+    }
+  },
+  
+    "virtualtour": {
+    "name": "Virtual Campus Tour",
+    "description": "Campus Tour with Wifi Overlays (Summer 2021)",
+    "group": "hacks",
+    "type": "simple_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Controller",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitor1",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Wall",
       "nodeIntegration": false
     }
   },
