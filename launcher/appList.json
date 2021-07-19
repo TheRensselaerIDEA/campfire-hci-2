@@ -342,6 +342,22 @@
     }
   },
   
+    "virtualtourdev": {
+    "name": "Virtual Campus Tour (dev server)",
+    "description": "Campus Tour with Wifi Overlays (Summer 2021)",
+    "group": "hacks",
+    "type": "simple_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Controller",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Monitor1",
+    "args": {
+      "floorURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Wall",
+      "nodeIntegration": false
+    }
+  },
+
+  
   "campus_tour": {
     "name": "Campus PanoTour",
     "description": "Click points on the Floor, see panorama video on the Wall!",
