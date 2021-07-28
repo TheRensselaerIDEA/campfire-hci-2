@@ -107,6 +107,10 @@ module.exports = function ViewController(args) {
     this.floorWindow = createWindow(this.floorScreen, FLOOR_X, FLOOR_Y, floorURL);
     this.wallWindow = createWindow(this.wallScreen, WALL_X, WALL_Y, wallURL);
     
+    const content = "";
+    console.log(content.concat("WallScreen: ", this.wallScreen.bounds.width, " x ",  this.wallScreen.bounds.height));
+    console.log(content.concat("FloorScreen: ", this.floorScreen.bounds.width, " x ",  this.floorScreen.bounds.height));
+    
     // Added 20 Nov 2020 (jse)
     // this.floorWindow.center();
     // this.wallWindow.center();
