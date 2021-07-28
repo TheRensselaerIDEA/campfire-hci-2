@@ -421,11 +421,11 @@
     "description": "Shiny Window Size Tester",
     "group": "hacks",
     "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/?WindowDimensions",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/?WindowDimensions",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/?WindowDimensions",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/?WindowDimensions",
       "nodeIntegration": false
     }
   }
