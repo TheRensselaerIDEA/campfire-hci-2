@@ -428,6 +428,22 @@
       "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/WindowSize/",
       "nodeIntegration": false
     }
+  },
+  
+    "shinybrowser": {
+    "name": "ShinyBrowser Test (July 2021)",
+    "description": "Another Shiny Window Size Tester",
+    "group": "hacks",
+    "type": "simple_app",
+    "remoteURL": "https://daattali.com/shiny/shinybrowser-demo/",
+    "splashURL": "https://daattali.com/shiny/shinybrowser-demo/",
+    "args": {
+      "floorURL": "https://daattali.com/shiny/shinybrowser-demo/",
+      "wallURL": "https://daattali.com/shiny/shinybrowser-demo/",
+      "nodeIntegration": false
+    }
   }
+
+  
 
 }
