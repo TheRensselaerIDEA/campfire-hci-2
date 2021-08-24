@@ -157,7 +157,6 @@
     "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Monitor2",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/sequea/NYS_Explorer/?Controller",
@@ -174,7 +173,6 @@
     "description": "Interactive network visualization of related twitter streams (Alex Mankowski) (R; Multi-window Shiny)",
     "group": "summer2018",
     "type": "simple_app",
-    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?URLMonitor",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/mankoa/twitter-network-explorer/?Controller",
@@ -343,16 +341,16 @@
   },
   
     "virtualtourdev": {
-    "name": "Virtual Campus Tour (dev server)",
+    "name": "Virtual Campus Tour (Campfire Workaround)",
     "description": "Campus Tour with Wifi Overlays (Summer 2021)",
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Controller",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Monitor1",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Controller",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitor1",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny-dev/erickj4/VirtualTour/?Wall",
+      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Floor",
+      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Wall",
       "nodeIntegration": false
     }
   },
@@ -363,7 +361,6 @@
     "description": "Click points on the Floor, see panorama video on the Wall!",
     "group": "hacks",
     "type": "simple_app",
-    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?LeftMonitor",
     "splashURL": "http://rpi.edu",
     "args": {
@@ -378,7 +375,6 @@
     "description": "Video, live app and overview slides",
     "group": "hacks",
     "type": "simple_app",
-    "demoable": "true",
     "remoteURL": "https://mortalityminder.idea.rpi.edu/",
     "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder_final.mp4",
     "args": {
@@ -402,19 +398,6 @@
       "nodeIntegration": false
     }
   },
-    "mm_mockup": {
-    "name": "MortalityMinder Campfire Mockup (Feb 2020)",
-    "description": "Mockup of mwshiny Campfire implementation of MortalityMinder",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://docs.google.com/presentation/d/1bcOVy5N_go3yFXLf4_5-M36_ap0ooPQEW4DXoSei9Xo/present",
-    "splashURL": "https://docs.google.com/presentation/d/1PSQe5c38lYyQn4MAty8lDlwxiLrPU64HMAHZ2edlX-Q/present",
-    "args": {
-      "floorURL": "https://docs.google.com/presentation/d/1FPKMB0TBG8wWHeiSIddOEot21ZHPEkhLelXL32pyKqk/present",
-      "wallURL": "https://docs.google.com/presentation/d/1hilhrhRyJDSuZlWdAjch9T93V0qeef8x-bBG1BpuWhM/present",
-      "nodeIntegration": false
-    }
-  },
         
     "windowsize": {
     "name": "Window Size Tester (July 2021)",
@@ -430,20 +413,6 @@
     }
   },
   
-    "shinybrowser": {
-    "name": "ShinyBrowser Test (July 2021)",
-    "description": "Another Shiny Window Size Tester",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://daattali.com/shiny/shinybrowser-demo/",
-    "splashURL": "https://daattali.com/shiny/shinybrowser-demo/",
-    "args": {
-      "floorURL": "https://daattali.com/shiny/shinybrowser-demo/",
-      "wallURL": "https://daattali.com/shiny/shinybrowser-demo/",
-      "nodeIntegration": false
-    }
-  }
-
   
 
 }
