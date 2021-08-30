@@ -331,8 +331,8 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Controller",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitor1",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Wall",
@@ -346,8 +346,8 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Controller",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitor1",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
     "args": {
       "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Wall",
