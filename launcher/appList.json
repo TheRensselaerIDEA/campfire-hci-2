@@ -354,6 +354,20 @@
     }
   },
 
+    "virtualtourunity": {
+    "name": "Virtual Campus Tour (Unity Browser)",
+    "description": "Campus Tour with Wifi Overlays (Summer 2021)",
+    "group": "hacks",
+    "type": "simple_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "Campfire.exe"
+    }
+  },
+
   
   "campus_tour": {
     "name": "Campus PanoTour",
