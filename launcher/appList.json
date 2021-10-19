@@ -358,7 +358,7 @@
     "name": "Unity Demo (Oct 2021)",
     "description": "Includes Virtual Campus Tour (Summer 2021)",
     "group": "hacks",
-    "type": "simple_app",
+    "type": "external_app",
     "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
