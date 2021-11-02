@@ -95,18 +95,6 @@
     }
   },
 
-  "swot_clock": {
-    "name": "SWOT Clock (Data INCITE)",
-    "description": "Susceptibility Windows Ontological Transcriptome Clock. Requires external controller (R; Multi-window Shiny)",
-    "group": "science",
-    "type": "external_app",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "start_dir": "C:\\SWOTR-Electron-Demo",
-      "start_cmd": "electron ."
-    }
-  },
-
   "circadian_explorer": {
     "name": "COE: Circadian Ontology Explorer",
     "description": "Explore enriched ECHO results for mouse data (R; Multi-window Shiny)",
@@ -136,19 +124,6 @@
       "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/ENCORE_demo/?Floor",
       "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/ENCORE_demo/?Wall",
       "nodeIntegration": false
-    }
-  },
-
-  "nys_health_storyboard": {
-    "name": "NYS Health Data Explorer (storyboard)",
-    "description": "NYS Health Data Explorer. By the Caffinated Quintuplet (Google Slides Storyboard)",
-    "group": "summer2018",
-    "type": "google_slides",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "centermode": false,
-      "floorURL": "https://docs.google.com/presentation/d/1j4Zn-o5UuUOaKqVm5vJu2IqcN_X485Cd4wFHl7YfvfY/present?slide=id.p",
-      "wallURL": "https://docs.google.com/presentation/d/14PRCr90QDENrT5B_5MN5cmd95n82MiWsn03m3bSE4s8/present?slide=id.p"
     }
   },
 
@@ -199,75 +174,6 @@
     }
   },
   
-  "mouse_wrangler_grid": {
-    "name": "Mouse Wrangler Grid Demo",
-    "description": "Simple static demo that displays an alignment target on the wall and floor",
-    "group": "hacks",
-    "type": "external_app",
-    "remoteURL": "http://empac.rpi.edu/content/campfire",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "start_cmd": "electron ../demo/demo_target.js"
-    }
-  },
-
-  "google_slides_idea": {
-    "name": "Google Slides Demo (IDEA Template)",
-    "description": "Prototype of IDEA Template (includes Floor, Wall and Monitor)",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://docs.google.com/presentation/d/1fJK4qwSE1k9tvyI6zsM7aFQEHRmioavdpcCXSD7YhfM/present",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "centermode": false,
-      "floorURL": "https://docs.google.com/presentation/d/1ot91NASRAb5Bw_sudgay4cohEt8q-nULwmbdEatLEVQ/present",
-      "wallURL": "https://docs.google.com/presentation/d/1MgjFQRFPFa9zst6da585Kas-jMa5zx96a4rG8u1pctA/present"
-    }
-  },
-
-  "google_slides_penguin": {
-    "name": "Google Slides Demo (Penguin)",
-    "description": "Demonstration of an animated visualization using Google Slides",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://www.google.com/slides/about/",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "centermode": false,
-      "floorURL": "http://bit.ly/CampfireFloorSlideFull",
-      "wallURL": "http://bit.ly/CampfireWallSlideFull"
-    }
-  },
-
-  "fruit_data_mws": {
-    "name": "Fruit Data Explorer: A Basic Multi-window Shiny Demo",
-    "description": "R-based data visualizations computed on the IDEA cluster (R; Multi-window Shiny)",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Monitor",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "controllerURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Controller",
-    "args": {
-      "centermode": false,
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/delosh/Fruit_MWS/?Wall",
-      "nodeIntegration": false
-    }
-  },
-
-  "smorgasbord": {
-    "name": "Smorgasbord",
-    "description": "Select your own Walls and Floors! Includes audio...",
-    "group": "hacks",
-    "type": "external_app",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "start_dir": "C:\\Users\\EMPAC\\Documents\\fangt\\campfire-hci\\slideWrangler",
-      "start_cmd": "electron ."
-    }
-  },
-
   "election_2016": {
     "name": "2016 Election Data",
     "description": "US 2016 Election Results and Twitter Activity (Electron)",
@@ -326,16 +232,15 @@
   },
   
     "virtualtour": {
-    "name": "Virtual Campus Tour",
+    "name": "Virtual Campus Tour (Unity)",
     "description": "Campus Tour with Wifi Overlays (Summer 2021)",
     "group": "hacks",
-    "type": "simple_app",
+    "type": "external_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Wall",
-      "nodeIntegration": false
+      "start_dir": "D:\\Unity\\win_builds\\warp",
+      "start_cmd": "D:\\Unity\\win_builds\\warp\\warp.exe 'Wall' 'https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Wall' 'Floor' 'https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Floor'"
     }
   },
   
@@ -355,13 +260,13 @@
   },
 
     "virtualtourunity": {
-    "name": "Unity Demo (Oct 2021)",
-    "description": "Includes Virtual Campus Tour (Summer 2021)",
+    "name": "Unity Demos (Oct 2021)",
+    "description": "Unity-based demo launcher",
     "group": "hacks",
     "type": "external_app",
     "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
       "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe"
