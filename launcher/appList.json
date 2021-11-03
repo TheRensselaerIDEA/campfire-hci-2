@@ -239,8 +239,8 @@
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "args": {
-      "start_dir": "D:\\Unity\\win_builds\\warp",
-      "start_cmd": "D:\\Unity\\win_builds\\warp\\warp.exe 'Wall' 'https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Wall' 'Floor' 'https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Floor'"
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe" 'Wall' 'https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Wall' 'Floor' 'https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Floor'"
     }
   },
   
