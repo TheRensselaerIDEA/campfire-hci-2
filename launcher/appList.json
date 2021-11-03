@@ -236,6 +236,7 @@
     "description": "Campus Tour with Wifi Overlays (Summer 2021)",
     "group": "hacks",
     "type": "external_app",
+    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTour/?Monitors",
     "args": {
