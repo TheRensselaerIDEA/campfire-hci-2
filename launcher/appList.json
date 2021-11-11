@@ -217,17 +217,16 @@
   },
 
   "starwars": {
-    "name": "StarWars Network Explorer",
+    "name": "StarWars Network Explorer (Unity)",
     "description": "Explore StarWars character network by selecting subsets of conversations",
     "group": "hacks",
-    "type": "simple_app",
+    "type": "external_app",
     "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Character",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Script",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Wall",
-      "nodeIntegration": false
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/StarWarsNetwork/?Floor"
     }
   },
   
