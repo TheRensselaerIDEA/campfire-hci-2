@@ -202,20 +202,6 @@
     }
   },
   
-  "visnetwork": {
-    "name": "VisNetwork Test",
-    "description": "Collapsible/Expandable Network Explorer",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/kamint/visnetmws/?Wall",
-    "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/kamint/visnetmws/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/kamint/visnetmws/?Wall",
-      "nodeIntegration": false
-    }
-  },
-
   "starwars": {
     "name": "StarWars Network Explorer (Unity)",
     "description": "Explore StarWars character network by selecting subsets of conversations",
@@ -288,22 +274,9 @@
     }
   },
   
-    "ahrq_storyboard": {
-    "name": "MortalityMinder Storyboard (Nov 2019)",
-    "description": "Video, live app and overview slides",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "https://mortalityminder.idea.rpi.edu/",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/MortalityMinder_final.mp4",
-    "args": {
-      "floorURL": "https://docs.google.com/presentation/d/1kTznoipDJ6Homg3nuyddE4K1qQh6-0YRGwO6dlwu7eo/present",
-      "wallURL": "https://docs.google.com/presentation/d/1NIlS3BE1mI3rd0taB8yNYhhovCyKTLDFi-siTQupkfg/present",
-      "nodeIntegration": false
-    }
-  }, 
-  
+ 
     "nyc_tree_tour": {
-    "name": "NYC Tree Explorer",
+    "name": "NYC Tree Explorer (Unity)",
     "description": "Click points on the Floor, see the tree's view on the Wall and tree data on the Monitor. Filter using the Controller.",
     "group": "hacks",
     "type": "simple_app",
@@ -311,9 +284,8 @@
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Wall",
-      "nodeIntegration": false
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Floor"
     }
   },
         
