@@ -162,15 +162,14 @@
     "name": "Twitter Time Machine (WebSci2019)",
     "description": "Interactive network visualization and social media analysis (IDEA URPs) (R; Multi-window Shiny)",
     "group": "summer2018",
-    "type": "simple_app",
+    "type": "external_app",
     "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?URLMonitor",
     "controllerURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Controller",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Wall",
-      "nodeIntegration": false
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/TwitterTimeMachine/?Floor"
     }
   },
   
@@ -279,7 +278,7 @@
     "name": "NYC Tree Explorer (Unity)",
     "description": "Click points on the Floor, see the tree's view on the Wall and tree data on the Monitor. Filter using the Controller.",
     "group": "hacks",
-    "type": "simple_app",
+    "type": "external_app",
     "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Monitor",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Controller",
