@@ -234,7 +234,6 @@
     "description": "Campus Tour with Wifi Overlays (Summer 2021)",
     "group": "hacks",
     "type": "simple_app",
-    "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/VirtualTourDev/?Monitors",
     "args": {
@@ -260,16 +259,15 @@
 
   
   "campus_tour": {
-    "name": "Campus PanoTour",
+    "name": "Campus Panoramic Video Tour (Unity)",
     "description": "Click points on the Floor, see panorama video on the Wall!",
     "group": "hacks",
-    "type": "simple_app",
+    "type": "external_app",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?LeftMonitor",
     "splashURL": "http://rpi.edu",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Wall",
-      "nodeIntegration": false
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/CampusTour/?Floor"
     }
   },
   
