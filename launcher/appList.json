@@ -293,7 +293,7 @@
     "type": "external_app",
     "demoable": "true",
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/erickj4/MarsExplorer/?Monitor1",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/erickj4/MarsExplorer/?Monitor2",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
       "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/MarsExplorer/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/MarsExplorer/?Floor"
