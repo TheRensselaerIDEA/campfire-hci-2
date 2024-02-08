@@ -285,6 +285,20 @@
       "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/TreeTourMwshiny/?Floor"
     }
   },
+
+    "mars_leaflet": {
+    "name": "Mars Data Explorer Leaflet (Unity)",
+    "description": "Click points on the Floor, see the Sample Site view on the Wall and Sample data on the Monitor.",
+    "group": "hacks",
+    "type": "external_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor1",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor2",
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Wall Floor https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Floor"
+    }
+  },
      
     "mars_explorer": {
     "name": "Mars Data Explorer (Unity)",
@@ -297,20 +311,6 @@
     "args": {
       "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
       "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/erickj4/MarsExplorer/?Wall Floor https://lp01.idea.rpi.edu/shiny/erickj4/MarsExplorer/?Floor"
-    }
-  },
-  
-    "mars_leaflet": {
-    "name": "Mars Data Explorer Leaflet (Unity)",
-    "description": "Click points on the Floor, see the Sample Site view on the Wall and Sample data on the Monitor.",
-    "group": "hacks",
-    "type": "external_app",
-    "demoable": "true",
-    "remoteURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor1",
-    "splashURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor2",
-    "args": {
-      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
-      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Wall Floor https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Floor"
     }
   },
   
