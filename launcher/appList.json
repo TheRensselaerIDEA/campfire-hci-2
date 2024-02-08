@@ -314,6 +314,21 @@
     }
   },
   
+    "mars_explorer_leaflet": {
+    "name": "Mars Data Explorer Leaflet (Unity)",
+    "description": "Click points on the Floor, see the Sample Site view on the Wall and Sample data on the Monitor.",
+    "group": "hacks",
+    "type": "external_app",
+    "demoable": "true",
+    "remoteURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor1",
+    "splashURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor2",
+    "args": {
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Wall Floor https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Floor"
+    }
+  },
+
+  
     "windowsize": {
     "name": "Window Size Tester (July 2021)",
     "description": "Shiny Window Size Tester",
