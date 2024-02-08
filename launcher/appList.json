@@ -286,7 +286,7 @@
     }
   },
 
-    "mars_leaflet": {
+    "maryellen_leaflet": {
     "name": "Mars Data Explorer Leaflet (Unity)",
     "description": "Click points on the Floor, see the Sample Site view on the Wall and Sample data on the Monitor.",
     "group": "hacks",
