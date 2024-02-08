@@ -201,20 +201,6 @@
     }
   },
 
-    "leaflet_test": {
-    "name": "Mars Leaflet Test",
-    "description": "Testing the MarsM20 tiles endpoint with Leaflet on Floor",
-    "group": "hacks",
-    "type": "simple_app",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/erickj4/LeafletTest/",
-      "wallURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-      "nodeIntegration": false
-    }
-  },
-
   "starwars": {
     "name": "StarWars Network Explorer (Unity)",
     "description": "Explore StarWars character network by selecting subsets of conversations",
@@ -314,7 +300,7 @@
     }
   },
   
-    "mars_explorer_leaflet": {
+    "mars_leaflet": {
     "name": "Mars Data Explorer Leaflet (Unity)",
     "description": "Click points on the Floor, see the Sample Site view on the Wall and Sample data on the Monitor.",
     "group": "hacks",
@@ -327,7 +313,6 @@
       "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Wall Floor https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Floor"
     }
   },
-
   
     "windowsize": {
     "name": "Window Size Tester (July 2021)",
