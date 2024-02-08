@@ -309,9 +309,8 @@
     "remoteURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor1",
     "splashURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Monitor2",
     "args": {
-      "floorURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Floor",
-      "wallURL": "https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Wall",
-      "nodeIntegration": false
+      "start_dir": "C:\\Users\\EMPAC\\UnityDemo",
+      "start_cmd": "C:\\Users\\EMPAC\\UnityDemo\\Campfire.exe Wall https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Wall Floor https://lp01.idea.rpi.edu/shiny/marinm4/MarsExplorerLeaflet/?Floor"
     }
   },
   
