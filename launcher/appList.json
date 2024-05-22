@@ -192,8 +192,8 @@
     "group": "hacks",
     "type": "simple_app",
     "demoable": "true",
-    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
-    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenIDEA_black_invert.jpg",
+    "remoteURL": "http://orion.tw.rpi.edu/~olyerickson/RenFOCI_black_invert.jpg",
+    "splashURL": "http://orion.tw.rpi.edu/~olyerickson/RenFOCI_black_invert.jpg",
     "args": {
       "floorURL": "https://docs.google.com/presentation/d/1xFj-YzlfQtgYwEHdrAYt1oHdwXXahwq6SiVTGugz2p8/present",
       "wallURL": "https://docs.google.com/presentation/d/1Hh92gWVMfvcqVm3Te3214brKn5NeouaXB9U8BlRoRIQ/present",
